@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [ "dom", "dom.iterable", "esnext" ],
     "allowJs": true,
     "baseUrl": ".",
+    "allowImportingTsExtensions": true,
     "paths": {
-      "@/components/*": ["components/*"]
+      "@/components/*": [ "components/*" ]
     },
     // "skipLibCheck": true,
     "skipLibCheck": true,
@@ -24,9 +25,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [ "./*" ]
     }
   },
-  "include": ["video.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [ "video.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts" ],
+  "exclude": [ "node_modules" ]
 }
