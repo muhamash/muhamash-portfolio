@@ -1,17 +1,20 @@
-import CodeEditor from "@/components/home/AnimatedCode";
-import AnimatedText from "@/components/home/AnimatedText";
+import GridContainer from "@/components/animations/grid/GridContainer";
+import HeaderComponent from "@/components/header/Header";
+import ServiceSection from "@/components/services/ServiceSection";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <div className="pt-[110px]">
-      <div className="flex gap-10">
-        <div className="w-1/2">
-          <AnimatedText />
-        </div>
-        <div className="w-1/2">
-          <CodeEditor/>
-        </div>
+    <div className="pt-[110px] flex flex-col items-center justify-center">
+      {/* home bg */}
+      <div className="absolute top-0 left-0 w-full h-full -z-20 opacity-20">
+        <GridContainer/>
       </div>
+
+
+      <div className="">
+        <HeaderComponent/>
+      </div>
+      <ServiceSection/>
     </div>
   );
 }

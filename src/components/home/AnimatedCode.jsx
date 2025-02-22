@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -25,9 +26,9 @@ export default MyComponent;
 `;
 
 export default function CodeEditor() {
-  const [codeIndex, setCodeIndex] = useState(0); // To track how much code is revealed
-  const [blink, setBlink] = useState(true); // Cursor blink state
-  const containerRef = useRef(null); // Reference for auto-scrolling
+  const [codeIndex, setCodeIndex] = useState(0); 
+  const [blink, setBlink] = useState(true); 
+  const containerRef = useRef(null);
 
   useEffect(() => {
     // Cursor blinking control
@@ -44,7 +45,7 @@ export default function CodeEditor() {
       return () => clearTimeout(timeout);
     } else {
       // Reset codeIndex to create infinite typing loop
-      const timeout = setTimeout(() => setCodeIndex(0), 1000); // Delay before restarting
+      const timeout = setTimeout(() => setCodeIndex(0), 1000); 
       return () => clearTimeout(timeout);
     }
   }, [codeIndex]);
@@ -74,10 +75,10 @@ export default function CodeEditor() {
   };
 
   return (
-    <div className="relative p-6 bg-gray-800 rounded-lg shadow-md h-96 overflow-hidden">
+    <div className="relative p-6 md:w-[420px] w-[280px] bg-gray-800 rounded-lg shadow-md h-96 overflow-hidden">
       <div
         className="h-full overflow-y-auto"
-        ref={containerRef} // Reference for auto-scrolling
+        ref={containerRef}
       >
         <div className="text-sm font-mono text-gray-300">
           <motion.pre

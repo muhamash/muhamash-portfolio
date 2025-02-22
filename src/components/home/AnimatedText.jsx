@@ -43,19 +43,14 @@ export default function AnimatedText() {
 
   return (
     <motion.div
-      className="font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent flex"
+      className="font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent flex w-full md:h-fit h-[100px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <motion.div className="text-[6vw] sm:text-[8vw] md:text-[10vw] lg:text-[40px] xl:text-[50px]">
+      <motion.div className="text-[6vw] md:text-[40px]">
         {texts[index].substring(0, subIndex)}
       </motion.div>
-      <motion.span
-        className={`ml-1 w-1 h-auto inline-block ${
-          blink ? "bg-slate-600" : "bg-transparent"
-        }`}
-      ></motion.span>
     </motion.div>
   );
 }
