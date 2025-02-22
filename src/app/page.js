@@ -15,6 +15,7 @@ export default async function Home() {
       <div className="">
         <HeaderComponent/>
       </div>
+      
       <ServiceSection/>
     </div>
   );
