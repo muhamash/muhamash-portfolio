@@ -1,11 +1,14 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const texts = [
-  "Writing Next.js Optimized Code...",
+  "A professional web developer",
+  "Creating beautiful websites",
+  "Building scalable applications!!",
+  "Writing Next.js Optimized Code!!",
   "Enhancing Performance...",
-  "Deploying to Vercel...",
 ];
 
 export default function AnimatedText() {
@@ -43,12 +46,12 @@ export default function AnimatedText() {
 
   return (
     <motion.div
-      className="font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent flex w-full md:h-fit h-[100px]"
+      className="font-bold w-full bg-gradient-to-r from-cyan-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent flex h-[105px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <motion.div className="text-[6vw] md:text-[40px]">
+      <motion.div className="md:text-[40px] text-[20px] w-full">
         {texts[index].substring(0, subIndex)}
       </motion.div>
     </motion.div>

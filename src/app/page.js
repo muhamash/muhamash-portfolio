@@ -5,7 +5,7 @@ import ServiceSection from "@/components/services/ServiceSection";
 
 export default async function Home() {
   return (
-    <div className="pt-[110px] px-3 flex flex-col items-center justify-center">
+    <div className="pt-[110px] md:px-10 px-3 flex flex-col items-center justify-center">
       {/* homepage cursor animation */}
       <CursorContainer />
       
@@ -15,7 +15,7 @@ export default async function Home() {
       </div>
 
       {/* home header */}
-      <div className="">
+      <div className="w-full">
         <HeaderComponent/>
       </div>
       

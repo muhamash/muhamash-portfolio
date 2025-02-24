@@ -18,7 +18,6 @@ const techStack = [
   "c",
   "nestjs",
   "expressjs",
-  "electron",
   "redux",
   "tailwind",
   "mui",
@@ -27,18 +26,14 @@ const techStack = [
   "git",
   "github",
   "gitlab",
-  "postman",
-  "rest",
   "figma",
   "vscode",
   "html",
   "css",
   "vercel",
   "jira",
-  "notion",
-  "zsh",
+  "bash",
   "terminal",
-  "axios",
 ];
 
 export default function TechSlider() {

@@ -1,43 +1,66 @@
-import { faCuttlefish, faGitAlt, faGithub, faGitlab, faJsSquare, faNodeJs, faPython, faReact } from '@fortawesome/free-brands-svg-icons';
-import { faServer } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import BashLogo from '@/components/svg/BashLogo';
+import CLogo from '@/components/svg/CLogo';
+import CssLogo from '@/components/svg/CssLogo';
+import ExpressjsLogo from '@/components/svg/ExpressjsLogo';
+import FigmaLogo from '@/components/svg/FigmaLogo';
+import GithubLogo from '@/components/svg/GithubLogo';
+import GitlabLogo from '@/components/svg/GitlabLogo';
+import GitLogo from '@/components/svg/GitLogo';
+import GraphQlLogo from '@/components/svg/GraphQlLogo';
+import HtmlLogo from '@/components/svg/HtmlLogo';
+import JIraLogo from '@/components/svg/JIraLogo';
+import JsLogo from '@/components/svg/JsLogo';
+import MongoIcon from '@/components/svg/MongoIcon';
+import MuiLogo from '@/components/svg/MuiLogo';
+import MySqlLogo from '@/components/svg/MySqlLogo';
+import NestLogo from '@/components/svg/NestLogo';
+import NextjsIcon from '@/components/svg/NextjsIcon';
+import NgnixLogo from '@/components/svg/NgnixLogo';
+import NodeIcon from '@/components/svg/NodeIcon';
+import PostgresLogo from '@/components/svg/PostgresLogo';
+import PrismaLogo from '@/components/svg/PrismaLogo';
+import PythonLogo from '@/components/svg/PythonLogo';
+import ReactIcon from '@/components/svg/ReactIcon';
+import ReduxLogo from '@/components/svg/ReduxLogo';
+import ShadcnLogo from '@/components/svg/ShadcnLogo';
+import TailwindCssLogo from '@/components/svg/TailwindCssLogo';
+import TerminalLogo from '@/components/svg/TerminalLogo';
+import TypescriptIcon from '@/components/svg/TypescriptIcon';
+import VercelLogo from '@/components/svg/VercelLogo';
+import VsCOde from '@/components/svg/VsCOde';
 
 export default function SlideCards({ text }) {
   const icons = {
-    react: <FontAwesomeIcon icon={faReact} className="text-4xl text-blue-400" />,
-    nodejs: <FontAwesomeIcon icon={faNodeJs} className="text-4xl text-green-500" />,
-    // mongo: <FontAwesomeIcon icon={faDatabase} className="text-4xl text-green-800" />,
-    nextjs: <FontAwesomeIcon icon={faReact} className="text-4xl text-gray-800" />,
-    typescript: <FontAwesomeIcon icon={faJsSquare} className="text-4xl text-blue-600" />,
-    javascript: <FontAwesomeIcon icon={faJsSquare} className="text-4xl text-yellow-500" />,
-    python: <FontAwesomeIcon icon={faPython} className="text-4xl text-blue-500" />,
-    c: <FontAwesomeIcon icon={faCuttlefish} className="text-4xl text-green-700" />,
-    nestjs: <FontAwesomeIcon icon={faNodeJs} className="text-4xl text-red-500" />,
-    expressjs: <FontAwesomeIcon icon={faNodeJs} className="text-4xl text-gray-600" />,
-    electron: <FontAwesomeIcon icon={faServer} className="text-4xl text-gray-700" />,
-    redux: <FontAwesomeIcon icon={faJsSquare} className="text-4xl text-purple-600" />,
-    tailwind: <FontAwesomeIcon icon={faJsSquare} className="text-4xl text-teal-500" />,
-    mui: <FontAwesomeIcon icon={faReact} className="text-4xl text-blue-500" />,
-    // postgresql: <FontAwesomeIcon icon={faDatabase} className="text-4xl text-blue-500" />,
-    // mysql: <FontAwesomeIcon icon={faDatabase} className="text-4xl text-blue-600" />,
-    // prisma: <FontAwesomeIcon icon={faDatabase} className="text-4xl text-green-600" />,
-    graphql: <FontAwesomeIcon icon={faJsSquare} className="text-4xl text-pink-600" />,
-    git: <FontAwesomeIcon icon={faGitAlt} className="text-4xl text-orange-600" />,
-    github: <FontAwesomeIcon icon={faGithub} className="text-4xl text-black" />,
-    gitlab: <FontAwesomeIcon icon={faGitlab} className="text-4xl text-orange-700" />,
-    postman: <FontAwesomeIcon icon={faGitlab} className="text-4xl text-orange-400" />,
-    rest: <FontAwesomeIcon icon={faServer} className="text-4xl text-green-400" />,
-    figma: <FontAwesomeIcon icon={faReact} className="text-4xl text-purple-600" />,
-    vscode: <FontAwesomeIcon icon={faReact} className="text-4xl text-blue-600" />,
-    html: <FontAwesomeIcon icon={faReact} className="text-4xl text-red-600" />,
-    css: <FontAwesomeIcon icon={faReact} className="text-4xl text-blue-600" />,
-    nginx: <FontAwesomeIcon icon={faServer} className="text-4xl text-gray-600" />,
-    vercel: <FontAwesomeIcon icon={faServer} className="text-4xl text-black" />,
-    jira: <FontAwesomeIcon icon={faReact} className="text-4xl text-blue-700" />,
-    notion: <FontAwesomeIcon icon={faReact} className="text-4xl text-black" />,
-    zsh: <FontAwesomeIcon icon={faReact} className="text-4xl text-blue-600" />,
-    terminal: <FontAwesomeIcon icon={faReact} className="text-4xl text-green-600" />,
-    axios: <FontAwesomeIcon icon={faReact} className="text-4xl text-blue-700" />
+    react: <ReactIcon/>,
+    nodejs: <NodeIcon/>,
+    mongo: <MongoIcon/>,
+    nextjs: <NextjsIcon/>,
+    typescript: <TypescriptIcon/>,
+    javascript: <JsLogo/>,
+    python: <PythonLogo/>,
+    c:<CLogo/>,
+    nestjs: <NestLogo/>,
+    expressjs: <ExpressjsLogo/>,
+    redux: <ReduxLogo/>,
+    tailwind:<TailwindCssLogo/>,
+    mui:<MuiLogo/>,
+    postgresql: <PostgresLogo/>,
+    mysql:<MySqlLogo/>,
+    prisma:<PrismaLogo/>,
+    graphql:<GraphQlLogo/>,
+    git: <GitLogo/>,
+    github: <GithubLogo/>,
+    gitlab: <GitlabLogo/>,
+    figma:<FigmaLogo/>,
+    vscode:<VsCOde/>,
+    html:<HtmlLogo/>,
+    css:<CssLogo/>,
+    nginx: <NgnixLogo/>,
+    vercel:<VercelLogo/>,
+    jira:<JIraLogo/>,
+    bash: <BashLogo/>,
+    terminal: <TerminalLogo />,
+    shadcn: <ShadcnLogo/>,
   };
 
   const Icon = icons[text.toLowerCase()];

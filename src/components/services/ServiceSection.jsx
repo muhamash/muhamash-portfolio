@@ -22,7 +22,7 @@ export default async function ServiceSection() {
             rotationInterval={ 2000 }
           />
         </div>
-        <TechSlider />
+        <TechSlider/>
       </div>
     </div>
   );
