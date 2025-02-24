@@ -1,15 +1,13 @@
-"use client"
-
 import GlitchText from "../animations/glitch/Glitch";
 import TechSlider from "../animations/sliders/techStacks/TechSlider";
 
-export default function ServiceSection() {
+export default async function ServiceSection() {
   return (
-    <div className="md:my-[120px] my-[300px]">
+    <div className="md:pt-[150px] pt-[300px]">
       
 
-      <div>
-        <div className="text-center w-fit mx-auto flex gap-3 items-center">
+      <div className="flex flex-col gap-5 items-center justify-center">
+        <div className="text-center w-fit mx-auto flex gap-3 items-center mt-10">
           <p className="text-white text-[39px] font-extrabold">Creative</p>
           <GlitchText
             texts={ [ 'Thinking!!', 'Coding!!', 'Features!!', 'Design!!!' ] }
@@ -21,7 +19,8 @@ export default function ServiceSection() {
             staggerDuration={ 0.025 }
             splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
             transition={ { type: "spring", damping: 30, stiffness: 400 } }
-            rotationInterval={ 2000 } />
+            rotationInterval={ 2000 }
+          />
         </div>
         <TechSlider />
       </div>

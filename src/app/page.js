@@ -6,12 +6,15 @@ import ServiceSection from "@/components/services/ServiceSection";
 export default async function Home() {
   return (
     <div className="pt-[110px] px-3 flex flex-col items-center justify-center">
-      <CursorContainer/>
+      {/* homepage cursor animation */}
+      <CursorContainer />
+      
       {/* home bg */}
       <div className="absolute top-0 left-0 w-full h-full -z-20 opacity-20">
         <GridContainer/>
       </div>
 
+      {/* home header */}
       <div className="">
         <HeaderComponent/>
       </div>

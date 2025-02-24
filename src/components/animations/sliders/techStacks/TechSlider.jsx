@@ -1,35 +1,59 @@
 "use client"
 
+import SlideCards from "./SlideCards";
 import ScrollVelocity from "./Tech";
+
+const techStack = [
+  "react",
+  "nodejs",
+  "mongo",
+  "nextjs",
+  "tailwind",
+  "postgresql",
+  "mysql",
+  "prisma",
+  "typescript",
+  "javascript",
+  "python",
+  "c",
+  "nestjs",
+  "expressjs",
+  "electron",
+  "redux",
+  "tailwind",
+  "mui",
+  "shadcn",
+  "graphql",
+  "git",
+  "github",
+  "gitlab",
+  "postman",
+  "rest",
+  "figma",
+  "vscode",
+  "html",
+  "css",
+  "vercel",
+  "jira",
+  "notion",
+  "zsh",
+  "terminal",
+  "axios",
+];
 
 export default function TechSlider() {
   return (
     <div className="w-screen px-4 py-8">
       <ScrollVelocity
         velocity={100}
-        className="min-w-[50%] px-2" // Controls card width for 2 columns
-        scrollerClassName="gap-4" // Space between cards
-        numCopies={8} // Increased copies for better continuity
+        className="min-w-[50%] px-2"
+        scrollerClassName="gap-4"
+        numCopies={8}
         parallaxClassName="w-full"
       >
-        <div className="card bg-white p-6 rounded-xl shadow-lg h-48 flex items-center justify-center">
-          <h3 className="text-2xl font-bold">React</h3>
-        </div>
-        <div className="card bg-white p-6 rounded-xl shadow-lg h-48 flex items-center justify-center">
-          <h3 className="text-2xl font-bold">TypeScript</h3>
-        </div>
-        <div className="card bg-white p-6 rounded-xl shadow-lg h-48 flex items-center justify-center">
-          <h3 className="text-2xl font-bold">Next.js</h3>
-        </div>
-        <div className="card bg-white p-6 rounded-xl shadow-lg h-48 flex items-center justify-center">
-          <h3 className="text-2xl font-bold">Node.js</h3>
-        </div>
-        <div className="card bg-white p-6 rounded-xl shadow-lg h-48 flex items-center justify-center">
-          <h3 className="text-2xl font-bold">Tailwind CSS</h3>
-        </div>
-        <div className="card bg-white p-6 rounded-xl shadow-lg h-48 flex items-center justify-center">
-          <h3 className="text-2xl font-bold">GraphQL</h3>
-        </div>
+        {techStack.map((tech, index) => (
+          <SlideCards key={index} text={tech} />
+        ))}
       </ScrollVelocity>
     </div>
   );
