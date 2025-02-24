@@ -34,6 +34,14 @@ const techStack = [
   "jira",
   "bash",
   "terminal",
+  "linux",
+  "docker",
+  "nginx",
+  "openai",
+  "cloudComputing",
+  "firebase",
+  "aws",
+  "nextAuth",
 ];
 
 export default function TechSlider() {
