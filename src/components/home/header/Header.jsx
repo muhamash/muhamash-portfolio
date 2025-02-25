@@ -1,5 +1,8 @@
 "use client"
 
+import HireMeButton from "@/components/common/HireMeButton";
+import Resume from "@/components/common/Resume";
+import GlitchText from "../../animations/glitch/Glitch";
 import SplitTextContainer from "../../animations/splitText/SplitTextContainer";
 import CodeEditor from "../AnimatedCode";
 import AnimatedText from "../AnimatedText";
@@ -7,19 +10,41 @@ import { Socialicons } from "./Stamp";
 
 export default function HeaderComponent() {
     return (
-        <div className="relative z-10 h-full w-full flex md:flex-row flex-col justify-between items-center gap-10">
+        <div className="relative z-10 min-h-screen min-w-screen flex md:flex-row flex-col md:justify-between justify-center gap-10 items-center mx-auto">
             <div className="absolute md:-left-20 -left-[17px] top-[70px]">
                 <Socialicons />
             </div>
 
-            <div className="w-[300px] md:w-[500px] h-fit flex flex-col gap-3 text-left">
+            <div className="w-[300px] md:w-[500px] h-fit flex flex-col gap-3 text-left items-center md:items-start justify-center">
                 <div className="h-fit">
                     <SplitTextContainer text={ "Assalamu alaikum, I am Md Ashraful Alam" } />
                 </div>
+                <AnimatedText />
 
-                <AnimatedText/>
+                <div className="flex flex-col md:flex-row gap-5 mt-10">
+                    <HireMeButton />
+                    <Resume />
+                </div>
             </div>
-            <CodeEditor />
+
+            <div className="flex flex-col gap-5">
+                <div className="text-center w-fit mx-auto flex gap-[10px] items-center md:mt-10 mt-3">
+                    <p className="text-white text-[32px] md:text-[35px] font-extrabold">Creative</p>
+                    <GlitchText
+                        texts={ [ 'Thinking!!', 'Coding!!', 'Features!!', 'Design!!!' ] }
+                        mainClassName="px-2  md:px-3 bg-cyan-300 text-black overflow-hidden py-1 md:py-2 justify-center rounded-lg text-[20px]"
+                        staggerFrom={ "last" }
+                        initial={ { y: "100%" } }
+                        animate={ { y: 0 } }
+                        exit={ { y: "-120%" } }
+                        staggerDuration={ 0.025 }
+                        splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                        transition={ { type: "spring", damping: 30, stiffness: 400 } }
+                        rotationInterval={ 2000 }
+                    />
+                </div>
+                <CodeEditor />
+            </div>
         </div>
     );
 }

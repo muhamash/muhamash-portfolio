@@ -1,11 +1,9 @@
 "use client";
 
-import CursorContainer from "@/components/animations/cursor/CursorContainer";
 import GridContainer from "@/components/animations/grid/GridContainer";
 import About from "@/components/home/about/About";
 import Footer from "@/components/home/contact/Contact";
 import HeaderComponent from "@/components/home/header/Header";
-import ServiceSection from "@/components/home/services/ServiceSection";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -28,7 +26,7 @@ export default function Home ()
   };
 
   return (
-    <div ref={sectionRef} className="pt-[110px] flex flex-col items-center justify-center">
+    <div ref={sectionRef} className="flex flex-col items-center justify-center">
       {/* Scroll Progress Bar */}
       <motion.div
         style={{ scaleX }}
@@ -36,7 +34,7 @@ export default function Home ()
       />
 
       {/* Cursor and Background */}
-      <CursorContainer />
+      {/* <CursorContainer /> */}
       <div className="absolute top-0 left-0 w-full h-full -z-20 opacity-20">
         <GridContainer />
       </div>
@@ -44,7 +42,7 @@ export default function Home ()
       {/* Main Content Sections */}
       <div id="header" className="w-full sticky top-0 z-10 md:px-20 px-5 md:pb-10 pb-5">
         <HeaderComponent />
-        <ServiceSection />
+        {/* <ServiceSection /> */}
       </div>
 
       <About />

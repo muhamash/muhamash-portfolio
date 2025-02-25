@@ -5,7 +5,7 @@ import Squares from './Grid';
 export default function GridContainer() {
     return (
         <Squares
-            speed={ 0.05 }
+            speed={ 0.9 }
             squareSize={ 40 }
             direction='diagonal' // up, down, left, right, diagonal
             borderColor='#fff'
