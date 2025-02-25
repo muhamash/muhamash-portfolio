@@ -15,7 +15,7 @@ export default async function HeaderComponent() {
 
             <div className="w-[300px] md:w-[500px] h-fit flex flex-col gap-3 text-left items-center md:items-start justify-center">
                 <div className="h-fit">
-                    <SplitTextContainer text={ "Assalamu alaikum, I am Md Ashraful Alam" } />
+                    <SplitTextContainer text={ "Assalamu alaikum, I am Ashraful" } />
                 </div>
                 <AnimatedText />
 

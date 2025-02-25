@@ -4,6 +4,7 @@ import Contact from "@/components/home/contact/Contact";
 import HeaderComponent from "@/components/home/header/Header";
 import ScrollBar from "../common/ScrollBar";
 import Footer from "./footer/Footer";
+import ProjectSection from "./projects/ProjectSection";
 
 export default async function Home ()
 {
@@ -24,6 +25,7 @@ export default async function Home ()
       </div>
 
       <About />
+      <ProjectSection/>
       <Contact />
       <Footer/>
     </div>

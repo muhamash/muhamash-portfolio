@@ -18,7 +18,7 @@ export default function ContactForm() {
                     <textarea
                         id="message"
                         rows="4"
-                        className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none bg-black/50 backdrop-blur-md"
+                        className="w-full mt-1 p-3 border rounded-lg focus:ring-2 focus:ring-green-600 focus:outline-none bg-black/40 backdrop-blur-md"
                         placeholder="Type your message here..."
                         required
                     ></textarea>
