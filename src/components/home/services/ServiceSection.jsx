@@ -1,13 +1,12 @@
-import GlitchText from "../animations/glitch/Glitch";
-import TechSlider from "../animations/sliders/techStacks/TechSlider";
+import GlitchText from "../../animations/glitch/Glitch";
+import TechSlider from "../../animations/sliders/techStacks/TechSlider";
 
-export default async function ServiceSection() {
+export default function ServiceSection() {
   return (
-    <div className="md:pt-[150px] pt-[300px]">
-      
-
-      <div className="flex flex-col gap-5 items-center justify-center">
-        <div className="text-center w-fit mx-auto flex gap-3 items-center mt-10">
+    <div className="md:pt-[120px] pt-[30px]">
+  
+      <div className="flex flex-col md:gap-5 gap-2 items-center justify-center">
+        <div className="text-center w-fit mx-auto flex gap-3 items-center md:mt-10 mt-5">
           <p className="text-white text-[39px] font-extrabold">Creative</p>
           <GlitchText
             texts={ [ 'Thinking!!', 'Coding!!', 'Features!!', 'Design!!!' ] }

@@ -1,8 +1,9 @@
 "use client"
 
+import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-const Footer = () => {
+const About = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -18,17 +19,21 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer 
+    <section
       ref={sectionRef}
-      className="min-h-screen sticky top-0 z-40 w-full bg-black text-white px-4 py-24 opacity-50 backdrop-blur-md"
+      className="min-h-screen min-w-screen sticky top-0 z-20 w-full bg-gradient-to-br from-black via-green-900 to-emerald-400 py-24"
     >
-      {/* Footer content */}
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold">Contact</h2>
-         working on!!! it is under construction
-      </div>
-    </footer>
+      {/* Your about content */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        className="max-w-6xl mx-auto text-white"
+      >
+        <h2 className="text-4xl font-bold">About Me</h2>
+        working on!!! it is under construction
+      </motion.div>
+    </section>
   );
 };
 
-export default Footer;
+export default About;

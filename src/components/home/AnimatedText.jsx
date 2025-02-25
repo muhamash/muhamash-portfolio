@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const texts = [
-  "A professional web developer",
+  "A professional full stack web developer",
   "Creating beautiful websites",
   "Building scalable applications!!",
   "Writing Next.js Optimized Code!!",
@@ -46,7 +46,7 @@ export default function AnimatedText() {
 
   return (
     <motion.div
-      className="font-bold w-full bg-gradient-to-r from-cyan-400 via-purple-500 w-full to-cyan-400 bg-clip-text text-transparent flex h-[105px]"
+      className="font-bold w-full bg-gradient-to-r from-cyan-400 via-purple-500  to-cyan-400 bg-clip-text text-transparent flex h-md:[105px] h-[60px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}

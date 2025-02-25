@@ -7,7 +7,7 @@ const codeSnippet = `
 import React from 'react';
 
 const MyComponent = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = React.useState(0);
 
   return (
     <div className="flex flex-col items-center">

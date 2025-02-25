@@ -1,4 +1,4 @@
-export default async function GradientText({
+export default function GradientText({
   children,
   className = "",
   colors = ["#ffaa40", "#9c40ff", "#ffaa40"],

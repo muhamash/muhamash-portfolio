@@ -1,25 +1,9 @@
-import CursorContainer from "@/components/animations/cursor/CursorContainer";
-import GridContainer from "@/components/animations/grid/GridContainer";
-import HeaderComponent from "@/components/header/Header";
-import ServiceSection from "@/components/services/ServiceSection";
+import Home from "@/components/home/Home";
 
-export default async function Home() {
+export default async function HomePage() {
   return (
-    <div className="pt-[110px] md:px-10 px-3 flex flex-col items-center justify-center">
-      {/* homepage cursor animation */}
-      <CursorContainer />
-      
-      {/* home bg */}
-      <div className="absolute top-0 left-0 w-full h-full -z-20 opacity-20">
-        <GridContainer/>
-      </div>
-
-      {/* home header */}
-      <div className="w-full">
-        <HeaderComponent/>
-      </div>
-      
-      <ServiceSection/>
-    </div>
-  );
+    <>
+      <Home/>
+    </>
+  )
 }

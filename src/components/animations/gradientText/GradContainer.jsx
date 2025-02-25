@@ -1,4 +1,4 @@
-export default async function GradContainer({text , showBorder = false, speed = 2}) {
+export default function GradContainer({text , showBorder = false, speed = 2}) {
     return (
         <GradientText
             colors={ [ "#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa" ] }

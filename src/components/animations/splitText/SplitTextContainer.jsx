@@ -7,7 +7,7 @@ import SplitText from "./SplitText";
 // };
 
 
-export default function SplitTextContainer({text, delay = 200}) {
+export default function SplitTextContainer({text, delay = 150}) {
     return (
         <SplitText
             text={text}
