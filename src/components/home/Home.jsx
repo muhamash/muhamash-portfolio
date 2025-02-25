@@ -1,8 +1,9 @@
 import GridContainer from "@/components/animations/grid/GridContainer";
 import About from "@/components/home/about/About";
-import Footer from "@/components/home/contact/Contact";
+import Contact from "@/components/home/contact/Contact";
 import HeaderComponent from "@/components/home/header/Header";
 import ScrollBar from "../common/ScrollBar";
+import Footer from "./footer/Footer";
 
 export default async function Home ()
 {
@@ -23,7 +24,8 @@ export default async function Home ()
       </div>
 
       <About />
-      <Footer />
+      <Contact />
+      <Footer/>
     </div>
   );
 }
