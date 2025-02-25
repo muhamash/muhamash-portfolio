@@ -42,7 +42,6 @@ export default function Home ()
       {/* Main Content Sections */}
       <div id="header" className="w-full sticky top-0 z-10 md:px-20 px-5 md:pb-10 pb-5">
         <HeaderComponent />
-        {/* <ServiceSection /> */}
       </div>
 
       <About />
