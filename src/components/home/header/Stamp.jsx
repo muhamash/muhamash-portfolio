@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 import
     {
         FaCircle,
@@ -33,7 +33,7 @@ const socialprofils = {
     twitter: "https://twitter.com",
 };
 
-export const Socialicons = ( params ) =>
+export const Socialicons = async () =>
 {
     return (
         <div className="text-white text-sm">
@@ -43,15 +43,16 @@ export const Socialicons = ( params ) =>
                     const IconComponent = ICON_MAPPING[ platform ] || ICON_MAPPING.default;
                     return (
                         <li key={ platform } className="hover:text-gray-400 transition duration-200">
-                            <a href={ url } className="flex items-center gap-2">
+                            <Link href={ url } className="flex items-center gap-2">
                                 <IconComponent className="text-[16px] hover:text-blue-500 transition duration-300" />
-                            </a>
+                            </Link>
                         </li>
                     );
                 } ) }
             </ul>
-            <p className="font-mono text-[13px] text-gray-300 -rotate-90 mt-10 -translate-x-[20px] hover:scale-110 transition duration-300">
-                Find Me
+            <div  className="-rotate-90 w-[60px] h-[2px] bg-cyan-500  mt-10 -translate-x-[21px] rounded-lg"/>
+            <p className="font-mono text-[13px] text-gray-300 -rotate-90 mt-20 -translate-x-[30px] hover:scale-110 transition duration-300">
+                Connect Me
             </p>
         </div>
     );

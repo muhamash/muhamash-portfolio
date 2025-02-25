@@ -1,5 +1,3 @@
-"use client"
-
 import HireMeButton from "@/components/common/HireMeButton";
 import Resume from "@/components/common/Resume";
 import GlitchText from "../../animations/glitch/Glitch";
@@ -8,7 +6,7 @@ import CodeEditor from "../AnimatedCode";
 import AnimatedText from "../AnimatedText";
 import { Socialicons } from "./Stamp";
 
-export default function HeaderComponent() {
+export default async function HeaderComponent() {
     return (
         <div className="relative z-10 min-h-screen min-w-screen flex md:flex-row flex-col md:justify-between justify-center gap-10 items-center mx-auto">
             <div className="absolute md:-left-20 -left-[17px] top-[70px]">

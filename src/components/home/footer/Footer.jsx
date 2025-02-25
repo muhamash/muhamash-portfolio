@@ -1,7 +1,7 @@
-export default function Footer() {
+export default async function Footer() {
   return (
-    <div>
+    <SectionScrollLayout className="">
       
-    </div>
+    </SectionScrollLayout>
   )
 }

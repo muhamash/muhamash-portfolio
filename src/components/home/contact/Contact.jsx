@@ -1,42 +1,18 @@
-"use client"
-
-import { useEffect, useRef } from "react";
+import SectionScrollLayout from "@/components/layouts/SectionScrollLayout";
 import HypeContainer from "../../animations/bg/hyper/HypeContainer";
 import ContactForm from "../form/ContactForm";
 
-const Contact = () =>
+const Contact = async() =>
 {
-  const sectionRef = useRef(null);
-
-  useEffect( () =>
-  {
-    const updateHeight = () =>
-    {
-      if ( !sectionRef.current ) return;
-      const heightInVh = ( sectionRef.current.offsetHeight / window.innerHeight ) * 100;
-      sectionRef.current.style.top = `-${heightInVh - 100}vh`;
-    };
-    
-    updateHeight();
-    window.addEventListener( "scroll", updateHeight );
-    
-    return () => window.removeEventListener( "scroll", updateHeight );
-  }, [] );
-
   return (
-    <div
-      ref={ sectionRef }
+    <SectionScrollLayout
       className="min-h-screen sticky top-0 z-40 w-full bg-black text-white px-4 min-w-screen flex md:flex-row flex-col md:justify-between justify-center gap-10 items-center mx-auto backdrop-blur-sm"
     >
+
       {/* background */ }
       <div className="-z-50">
         <HypeContainer />
       </div>
-
-      {/* <div className="max-w-6xl mx-auto z-50">
-        <h2 className="text-4xl font-bold text-slate-300">Contact me</h2>
-        <hr className="w-full mt-5 bg-slate-400" />
-      </div> */}
 
       {/* content */ }
       <div className="flex md:flex-row flex-col gap-10 items-center w-full md:justify-between z-50 md:p-10">
@@ -50,7 +26,8 @@ const Contact = () =>
 
         <ContactForm />
       </div>
-    </div>
+
+    </SectionScrollLayout>
   );
 };
 
