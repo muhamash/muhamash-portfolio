@@ -1,37 +1,15 @@
-"use client";
-
 import GridContainer from "@/components/animations/grid/GridContainer";
 import About from "@/components/home/about/About";
 import Footer from "@/components/home/contact/Contact";
 import HeaderComponent from "@/components/home/header/Header";
-import { motion, useScroll, useSpring } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import ScrollBar from "../common/ScrollBar";
 
-export default function Home ()
+export default async function Home ()
 {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress);
-  const sectionRef = useRef( null );
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect( () =>
-  {
-    window.addEventListener( "scroll", handleScroll );
-
-    return () => window.removeEventListener( "scroll", handleScroll );
-  }, [] );
-
-  const handleScroll = () => {
-    setScrolled(window.scrollY > window.innerHeight / 2);
-  };
-
   return (
-    <div ref={sectionRef} className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center">
       {/* Scroll Progress Bar */}
-      <motion.div
-        style={{ scaleX }}
-        className="bg-gradient-to-br from-slate-200 via-green-200 via-violet-200 fixed top-0 w-screen h-[5px] border border-black origin-left z-[100] rounded-full"
-      />
+      <ScrollBar/>
 
       {/* Cursor and Background */}
       {/* <CursorContainer /> */}
