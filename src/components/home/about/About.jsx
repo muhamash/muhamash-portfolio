@@ -22,14 +22,14 @@ const About = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen min-w-screen sticky top-0 z-20 w-full bg-gradient-to-br from-slate-900 via-gray-800 backdrop-blur-[3px] pt-20 md:px-10 px-5"
+      className="min-h-screen min-w-screen sticky top-0 z-20 w-full bg-gradient-to-br from-slate-900 via-gray-800 backdrop-blur-[3px]"
     >
       <AuoraContainer />
       
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        className="max-w-6xl mx-auto text-white relative"
+        className="max-w-6xl mx-auto text-white relative pt-20 md:px-10 px-5"
       >
         
         <h2 className="text-4xl font-bold">About Me</h2>

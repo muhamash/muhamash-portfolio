@@ -2,8 +2,8 @@
 
 import CursorContainer from "@/components/animations/cursor/CursorContainer";
 import GridContainer from "@/components/animations/grid/GridContainer";
-import Footer from "@/components/contact/Contact";
 import About from "@/components/home/about/About";
+import Footer from "@/components/home/contact/Contact";
 import HeaderComponent from "@/components/home/header/Header";
 import ServiceSection from "@/components/home/services/ServiceSection";
 import { motion, useScroll, useSpring } from "framer-motion";

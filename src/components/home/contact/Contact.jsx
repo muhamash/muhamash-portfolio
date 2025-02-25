@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react";
-import HypeContainer from "../animations/bg/hyper/HypeContainer";
+import HypeContainer from "../../animations/bg/hyper/HypeContainer";
 
 const Contact = () => {
   const sectionRef = useRef(null);
@@ -24,14 +24,26 @@ const Contact = () => {
       className="min-h-screen sticky top-0 z-40 w-full bg-black text-white px-4 py-24 backdrop-blur-sm"
     >
       {/* background */}
-      <div>
+      <div className="-z-20 opacity-60">
         <HypeContainer/>
       </div>
       {/*  content */}
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto z-20">
         <h2 className="text-4xl font-bold">Contact</h2>
-         working on!!! it is under construction
+        working on!!! it is under construction
+        <p>working on!!! it is under construction</p>
+        <p>working on!!! it is under construction</p>
+        <p>working on!!! it is under construction</p>
+
+        <p>working on!!! it is under construction</p>
+        <p>working on!!! it is under construction</p>
+        <p>working on!!! it is under construction</p>
+        <p>working on!!! it is under construction</p>
+        <p>working on!!! it is under construction</p>
+        <p>working on!!! it is under construction</p>
+
       </div>
+
     </div>
   );
 };
