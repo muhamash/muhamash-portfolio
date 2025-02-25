@@ -1,5 +1,6 @@
 "use client"
 
+import AuoraContainer from "@/components/animations/bg/auora/AuoraContainer";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
@@ -21,14 +22,15 @@ const About = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen min-w-screen sticky top-0 z-20 w-full bg-gradient-to-br from-black via-green-900 to-emerald-400 py-24"
+      className="min-h-screen min-w-screen sticky top-0 z-20 w-full bg-gradient-to-br from-slate-900 via-gray-800 backdrop-blur-[3px] pt-20 md:px-10 px-5"
     >
-      {/* Your about content */}
+      <AuoraContainer/>
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        className="max-w-6xl mx-auto text-white"
+        className="max-w-6xl mx-auto text-white relative"
       >
+        
         <h2 className="text-4xl font-bold">About Me</h2>
         working on!!! it is under construction
       </motion.div>

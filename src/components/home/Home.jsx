@@ -32,7 +32,7 @@ export default function Home ()
       {/* Scroll Progress Bar */}
       <motion.div
         style={{ scaleX }}
-        className="bg-green-700 fixed top-0 w-screen h-[5px] border border-black origin-left z-[100] rounded-full"
+        className="bg-gradient-to-br from-slate-200 via-green-200 via-violet-200 fixed top-0 w-screen h-[5px] border border-black origin-left z-[100] rounded-full"
       />
 
       {/* Cursor and Background */}
@@ -42,7 +42,7 @@ export default function Home ()
       </div>
 
       {/* Main Content Sections */}
-      <div id="header" className="w-full sticky top-0 z-10 md:px-20 px-5 md:pb-7 pb-3">
+      <div id="header" className="w-full sticky top-0 z-10 md:px-20 px-5 md:pb-10 pb-5">
         <HeaderComponent />
         <ServiceSection />
       </div>

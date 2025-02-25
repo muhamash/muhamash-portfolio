@@ -75,7 +75,7 @@ export default function CodeEditor() {
   };
 
   return (
-    <div className="relative p-6 md:w-[450px] w-[300px] bg-gray-800 rounded-lg shadow-md h-96 overflow-hidden">
+    <div className="relative p-6 md:w-[450px] w-[300px] bg-gray-800 rounded-lg shadow-md md:h-96 h-[300px] overflow-hidden">
       <div
         className="h-full overflow-y-auto"
         ref={containerRef}

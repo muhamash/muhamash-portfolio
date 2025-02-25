@@ -59,7 +59,7 @@ const SplitText = ({
   return (
     <p
       ref={ref}
-      className={`split-parent ${className} w-full`}
+      className={`split-parent ${className} w-full text-cyan-100`}
       style={{ textAlign, overflow: 'hidden', display: 'inline', whiteSpace: 'normal', wordWrap: 'break-word' }}
     >
       {words.map((word, wordIndex) => (

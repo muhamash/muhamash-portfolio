@@ -1,5 +1,5 @@
 import AILogo from '@/components/svg/AILogo';
-import AwsLogo from '@/components/svg/AwsLogo';
+import AwsLogo from '@/components/svg/AwsLogosss';
 import BashLogo from '@/components/svg/BashLogo';
 import CLogo from '@/components/svg/CLogo';
 import Cloud from '@/components/svg/CloudComI';
@@ -80,8 +80,8 @@ export default function SlideCards({ text }) {
   const Icon = icons[text.toLowerCase()];
 
     return (
-        <div className="flex items-center justify-center rounded-lg p-[2px] bg-gradient-to-r from-sky-500 via-green-600 via-yellow-400 to-violet-600">
-            <div className="p-8 rounded-lg bg-slate-800 bg-opacity-80 backdrop-blur-sm w-64 h-[100px] flex items-center justify-center gap-10">
+        <div className="flex items-center justify-center rounded-lg p-[1.5px] bg-gradient-to-r from-sky-500 via-green-600 via-yellow-400 to-violet-600">
+            <div className="p-8 rounded-lg bg-slate-800 bg-opacity-80 backdrop-blur-sm w-64 h-[80px] flex items-center justify-center gap-10">
                 { Icon ? Icon : <span className="text-white text-xl">Icon Not Found</span> }
                 <p className="text-white text-lg">{ text }</p>
             </div>
