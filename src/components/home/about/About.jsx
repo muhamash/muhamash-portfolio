@@ -1,6 +1,7 @@
 "use client"
 
 import AuoraContainer from "@/components/animations/bg/auora/AuoraContainer";
+import TechSlider from "@/components/animations/sliders/techStacks/TechSlider";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
@@ -34,6 +35,8 @@ const About = () => {
         
         <h2 className="text-4xl font-bold">About Me</h2>
         working on!!! it is under construction
+
+        <TechSlider/>
       </motion.div>
     </section>
   );
