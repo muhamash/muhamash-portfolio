@@ -2,7 +2,7 @@
 
 import CursorContainer from "@/components/animations/cursor/CursorContainer";
 import GridContainer from "@/components/animations/grid/GridContainer";
-import Footer from "@/components/footer/Footer";
+import Footer from "@/components/contact/Contact";
 import About from "@/components/home/about/About";
 import HeaderComponent from "@/components/home/header/Header";
 import ServiceSection from "@/components/home/services/ServiceSection";

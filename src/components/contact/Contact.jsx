@@ -1,8 +1,9 @@
 "use client"
 
 import { useEffect, useRef } from "react";
+import HypeContainer from "../animations/bg/hyper/HypeContainer";
 
-const Footer = () => {
+const Contact = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -18,17 +19,21 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer 
+    <div 
       ref={sectionRef}
-      className="min-h-screen sticky top-0 z-40 w-full bg-black text-white px-4 py-24 opacity-50 backdrop-blur-md"
+      className="min-h-screen sticky top-0 z-40 w-full bg-black text-white px-4 py-24 backdrop-blur-sm"
     >
+      {/* background */}
+      <div>
+        <HypeContainer/>
+      </div>
       {/* Footer content */}
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold">Contact</h2>
          working on!!! it is under construction
       </div>
-    </footer>
+    </div>
   );
 };
 
-export default Footer;
+export default Contact;
