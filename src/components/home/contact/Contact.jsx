@@ -23,18 +23,15 @@ const Contact = () => {
       ref={sectionRef}
       className="min-h-screen sticky top-0 z-40 w-full bg-black text-white px-4 py-24 backdrop-blur-sm"
     >
-      {/* background */}
       <div className="-z-20 opacity-60">
         <HypeContainer/>
       </div>
-      {/*  content */}
-      <div className="max-w-6xl mx-auto z-20">
+      <div className="max-w-6xl mx-auto z-50">
         <h2 className="text-4xl font-bold">Contact</h2>
         working on!!! it is under construction
         <p>working on!!! it is under construction</p>
         <p>working on!!! it is under construction</p>
         <p>working on!!! it is under construction</p>
-
         <p>working on!!! it is under construction</p>
         <p>working on!!! it is under construction</p>
         <p>working on!!! it is under construction</p>
