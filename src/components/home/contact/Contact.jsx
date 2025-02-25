@@ -39,9 +39,9 @@ const Contact = () =>
       </div> */}
 
       {/* content */ }
-      <div className="flex md:flex-row flex-col gap-10 items-center w-full md:justify-between z-50 p-10">
+      <div className="flex md:flex-row flex-col gap-10 items-center w-full md:justify-between z-50 md:p-10">
 
-        <div className="flex flex-col gap-3 w-full md:w-[500px] h-fit">
+        <div className="flex flex-col gap-3 w-full md:w-[500px] h-fit p-3">
           <h2 className="text-violet-300 text-[30px] md:text-[25px] pb-5">Get in touch</h2>
           <p className="text-gray-200 font-mono text-md">Email: muhammad-ashraful@outlook.com</p>
           <p className="text-gray-200 font-mono text-md">Phone: +8801306567164</p>

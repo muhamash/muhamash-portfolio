@@ -1,7 +1,7 @@
 export default function ContactForm() {
     return (
         <div className="w-full md:w-[500px] h-fit flex flex-col gap-3 text-left items-center md:items-start justify-center bg-black/50 backdrop-blur-md md:p-10 p-3 rounded-md">
-            <h2 className="text-[30px] md:text-[25px] font-bold  mb-6 text-violet-300">Send me, what's going on your mind!</h2>
+            <h2 className="text-[30px] md:text-[25px] font-bold  mb-6 text-violet-300">Send Message!</h2>
             <form className="space-y-4 w-full">
                 <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-400">Email</label>
