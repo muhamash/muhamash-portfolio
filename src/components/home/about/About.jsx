@@ -24,7 +24,8 @@ const About = () => {
       ref={sectionRef}
       className="min-h-screen min-w-screen sticky top-0 z-20 w-full bg-gradient-to-br from-slate-900 via-gray-800 backdrop-blur-[3px] pt-20 md:px-10 px-5"
     >
-      <AuoraContainer/>
+      <AuoraContainer />
+      
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

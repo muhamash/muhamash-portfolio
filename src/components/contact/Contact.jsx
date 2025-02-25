@@ -27,7 +27,7 @@ const Contact = () => {
       <div>
         <HypeContainer/>
       </div>
-      {/* Footer content */}
+      {/*  content */}
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold">Contact</h2>
          working on!!! it is under construction

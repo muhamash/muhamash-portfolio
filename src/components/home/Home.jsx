@@ -47,7 +47,10 @@ export default function Home ()
         <ServiceSection />
       </div>
 
-      <About />
+      <div className="w-full relative">
+        <About />
+      </div>
+
       <Footer />
     </div>
   );
