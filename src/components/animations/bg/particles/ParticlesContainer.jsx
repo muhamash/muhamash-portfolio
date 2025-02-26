@@ -1,20 +1,16 @@
-"use client"
-
 import Particles from './Particles';
 
-export default function ParticlesContainer() {
+export default async function ParticlesContainer() {
     return (
-        <div style={ { width: '100%', height: '600px', position: 'relative' } }>
-            <Particles
-                particleColors={ [ '#ffffff', '#ffffff' ] }
-                particleCount={ 200 }
-                particleSpread={ 10 }
-                speed={ 0.1 }
-                particleBaseSize={ 100 }
-                moveParticlesOnHover={ true }
-                alphaParticles={ false }
-                disableRotation={ false }
-            />
-        </div>
+        <Particles
+            particleColors={ [ '#04866c', '#9a9309', '#087421', '#5a068e', '#ffffff', '#e70e0e', '#ab07ab', '#c47021', '#0576aa' ] }
+            particleCount={ 200 }
+            particleSpread={ 10 }
+            speed={ 0.1 }
+            particleBaseSize={ 100 }
+            moveParticlesOnHover={ true }
+            alphaParticles={ false }
+            disableRotation={ false }
+        />
     );
 }

@@ -77,7 +77,7 @@ const fragment = /* glsl */ `
 `;
 
 const Particles = ({
-  particleCount = 200,
+  particleCount = 1000,
   particleSpread = 10,
   speed = 0.1,
   particleColors,
@@ -226,7 +226,7 @@ const Particles = ({
   return (
     <div
       ref={containerRef}
-      className={`relative w-full h-full ${className}`}
+      className={`w-screen h-screen ${className}`}
     />
   );
 };
