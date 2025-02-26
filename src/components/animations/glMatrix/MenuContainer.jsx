@@ -5,31 +5,31 @@ const items = [
     image: '/ss/hotel.png',
     link: 'https://muhamash-portfolio.vercel.app/projects',
     title: 'Booking hub',
-    description: 'This is pretty cool, right?'
+    description: 'Typescript, MERN, Tailwindcss'
   },
   {
     image: '/ss/movie.png',
     link: 'https://muhamash-portfolio.vercel.app/projects',
     title: 'MovieDb',
-    description: 'This is pretty cool, right?'
+    description: 'Javascript, MERN, Tailwindcss'
   },
   {
     image: '/ss/portfolio.png',
     link: 'https://muhamash-portfolio.vercel.app/projects',
     title: 'Portfolio',
-    description: 'This is pretty cool, right?'
+    description: 'Javascript, MERN, Tailwindcss'
   },
   {
     image: '/ss/task.png',
     link: 'https://muhamash-portfolio.vercel.app/projects',
     title: 'Tasks',
-    description: 'This is pretty cool, right?'
+    description: 'Javascript, Mysql, MERN, Prisma'
   },
   {
     image: '/ss/web.png',
     link: 'https://muhamash-portfolio.vercel.app/projects',
     title: 'Web',
-    description: 'This is pretty cool, right?'
+    description: 'Javascript, MERN, Tailwindcss'
   }
 ];
 
