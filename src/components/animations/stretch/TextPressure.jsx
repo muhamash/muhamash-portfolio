@@ -4,8 +4,8 @@ import React, { useEffect, useRef } from "react";
 
 const FuzzyText = ({
   children,
-  fontSize = "50px",
-  fontWeight = 600,
+  fontSize = "30px",
+  fontWeight = 400,
   fontFamily = "inherit",
   color = "#b9d5d8",
   enableHover = true,
