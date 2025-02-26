@@ -940,7 +940,6 @@ export default function InfiniteMenu({ items = [] }) {
           top-1/2
           transform
           md:translate-x-[50%]
-          translate-x-[100%]
           -translate-y-1/2
           transition-all
           md:text-violet-200

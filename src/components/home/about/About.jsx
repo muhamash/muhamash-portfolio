@@ -11,12 +11,12 @@ const About = async() =>
     >
       <AuoraContainer />
 
-      <div className="max-w-6xl mx-auto text-white relative pt-20 md:px-10 px-5">
+      <div className="max-w-6xl mx-auto text-white relative pt-20 md:px-10 px-5 z-20 overflow-hidden">
         <div className="py-10">
           <FocusConatiner/>
         </div>
 
-         <TechSlider/>
+        <TechSlider/>
       </div>
 
       <p className="text-white"> working on!!! it is under construction</p>
