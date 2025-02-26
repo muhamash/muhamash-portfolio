@@ -1,16 +1,7 @@
+import { arsenal_SC, codeFont, eduFont, nunito, outfit } from "@/components/fonts/fonts";
 import Nav from "@/components/nav/Nav";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Muhammad Ashraful Alam",
@@ -21,7 +12,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black overflow-x-hidden min-w-screen min-h-screen`}
+        className={`${arsenal_SC.className} ${nunito.className} ${outfit.className} ${eduFont.className} ${codeFont.className}  antialiased bg-black overflow-x-hidden min-w-screen min-h-screen`}
       >
         <Nav/>
         { children }

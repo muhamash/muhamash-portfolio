@@ -95,3 +95,20 @@ body {
 @keyframes blinkblink {
   50% { opacity: 0.1; }
 }
+@layer utilities {
+  .arsenal_SC {
+    font-family: 'Arsenal', sans-serif;
+  }
+  .nunito {
+    font-family: 'Nunito', sans-serif;
+  }
+  .outfit {
+    font-family: 'Outfit', sans-serif;
+  }
+  .eduFont {
+    font-family: 'Edu NSW ACT Foundation', sans-serif;
+  }
+  .codeFont {
+    font-family: 'Source Code Pro', monospace;
+  }
+}
