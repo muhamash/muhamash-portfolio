@@ -23,12 +23,13 @@ export default function ContactForm() {
                         required
                     ></textarea>
                 </div>
-                <button
-                    type="submit"
-                    className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300"
-                >
-                    Send Message
-                </button>
+
+                <div className=" bg-gradient-to-r from-violet-500 via-cyan-600 via-sky-400 to-slate-400 p-[1.2] rounded-lg">
+                    <button type="submit" className="relative font-semibold text-white bg-gray-900 rounded-lg w-full group py-3">
+                        <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg blur-md opacity-50 group-hover:opacity-100 transition duration-300"></span>
+                        <span className="relative z-10">Send message</span>
+                    </button>
+                </div>
             </form>
         </div>
     );

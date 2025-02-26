@@ -922,15 +922,15 @@ export default function InfiniteMenu({ items = [] }) {
     <div className="relative w-full h-full rounded-md">
       <canvas
         id="infinite-grid-menu-canvas"
-        ref={canvasRef}
+        ref={ canvasRef }
         className="cursor-grab w-full h-full overflow-hidden relative outline-none active:cursor-grabbing rounded-md shadow-md shadow-cyan-800"
       />
 
-      {activeItem && (
+      { activeItem && (
         <>
-          {/* Title */}
+          {/* Title */ }
           <h2
-            className={`
+            className={ `
           select-none
           absolute
           text-violet-900
@@ -939,6 +939,7 @@ export default function InfiniteMenu({ items = [] }) {
           left-[1.6em]
           top-1/2
           transform
+          bg-black/50 backdrop-blur-sm px-2 py-2 rounded-md
           md:translate-x-[50%]
           -translate-y-1/2
           transition-all
@@ -950,39 +951,40 @@ export default function InfiniteMenu({ items = [] }) {
               }
         `}
           >
-            {activeItem.title}
+            { activeItem.title }
           </h2>
 
-          {/* Description */}
+          {/* Description */ }
           <p
-            className={`
-          select-none
-          absolute
-          max-w-[10ch]
-          md:text-[1.5rem]
-          text-[15px]
-          md:top-1/2
-          top-1/3
-          md:right-[10%]
-          right-[35%]
-          font-mono
-          md:text-cyan-200
-          text-cyan-600
-          transition-all
-          ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
-          ${isMoving
+            className={ `
+              bg-black/50 backdrop-blur-sm px-3 py-2 rounded-md
+            select-none
+            absolute
+            max-w-[10ch]
+            md:text-[1.2rem]
+            text-[14px]
+            md:top-1/2
+            top-1/3
+            md:right-[10%]
+            right-[35%]
+            font-mono
+           md:text-cyan-200
+           text-cyan-600
+            transition-all
+            ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
+            ${isMoving
                 ? 'opacity-0 pointer-events-none duration-[100ms] translate-x-[-60%] -translate-y-1/2'
                 : 'opacity-100 pointer-events-auto duration-[500ms] translate-x-[-90%] -translate-y-1/2'
               }
         `}
           >
-            {activeItem.description}
+            { activeItem.description }
           </p>
 
-          {/* Action Button */}
+          {/* Action Button */ }
           <div
-            onClick={handleButtonClick}
-            className={`
+            onClick={ handleButtonClick }
+            className={ `
           absolute
           left-1/2
           z-10
@@ -1008,7 +1010,7 @@ export default function InfiniteMenu({ items = [] }) {
             </p>
           </div>
         </>
-      )}
+      ) }
     </div>
   );
 }
