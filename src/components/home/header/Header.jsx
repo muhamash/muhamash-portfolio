@@ -8,7 +8,7 @@ import { Socialicons } from "./Stamp";
 
 export default async function HeaderComponent() {
     return (
-        <div className="relative z-10 min-h-screen min-w-screen flex md:flex-row flex-col md:justify-between justify-center gap-10 items-center mx-auto">
+        <div className="relative z-10 min-h-screen min-w-screen flex md:flex-row flex-col md:justify-between justify-center gap-10 items-center mx-auto py-20">
             <div className="absolute md:-left-20 -left-[17px] top-[70px]">
                 <Socialicons />
             </div>
@@ -19,7 +19,7 @@ export default async function HeaderComponent() {
                 </div>
                 <AnimatedText />
 
-                <div className="flex flex-col md:flex-row gap-5 mt-10">
+                <div className="flex flex-row gap-5 my-5">
                     <HireMeButton />
                     <Resume />
                 </div>
@@ -30,7 +30,7 @@ export default async function HeaderComponent() {
                     <p className="text-white text-[32px] md:text-[35px] font-extrabold">Creative</p>
                     <GlitchText
                         texts={ [ 'Thinking!!', 'Coding!!', 'Features!!', 'Design!!!' ] }
-                        mainClassName="px-2  md:px-3 bg-cyan-300 text-black overflow-hidden py-1 md:py-2 justify-center rounded-lg text-[20px]"
+                        mainClassName="px-2  md:px-3 bg-cyan-300 text-black overflow-hidden py-1 md:py-2 justify-center rounded-lg text-[18px]"
                         staggerFrom={ "last" }
                         initial={ { y: "100%" } }
                         animate={ { y: 0 } }
