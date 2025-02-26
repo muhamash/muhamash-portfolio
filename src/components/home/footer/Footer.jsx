@@ -19,11 +19,11 @@ export default async function Footer() {
                 </div>
                 <div className="flex flex-col gap-2">
                     <p className="text-center md:text-left">For inquiries, contact me at:</p>
-                    <a href="mailto:muhammad-ashraful@outlook.com" className="flex items-center gap-2 text-violet-400 hover:text-violet-300">
-                        <FaEnvelope /> muhammad-ashraful@outlook.com
-                    </a>
                     <a href="tel:+8801306567164" className="flex items-center gap-2 text-violet-400 hover:text-violet-300">
                         <FaPhone /> +8801306567164
+                    </a>
+                    <a href="mailto:muhammad-ashraful@outlook.com" className="flex items-center gap-2 text-violet-400 hover:text-violet-300">
+                        <FaEnvelope /> muhammad-ashraful@outlook.com
                     </a>
                 </div>
             </div>

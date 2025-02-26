@@ -28,7 +28,7 @@ export default async function Client() {
 
                     <GradContainer
                         showBorder={ false }
-                        text={ "Companies I have been with!!" }
+                        text={ "Organizations I've Engaged With!!" }
                         className="px-5 py-2 text-xl md:text-3xl"
                     />
 

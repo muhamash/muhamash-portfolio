@@ -24,7 +24,8 @@ export default async function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black overflow-x-hidden min-w-screen min-h-screen`}
       >
         <Nav/>
-        {children}
+        { children }
+        {/* <Footer/> */}
       </body>
     </html>
   );

@@ -1,4 +1,3 @@
-
 export default function MeetingButton() {
     return (
         <div className=" bg-gradient-to-r from-pink-500 via-sky-600 to-teal-600 w-[200px] p-[1px] rounded-lg">
