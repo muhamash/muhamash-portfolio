@@ -1,4 +1,5 @@
 import AuoraContainer from "@/components/animations/bg/auora/AuoraContainer";
+import FocusConatiner from "@/components/animations/focusText/FocusConatiner";
 import TechSlider from "@/components/animations/sliders/techStacks/TechSlider";
 import SectionScrollLayout from "@/components/layouts/SectionScrollLayout";
 
@@ -11,12 +12,18 @@ const About = async() =>
       <AuoraContainer />
 
       <div className="max-w-6xl mx-auto text-white relative pt-20 md:px-10 px-5">
-        <h2 className="text-4xl font-bold">About Me</h2>
-        working on!!! it is under construction
+        <div className="py-10">
+          <FocusConatiner/>
+        </div>
+
          <TechSlider/>
       </div>
 
-      
+      <p className="text-white"> working on!!! it is under construction</p>
+      <p className="text-white"> working on!!! it is under construction</p>
+      <p className="text-white"> working on!!! it is under construction</p>
+      <p className="text-white"> working on!!! it is under construction</p>
+
     </SectionScrollLayout>
   )
 };
