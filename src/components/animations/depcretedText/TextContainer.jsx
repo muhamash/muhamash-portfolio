@@ -1,0 +1,18 @@
+import DecryptedText from "./Text";
+
+export default async function TextContainer({text}) {
+    return (
+        <div>
+            <DecryptedText
+                text={text}
+                animateOn="view"
+                speed={50}
+                maxIterations={20}
+                revealDirection="center"
+                className="revealed w-full md:text-[20px] text-[14px] pb-1 text-violet-100"
+                parentClassName="all-letters"
+                encryptedClassName="encrypted"
+            />
+        </div>
+    );
+}
