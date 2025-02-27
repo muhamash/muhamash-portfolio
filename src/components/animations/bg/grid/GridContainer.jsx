@@ -1,6 +1,8 @@
 "use client"
 
-import Squares from './Grid';
+import dynamic from "next/dynamic";
+
+const Squares = dynamic( () => import( "./Grid" ), {ssr: false} );
 
 export default function GridContainer() {
     return (

@@ -876,38 +876,44 @@ export default function InfiniteMenu({ items = [] }) {
   const [activeItem, setActiveItem] = useState(null);
   const [isMoving, setIsMoving] = useState(false);
 
-  useEffect(() => {
+  useEffect( () =>
+  {
     const canvas = canvasRef.current;
     let sketch;
 
-    const handleActiveItem = (index) => {
+    const handleActiveItem = ( index ) =>
+    {
       const itemIndex = index % items.length;
-      setActiveItem(items[itemIndex]);
+      setActiveItem( items[ itemIndex ] );
     };
 
-    if (canvas) {
+    if ( canvas )
+    {
       sketch = new InfiniteGridMenu(
         canvas,
         items.length ? items : defaultItems,
         handleActiveItem,
         setIsMoving,
-        (sk) => sk.run()
+        ( sk ) => sk.run()
       );
     }
 
-    const handleResize = () => {
-      if (sketch) {
+    const handleResize = () =>
+    {
+      if ( sketch )
+      {
         sketch.resize();
       }
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener( 'resize', handleResize );
     handleResize();
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
+    return () =>
+    {
+      window.removeEventListener( 'resize', handleResize );
     };
-  }, [items]);
+  }, [ items ] );
 
   const handleButtonClick = () => {
     if (!activeItem?.link) return;

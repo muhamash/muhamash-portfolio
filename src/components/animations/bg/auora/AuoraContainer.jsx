@@ -1,4 +1,8 @@
-import Aurora from "./Auora";
+"use client"
+
+import dynamic from "next/dynamic";
+
+const Aurora = dynamic( () => import( "./Auora" ), { ssr: false } );
 
 export default function AuoraContainer() {
     return (

@@ -3,7 +3,6 @@ import Link from "next/link";
 
 const AboutPhoto = dynamic( () => import( "./AboutPhoto" ) );
 const SectionScrollLayout = dynamic( () => import( "@/components/layouts/SectionScrollLayout" ) );
-const CardContainer = dynamic( () => import( "@/components/animations/TiledCard/CardContainer" ) );
 const TechSlider = dynamic( () => import( "@/components/animations/sliders/techStacks/TechSlider" ) );
 const FocusConatiner = dynamic( () => import( "@/components/animations/focusText/FocusConatiner" ) );
 const TextContainer = dynamic( () => import( "@/components/animations/depcretedText/TextContainer" ) );

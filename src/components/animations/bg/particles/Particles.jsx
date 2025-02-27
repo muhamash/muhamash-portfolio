@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Camera, Geometry, Mesh, Program, Renderer } from "ogl";
 import { useEffect, useRef } from "react";
@@ -97,6 +97,11 @@ const Particles = ({
     const container = containerRef.current;
     if (!container) return;
 
+    // Dynamically adjust particle count and base size based on the device
+    const isMobile = window.innerWidth < 768;
+    const adjustedParticleCount = isMobile ? 500 : particleCount; // Reduce for mobile
+    const adjustedParticleBaseSize = isMobile ? 50 : particleBaseSize; // Smaller particles on mobile
+
     const renderer = new Renderer({ depth: false, alpha: true });
     const gl = renderer.gl;
     container.appendChild(gl.canvas);
@@ -125,7 +130,7 @@ const Particles = ({
       container.addEventListener("mousemove", handleMouseMove);
     }
 
-    const count = particleCount;
+    const count = adjustedParticleCount;
     const positions = new Float32Array(count * 3);
     const randoms = new Float32Array(count * 4);
     const colors = new Float32Array(count * 3);
@@ -158,7 +163,7 @@ const Particles = ({
       uniforms: {
         uTime: { value: 0 },
         uSpread: { value: particleSpread },
-        uBaseSize: { value: particleBaseSize },
+        uBaseSize: { value: adjustedParticleBaseSize },
         uSizeRandomness: { value: sizeRandomness },
         uAlphaParticles: { value: alphaParticles ? 1 : 0 },
       },

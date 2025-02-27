@@ -1,4 +1,8 @@
-import FuzzyText from "./TextPressure";
+"use client";
+
+import dynamic from "next/dynamic";
+
+const FuzzyText = dynamic( () => import( "./TextPressure.jsx" ), { ssr: false } );
 
 export default function TextPressureContainer() {
     return (

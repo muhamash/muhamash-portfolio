@@ -1,4 +1,6 @@
-import GradientText from "./Grad";
+import dynamic from "next/dynamic";
+
+const GradientText = dynamic( () => import( "./Grad.jsx" ) );
 
 export default async function GradContainer ( { text, showBorder = false, speed = 2, className } )
 {

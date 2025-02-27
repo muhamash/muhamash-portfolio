@@ -1,7 +1,8 @@
 "use client"
 
-import SplitText from "./SplitText";
+import dynamic from "next/dynamic";
 
+const SplitText = dynamic( () => import( "./SplitText" ), {ssr: false} );
 // const handleAnimationComplete = () => {
 //   console.log('All letters have animated!');
 // };

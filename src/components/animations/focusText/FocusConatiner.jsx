@@ -1,4 +1,8 @@
-import TrueFocus from "./Focus";
+"use client"
+
+import dynamic from "next/dynamic";
+
+const TrueFocus = dynamic( () => import( "./Focus" ), { ssr: false } );
 
 export default function FocusConatiner() {
     return (

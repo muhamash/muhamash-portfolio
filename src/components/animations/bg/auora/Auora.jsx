@@ -183,6 +183,7 @@ export default function Aurora(props) {
     let animateId = 0;
     const update = ( t ) =>
     {
+      // if (!isVisible) return;
       animateId = requestAnimationFrame( update );
       const { time = t * 0.01, speed = 1.0 } = propsRef.current;
       program.uniforms.uTime.value = time * speed * 0.1;

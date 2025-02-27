@@ -95,30 +95,40 @@ const FuzzyText = ({
       let isHovering = false;
       const fuzzRange = 30;
 
-      const run = () => {
-        if (isCancelled) return;
-        ctx.clearRect(
-          -fuzzRange,
-          -fuzzRange,
-          offscreenWidth + 2 * fuzzRange,
-          tightHeight + 2 * fuzzRange
-        );
-        const intensity = isHovering ? hoverIntensity : baseIntensity;
-        for (let j = 0; j < tightHeight; j++) {
-          const dx = Math.floor(intensity * (Math.random() - 0.5) * fuzzRange);
-          ctx.drawImage(
-            offscreen,
-            0,
-            j,
-            offscreenWidth,
-            1,
-            dx,
-            j,
-            offscreenWidth,
-            1
+      let lastTime = 0;
+      const THROTTLE_TIME = 50;
+
+      const run = () =>
+      {
+        const currentTime = Date.now();
+        if ( currentTime - lastTime > THROTTLE_TIME )
+        {
+          if ( isCancelled ) return;
+          ctx.clearRect(
+            -fuzzRange,
+            -fuzzRange,
+            offscreenWidth + 2 * fuzzRange,
+            tightHeight + 2 * fuzzRange
           );
+          const intensity = isHovering ? hoverIntensity : baseIntensity;
+          for ( let j = 0; j < tightHeight; j++ )
+          {
+            const dx = Math.floor( intensity * ( Math.random() - 0.5 ) * fuzzRange );
+            ctx.drawImage(
+              offscreen,
+              0,
+              j,
+              offscreenWidth,
+              1,
+              dx,
+              j,
+              offscreenWidth,
+              1
+            );
+          }
+          lastTime = currentTime;
         }
-        animationFrameId = window.requestAnimationFrame(run);
+        animationFrameId = window.requestAnimationFrame( run );
       };
 
       run();

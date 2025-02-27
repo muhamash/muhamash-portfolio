@@ -1,7 +1,9 @@
 "use client"
 
-import SlideCards from "./SlideCards";
-import ScrollVelocity from "./Tech";
+import dynamic from "next/dynamic";
+
+const ScrollVelocity = dynamic( () => import( "./Tech" ), { ssr: false } );
+const SlideCards = dynamic( () => import( "./SlideCards" ), { ssr: false } );
 
 const techStack = [
   "react",

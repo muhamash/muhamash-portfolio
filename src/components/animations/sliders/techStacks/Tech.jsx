@@ -1,20 +1,17 @@
-"use client"
-
 import
-    {
-        motion,
-        useAnimationFrame,
-        useMotionValue,
-        useScroll,
-        useSpring,
-        useTransform,
-        useVelocity,
-    } from "framer-motion";
+  {
+    motion,
+    useAnimationFrame,
+    useMotionValue,
+    useScroll,
+    useSpring,
+    useTransform,
+    useVelocity,
+  } from "framer-motion";
 import { useLayoutEffect, useRef, useState } from "react";
 
 function useElementWidth(ref) {
   const [width, setWidth] = useState(0);
-
   useLayoutEffect(() => {
     function updateWidth() {
       if (ref.current) setWidth(ref.current.offsetWidth);
@@ -24,6 +21,7 @@ function useElementWidth(ref) {
     return () => window.removeEventListener("resize", updateWidth);
   }, [ref]);
 
+  // console.log( width );
   return width;
 }
 
@@ -41,20 +39,16 @@ export const ScrollVelocity = ({
   parallaxStyle,
   scrollerStyle,
 }) => {
+  const isMobile = window.innerWidth <= 768;
   const baseX = useMotionValue(0);
-  const scrollOptions = scrollContainerRef ? { container: scrollContainerRef } : {};
-  const { scrollY } = useScroll(scrollOptions);
+  const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, {
-    damping: damping,
-    stiffness: stiffness,
-  });
-  const velocityFactor = useTransform(
-    smoothVelocity,
-    velocityMapping.input,
-    velocityMapping.output,
-    { clamp: false }
-  );
+  const smoothVelocity = useSpring(scrollVelocity, { damping, stiffness });
+  const velocityFactor = useTransform(smoothVelocity, velocityMapping.input, velocityMapping.output, { clamp: false });
+
+  if (isMobile) {
+    velocityFactor.set(velocityFactor.get() / 2); // Reduce velocity on mobile
+  }
 
   const copyRef = useRef(null);
   const copyWidth = useElementWidth(copyRef);
@@ -72,7 +66,6 @@ export const ScrollVelocity = ({
   const directionFactor = useRef(1);
   useAnimationFrame((t, delta) => {
     let moveBy = directionFactor.current * velocity * (delta / 1000);
-
     if (velocityFactor.get() < 0) directionFactor.current = -1;
     else if (velocityFactor.get() > 0) directionFactor.current = 1;
 
@@ -81,13 +74,9 @@ export const ScrollVelocity = ({
   });
 
   const copies = [];
-  for (let i = 0; i < numCopies; i++) {
+  for (let i = 0; i < (isMobile ? 3 : numCopies); i++) {
     copies.push(
-      <div
-        key={i}
-        ref={i === 0 ? copyRef : null}
-        className={`flex-shrink-0 flex gap-4 ${className}`}
-      >
+      <div key={i} ref={i === 0 ? copyRef : null} className={`flex-shrink-0 flex gap-4 ${className}`}>
         {children}
       </div>
     );
@@ -95,10 +84,7 @@ export const ScrollVelocity = ({
 
   return (
     <div className={`${parallaxClassName} relative overflow-hidden w-full`} style={parallaxStyle}>
-      <motion.div
-        className={`${scrollerClassName} flex whitespace-nowrap`}
-        style={{ x, ...scrollerStyle }}
-      >
+      <motion.div className={`${scrollerClassName} flex whitespace-nowrap`} style={{ x, ...scrollerStyle }}>
         {copies}
       </motion.div>
     </div>

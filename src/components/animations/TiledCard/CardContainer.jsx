@@ -1,4 +1,8 @@
-import TiltedCard from "./Crad";
+"use client"
+
+import dynamic from "next/dynamic";
+
+const TiltedCard = dynamic( () => import( "./Crad.jsx" ), { ssr: false } );
 
 export default function CardContainer({src, name}) {
     return (

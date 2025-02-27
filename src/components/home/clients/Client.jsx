@@ -34,7 +34,7 @@ export default async function Client() {
                         className="px-5 py-2 text-xl md:text-3xl font-arsenal"
                     />
 
-                    <CompanyGalleryConatiner />
+                    {/* <CompanyGalleryConatiner /> */}
                 </div>
                 <div className="flex items-center justify-center font-edu font-semibold">
                     <MeetingButton/>

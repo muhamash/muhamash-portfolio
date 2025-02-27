@@ -1,4 +1,8 @@
-import DecryptedText from "./Text";
+"use client"
+
+import dynamic from "next/dynamic";
+
+const DecryptedText = dynamic( () => import( "./Text" ), { ssr: false } );
 
 export default function TextContainer({text}) {
     return (
