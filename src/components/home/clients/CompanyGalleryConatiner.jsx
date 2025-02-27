@@ -15,7 +15,7 @@ const myItems = [
 
 export default async function CompanyGalleryConatiner() {
     return (
-        <div className="w-full mx-auto">
+        <div className="w-full mx-auto outfit_9f52d144-module__aRqVQW__className">
             <CircularGallery items={myItems} bend={ -50 } textColor="#ffffff" borderRadius={ 0.05 } />
         </div>
     );

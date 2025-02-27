@@ -47,7 +47,7 @@ export default function CompaniesWorked() {
     return (
         <div className="mt-10 text-center relative">
             {/* Background Gradient */}
-            <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500/30 via-purple-500/30 to-gray-900/30 blur-2xl opacity-50 z-[-1]"></div>
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-500/30 via-purple-500/30 to-gray-900/30 blur-2xl opacity-50 z-[-1] outfit_9f52d144-module__aRqVQW__className"></div>
 
             <h2 className="text-2xl md:text-3xl font-bold text-white">
                 Companies I Have Worked With

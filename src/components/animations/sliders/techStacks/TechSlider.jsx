@@ -46,7 +46,7 @@ const techStack = [
 
 export default function TechSlider() {
   return (
-    <div className="w-screen px-4 py-8">
+    <div className="w-screen px-4 py-8 nunito_3bf5173f-module__QjYhuG__className">
       <ScrollVelocity
         velocity={100}
         className="min-w-[50%] px-2"

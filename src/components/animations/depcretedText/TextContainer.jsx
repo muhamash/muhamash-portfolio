@@ -9,7 +9,7 @@ export default async function TextContainer({text}) {
                 speed={50}
                 maxIterations={20}
                 revealDirection="center"
-                className="revealed w-full md:text-[20px] text-[14px] pb-1 text-violet-100 font-eduFont"
+                className="revealed w-full md:text-[20px] text-[14px] pb-1 text-violet-200 font-eduFont"
                 parentClassName="all-letters"
                 encryptedClassName="encrypted"
             />

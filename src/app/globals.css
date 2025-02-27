@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* edu_nsw_act_foundation_1c0be069-module__FSkPZG__className */
+/* nunito_3bf5173f-module__QjYhuG__className */
+/* outfit_9f52d144-module__aRqVQW__className */
+/* source_code_pro_54d47b2a-module__pcAarq__className */
+/* arsenal_sc_4ec5a515-module__VO5U8q__className */
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -95,20 +101,20 @@ body {
 @keyframes blinkblink {
   50% { opacity: 0.1; }
 }
-@layer utilities {
+/* @layer utilities {
   .arsenal_SC {
-    font-family: 'Arsenal', sans-serif;
+    font-family: 'Arsenal SC', 'Arsenal SC Fallback',;
   }
   .nunito {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito', 'Nunito Fallback';
   }
   .outfit {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Source Code Pro', 'Source Code Pro Fallback';
   }
   .eduFont {
-    font-family: 'Edu NSW ACT Foundation', sans-serif;
+    font-family: 'Edu NSW ACT Foundation', 'Edu NSW ACT Foundation Fallback';
   }
   .codeFont {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'Source Code Pro', 'Source Code Pro Fallback';
   }
-}
+} */

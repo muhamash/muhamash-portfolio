@@ -11,7 +11,7 @@ export default function SplitTextContainer({text, delay = 150}) {
     return (
         <SplitText
             text={text}
-            className="text-2xl font-semibold"
+            className="md:text-4xl text-2xl font-semibold"
             delay={ delay }
             animationFrom={ { opacity: 0, transform: 'translate3d(0,50px,0)' } }
             animationTo={ { opacity: 1, transform: 'translate3d(0,0,0)' } }

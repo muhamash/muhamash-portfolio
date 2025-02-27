@@ -1,8 +1,8 @@
 export default function ContactForm() {
     return (
         <div className="w-full md:w-[500px] h-fit flex flex-col gap-3 text-left items-center md:items-start justify-center bg-black/50 backdrop-blur-md md:p-10 p-3 rounded-md">
-            <h2 className="text-[30px] md:text-[25px] font-bold  mb-6 text-violet-300">Send Message!</h2>
-            <form className="space-y-4 w-full">
+            <h2 className="text-[30px] md:text-[25px] font-bold  mb-6 text-violet-300 arsenal_sc_4ec5a515-module__VO5U8q__className">Send Message!</h2>
+            <form className="space-y-4 w-full nunito_3bf5173f-module__QjYhuG__className">
                 <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-400">Email</label>
                     <input
@@ -24,7 +24,7 @@ export default function ContactForm() {
                     ></textarea>
                 </div>
 
-                <div className=" bg-gradient-to-r from-violet-500 via-cyan-600 via-sky-400 to-slate-400 p-[1.2] rounded-lg">
+                <div className=" bg-gradient-to-r from-violet-500 via-cyan-600 via-sky-400 to-slate-400 p-[1.2] rounded-lg edu_nsw_act_foundation_1c0be069-module__FSkPZG__className">
                     <button type="submit" className="relative font-semibold text-white bg-gray-900 rounded-lg w-full group py-3">
                         <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg blur-md opacity-50 group-hover:opacity-100 transition duration-300"></span>
                         <span className="relative z-10">Send message</span>
