@@ -12,7 +12,7 @@ const stats = [
 
 export default function States() {
     return (
-        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-white nunito_3bf5173f-module__QjYhuG__className">
+        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-white font-nunito">
             { stats.map( ( stat, index ) => (
                 <motion.div
                     key={ index }

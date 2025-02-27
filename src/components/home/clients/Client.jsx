@@ -20,7 +20,7 @@ export default async function Client() {
                 <GradContainer
                     showBorder={ true }
                     text={ "Meet My Experiences!" }
-                    className="px-5 py-2 text-xl md:text-3xl arsenal_sc_4ec5a515-module__VO5U8q__className"
+                    className="px-5 py-2 text-xl md:text-3xl font-arsenal"
                 />
 
                 {/* Stats Section */ }
@@ -31,12 +31,12 @@ export default async function Client() {
                     <GradContainer
                         showBorder={ false }
                         text={ "Organizations I've Engaged With!!" }
-                        className="px-5 py-2 text-xl md:text-3xl arsenal_sc_4ec5a515-module__VO5U8q__className"
+                        className="px-5 py-2 text-xl md:text-3xl font-arsenal"
                     />
 
                     <CompanyGalleryConatiner />
                 </div>
-                <div className="flex items-center justify-center edu_nsw_act_foundation_1c0be069-module__FSkPZG__className font-semibold">
+                <div className="flex items-center justify-center font-edu font-semibold">
                     <MeetingButton/>
                 </div>
             </div>

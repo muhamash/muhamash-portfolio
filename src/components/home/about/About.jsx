@@ -18,7 +18,7 @@ const About = async () =>
       <AuoraContainer />
 
       <div className="max-w-6xl mx-auto text-white relative pt-20 md:px-10 px-5 z-20 overflow-hidden">
-        <div className="py-10 arsenal_sc_4ec5a515-module__VO5U8q__className">
+        <div className="py-10 font-arsenal">
           <FocusConatiner />
         </div>
 
@@ -27,7 +27,7 @@ const About = async () =>
 
       <div className="p-4 my-10 gap-5 flex md:flex-row flex-col-reverse items-center justify-center w-full">
 
-        <div className="md:w-1/2 w-fit edu_nsw_act_foundation_1c0be069-module__FSkPZG__className font-semibold z-50">
+        <div className="md:w-1/2 w-fit font-edu font-semibold z-50">
 
           <TextContainer text={ "Hey, I'm Ashraful! With 2.5 years of experience as a full-stack developer, I love working with a variety of technologies to build innovative, scalable applications. I’m passionate about staying on top of new trends, and I’ve worked with everything from the MERN stack and Next.js to Nest.js, Three.js, OpenGL, and both SQL and NoSQL databases. I’m always exploring new tools to create efficient, high-performance solutions that solve real-world problems. If you're looking to build something exciting, let’s connect and make it happen! How does that sound?" } />
 

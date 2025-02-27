@@ -12,10 +12,10 @@ export default async function ProjectSection() {
             
             {/* background */ }
             <NoiseContainer />
-            <div className="z-50 relative pt-[110px] arsenal_sc_4ec5a515-module__VO5U8q__className">
+            <div className="z-50 relative pt-[110px] font-font-arsenal">
              <TextPressureContainer/>
             </div>
-            <div className="text-white pt-10 outfit_9f52d144-module__aRqVQW__className">
+            <div className="text-white pt-10 font-outfit">
                <MenuContainer/>
             </div>
       

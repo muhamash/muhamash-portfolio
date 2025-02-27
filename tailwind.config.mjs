@@ -11,6 +11,13 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        arsenal: [ "var(--arsenal-sc)", "sans-serif" ],
+        nunito: ["var(--nunito)", "sans-serif"],
+        edu: [ "var(--edu-font)", "sans-serif" ],
+        outfit: ["var(--outfit)", "sans-serif"],
+        code: ["var(--code-font)", "monospace"],
+      },
     },
   },
   plugins: [],

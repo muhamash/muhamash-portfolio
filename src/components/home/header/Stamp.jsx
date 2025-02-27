@@ -1,17 +1,16 @@
 import Link from "next/link";
-import
-    {
-        FaCircle,
-        FaFacebookF,
-        FaGithub,
-        FaInstagram,
-        FaLinkedin,
-        FaSnapchatGhost,
-        FaTiktok,
-        FaTwitch,
-        FaTwitter,
-        FaYoutube
-    } from "react-icons/fa";
+import {
+    FaCircle,
+    FaFacebookF,
+    FaGithub,
+    FaInstagram,
+    FaLinkedin,
+    FaSnapchatGhost,
+    FaTiktok,
+    FaTwitch,
+    FaTwitter,
+    FaYoutube
+} from "react-icons/fa";
 
 const ICON_MAPPING = {
   default: FaCircle,
@@ -51,7 +50,7 @@ export default function Socialicons ()
                 } ) }
             </ul>
             <div  className="-rotate-90 w-[60px] h-[2px] bg-cyan-500  mt-10 -translate-x-[23px] rounded-lg"/>
-            <p className="edu_nsw_act_foundation_1c0be069-module__FSkPZG__className text-[13px] font-bold text-gray-300 -rotate-90 mt-[60px] -translate-x-[25px] hover:scale-110 transition duration-300 ">
+            <p className="font-edu text-[13px] font-bold text-gray-300 -rotate-90 mt-[60px] -translate-x-[25px] hover:scale-110 transition duration-300 ">
                 Connect Me
             </p>
         </div>

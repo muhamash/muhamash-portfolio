@@ -2,11 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-/* edu_nsw_act_foundation_1c0be069-module__FSkPZG__className */
-/* nunito_3bf5173f-module__QjYhuG__className */
-/* outfit_9f52d144-module__aRqVQW__className */
-/* source_code_pro_54d47b2a-module__pcAarq__className */
-/* arsenal_sc_4ec5a515-module__VO5U8q__className */
+/* font-edu */
+/* font-nunito */
+/* font-outfit */
+/* font-code */
+/* font-arsenal */
+/* 
+@layer utilities {
+  .arsenalSC {
+    font-family: "Arsenal SC", serif;
+  }
+  .nunito {
+     font-family: "Nunito", serif;
+  }
+  .outfit {
+    font-family: "Outfit", serif;
+  }
+  .eduFont {
+    font-family: "Edu NSW ACT Foundation", serif;
+  }
+  .codeFont {
+    font-family: "Source Code Pro", serif;
+  }
+} */
 
 :root {
   --background: #ffffff;
@@ -18,12 +36,6 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .cursor {
@@ -101,20 +113,3 @@ body {
 @keyframes blinkblink {
   50% { opacity: 0.1; }
 }
-/* @layer utilities {
-  .arsenal_SC {
-    font-family: 'Arsenal SC', 'Arsenal SC Fallback',;
-  }
-  .nunito {
-    font-family: 'Nunito', 'Nunito Fallback';
-  }
-  .outfit {
-    font-family: 'Source Code Pro', 'Source Code Pro Fallback';
-  }
-  .eduFont {
-    font-family: 'Edu NSW ACT Foundation', 'Edu NSW ACT Foundation Fallback';
-  }
-  .codeFont {
-    font-family: 'Source Code Pro', 'Source Code Pro Fallback';
-  }
-} */

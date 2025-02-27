@@ -75,7 +75,7 @@ export default function CodeEditor() {
   };
 
   return (
-    <div className="relative p-6 md:w-[450px] w-[300px] bg-gray-800 rounded-lg shadow-md md:h-96 h-[200px] overflow-hidden source_code_pro_54d47b2a-module__pcAarq__className">
+    <div className="relative p-6 md:w-[450px] w-[300px] bg-gray-800 rounded-lg shadow-md md:h-96 h-[200px] overflow-hidden font-code">
       <div
         className="h-full overflow-y-auto"
         ref={containerRef}
@@ -89,7 +89,7 @@ export default function CodeEditor() {
           >
             <code>
               <div
-                className="source_code_pro_54d47b2a-module__pcAarq__className"
+                className="font-code"
                 dangerouslySetInnerHTML={{
                   __html: highlightCode(codeSnippet.substring(0, codeIndex)),
                 }}

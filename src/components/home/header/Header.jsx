@@ -20,12 +20,12 @@ export default async function HeaderComponent() {
             </div>
 
             <div className="w-[300px] md:w-[500px] h-fit flex flex-col gap-3 text-left items-center md:items-start justify-center">
-                <div className="h-fit arsenal_sc_4ec5a515-module__VO5U8q__className">
+                <div className="h-fit">
                     <SplitTextContainer text={ "Assalamu alaikum, I am Ashraful" } />
                 </div>
                 <AnimatedText />
 
-                <div className="flex flex-row gap-5 my-5 edu_nsw_act_foundation_1c0be069-module__FSkPZG__className">
+                <div className="flex flex-row gap-5 my-5 font-edu">
                     <HireMeButton />
                     <Resume />
                 </div>
@@ -33,10 +33,10 @@ export default async function HeaderComponent() {
 
             <div className="flex flex-col gap-5">
                 <div className="text-center w-fit mx-auto flex gap-[10px] items-center md:mt-10 mt-3">
-                    <p className="text-white text-[28px] md:text-[35px] font-extrabold outfit_9f52d144-module__aRqVQW__className">Creative</p>
+                    <p className="text-white text-[28px] md:text-[35px] font-extrabold font-outfit">Creative</p>
                     <GlitchText
                         texts={ [ 'Thinking!!', 'Coding!!', 'Features!!', 'Design!!!' ] }
-                        mainClassName="px-2 nunito_3bf5173f-module__QjYhuG__className md:px-3 bg-cyan-300 text-black overflow-hidden py-1 md:py-2 justify-center rounded-lg text-[16px] font-arsenal_SC"
+                        mainClassName="px-2 font-nunito md:px-3 bg-cyan-300 text-black overflow-hidden py-1 md:py-2 justify-center rounded-lg text-[16px] font-arsenal_SC"
                         staggerFrom={ "last" }
                         initial={ { y: "100%" } }
                         animate={ { y: 0 } }

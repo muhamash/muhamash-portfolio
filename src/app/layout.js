@@ -1,4 +1,4 @@
-import { arsenal_SC, codeFont, eduFont, nunito, outfit } from "@/components/fonts/fonts";
+import { arsenalSC, codeFont, eduFont, nunito, outfit } from "@/components/fonts/fonts";
 import Nav from "@/components/nav/Nav";
 import "./globals.css";
 
@@ -14,7 +14,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${arsenal_SC.className} ${nunito.className} ${outfit.className} ${eduFont.className} ${codeFont.className}  antialiased bg-black overflow-x-hidden min-w-screen min-h-screen`}
+        className={`${arsenalSC.variable} ${nunito.variable} ${outfit.variable} ${eduFont.variable} ${codeFont.variable}  antialiased bg-black overflow-x-hidden min-w-screen min-h-screen`}
       >
         <Nav/>
         { children }

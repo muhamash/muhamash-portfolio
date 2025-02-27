@@ -17,22 +17,22 @@ export default async function Footer() {
                         width={ 60 }
                         alt="logo?"
                     />
-                    <p className="uppercase font-bold arsenal_sc_4ec5a515-module__VO5U8q__className text-[20px] md:text-[25px] text-cyan-200">Free Palastine</p>
+                    <p className="uppercase font-bold font-arsenal text-[20px] md:text-[25px] text-cyan-200">Free Palastine</p>
                 </div>
                 <div className="flex flex-col gap-2">
-                    <p className="text-center md:text-left nunito_3bf5173f-module__QjYhuG__className ">For inquiries, contact me at:</p>
-                    <a href="tel:+8801306567164" className="flex items-center gap-2 text-violet-400 hover:text-violet-300 outfit_9f52d144-module__aRqVQW__className">
+                    <p className="text-center md:text-left font-nunito ">For inquiries, contact me at:</p>
+                    <a href="tel:+8801306567164" className="flex items-center gap-2 text-violet-400 hover:text-violet-300 font-outfit">
                         <FaPhone /> +8801306567164
                     </a>
-                    <a href="mailto:muhammad-ashraful@outlook.com" className="flex items-center gap-2 text-violet-400 hover:text-violet-300 outfit_9f52d144-module__aRqVQW__className">
+                    <a href="mailto:muhammad-ashraful@outlook.com" className="flex items-center gap-2 text-violet-400 hover:text-violet-300 font-outfit">
                         <FaEnvelope /> muhammad-ashraful@outlook.com
                     </a>
                 </div>
             </div>
 
             <div className="flex flex-col items-center md:items-start gap-4">
-                <h3 className="text-xl font-semibold md:text-left text-center arsenal_sc_4ec5a515-module__VO5U8q__className">Quick Links</h3>
-                <ul className="text-center flex  gap-3 md:flex-col flex-row md:text-left outfit_9f52d144-module__aRqVQW__className">
+                <h3 className="text-xl font-semibold md:text-left text-center font-arsenal">Quick Links</h3>
+                <ul className="text-center flex  gap-3 md:flex-col flex-row md:text-left font-outfit">
                     <li><a href="/about" className="hover:text-violet-400">About</a></li>
                     <li><a href="/services" className="hover:text-violet-400">Projects</a></li>
                     <li><a href="/contact" className="hover:text-violet-400">Contact</a></li>
@@ -55,10 +55,10 @@ export default async function Footer() {
                     </Link>
                 </div>
 
-                <div className="mt-6 text-center flex flex-wrap md:py-0 py-5 gap-1 items-center font-mono source_code_pro_54d47b2a-module__pcAarq__className">
+                <div className="mt-6 text-center flex flex-wrap md:py-0 py-5 gap-1 items-center font-mono font-code">
                     <p className="md:text-sm text-[10px]">© Md Ashraful Alam ;</p>
-                    <Link className="text-rose-500 md:text-sm text-[12px] edu_nsw_act_foundation_1c0be069-module__FSkPZG__className" href={ "https://github.com/muhamash" }>github.com/muhamash,</Link>
-                    <span className="md:text-sm text-[10px] source_code_pro_54d47b2a-module__pcAarq__className"> All rights reserved.</span>
+                    <Link className="text-rose-500 md:text-sm text-[12px] font-edu" href={ "https://github.com/muhamash" }>github.com/muhamash,</Link>
+                    <span className="md:text-sm text-[10px] font-code"> All rights reserved.</span>
                 </div>
             </div>
         </SectionScrollLayout>
