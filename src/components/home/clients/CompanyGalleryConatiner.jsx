@@ -1,4 +1,6 @@
-import CircularGallery from "./CompanyGallery";
+import dynamic from "next/dynamic";
+
+const CircularGallery = dynamic( () => import( "./CompanyGallery" ) );
 
 const myItems = [
     { image: `/logos/electro-world.jpg`, text: 'Electro tech-world' },

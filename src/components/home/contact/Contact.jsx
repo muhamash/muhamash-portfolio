@@ -1,6 +1,8 @@
-import SectionScrollLayout from "@/components/layouts/SectionScrollLayout";
-import HypeContainer from "../../animations/bg/hyper/HypeContainer";
-import ContactForm from "../form/ContactForm";
+import dynamic from "next/dynamic";
+
+const SectionScrollLayout = dynamic( () => import( "@/components/layouts/SectionScrollLayout" ) );
+const HypeContainer = dynamic( () => import( "../../animations/bg/hyper/HypeContainer" ) );
+const ContactForm = dynamic( () => import( "../form/ContactForm" ) );
 
 const Contact = async() =>
 {

@@ -19,6 +19,7 @@ import { useEffect, useRef, useState } from 'react'
  * - parentClassName?: string    (applied to the top-level span container)
  * - animateOn?: "view" | "hover"  (default: "hover")
  */
+
 export default function DecryptedText({
   text,
   speed = 50,

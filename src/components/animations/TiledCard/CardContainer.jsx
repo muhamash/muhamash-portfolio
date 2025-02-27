@@ -1,6 +1,6 @@
 import TiltedCard from "./Crad";
 
-export default async function CardContainer({src, name}) {
+export default function CardContainer({src, name}) {
     return (
         <TiltedCard
             imageSrc={src}

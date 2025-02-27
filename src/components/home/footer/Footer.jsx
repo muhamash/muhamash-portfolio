@@ -1,7 +1,9 @@
-import SectionScrollLayout from "@/components/layouts/SectionScrollLayout";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { FaEnvelope, FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaPhone } from 'react-icons/fa';
+
+const SectionScrollLayout = dynamic( () => import( "@/components/layouts/SectionScrollLayout" ) );
 
 export default async function Footer() {
     return (

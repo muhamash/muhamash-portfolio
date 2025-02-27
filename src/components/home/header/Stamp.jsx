@@ -33,7 +33,7 @@ const socialprofils = {
     twitter: "https://twitter.com",
 };
 
-export const Socialicons = async () =>
+export default function Socialicons ()
 {
     return (
         <div className="text-white text-sm">

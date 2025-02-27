@@ -1,17 +1,19 @@
-import AuoraContainer from "@/components/animations/bg/auora/AuoraContainer";
-import TextContainer from "@/components/animations/depcretedText/TextContainer";
-import FocusConatiner from "@/components/animations/focusText/FocusConatiner";
-import TechSlider from "@/components/animations/sliders/techStacks/TechSlider";
-import CardContainer from "@/components/animations/TiledCard/CardContainer";
-import SectionScrollLayout from "@/components/layouts/SectionScrollLayout";
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+
+const AboutPhoto = dynamic( () => import( "./AboutPhoto" ) );
+const SectionScrollLayout = dynamic( () => import( "@/components/layouts/SectionScrollLayout" ) );
+const CardContainer = dynamic( () => import( "@/components/animations/TiledCard/CardContainer" ) );
+const TechSlider = dynamic( () => import( "@/components/animations/sliders/techStacks/TechSlider" ) );
+const FocusConatiner = dynamic( () => import( "@/components/animations/focusText/FocusConatiner" ) );
+const TextContainer = dynamic( () => import( "@/components/animations/depcretedText/TextContainer" ) );
+const AuoraContainer = dynamic( () => import( "@/components/animations/bg/auora/AuoraContainer" ) );
 
 const About = async () => 
 {
   return (
     <SectionScrollLayout
-      className={ "min-h-screen min-w-screen sticky top-0 z-20 w-full bg-gradient-to-br from-slate-900 via-gray-800 backdrop-blur-[3px]" }
+      className={ "min-h-screen min-w-screen sticky top-0 z-20 w-full bg-gradient-to-br from-slate-900 via-gray-800 backdrop-blur-md" }
     >
       <AuoraContainer />
 
@@ -38,23 +40,8 @@ const About = async () =>
           </Link>
         </div>
         
-        <div className="w-ful flex flex-col items-center justify-center gap-3">
-          <CardContainer src={ "/photo.jpeg" } name={ "Muhammad Ashraful Alam" } />
-          <div className="flex gap-5 relative text-white">
-            <Link href="https://github.com" className="hover:text-green-400 hover:scale-110 transition-all duration-150">
-              <FaGithub size={ 24 } />
-            </Link>
-            <Link href="https://linkedin.com" className="hover:text-green-400 hover:scale-110 transition-all duration-150">
-              <FaLinkedin size={ 24 } />
-            </Link>
-            <Link href="https://facebook.com/dott.ash" className="hover:text-green-400 hover:scale-110 transition-all duration-150">
-              <FaFacebook size={ 24 } />
-            </Link>
-            <Link href="https://instagram.com/dott.ash" className="hover:text-green-400 hover:scale-110 transition-all duration-150">
-              <FaInstagram size={ 24 } />
-            </Link>
-          </div>
-        </div>
+        {/* image */ }
+        <AboutPhoto/>
       </div>
     </SectionScrollLayout>
   )

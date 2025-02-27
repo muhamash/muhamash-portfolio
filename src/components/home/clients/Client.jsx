@@ -1,9 +1,11 @@
-import ParticlesContainer from "@/components/animations/bg/particles/ParticlesContainer";
-import GradContainer from "@/components/animations/gradientText/GradContainer";
-import MeetingButton from "@/components/common/MeetingButton";
-import SectionScrollLayout from "@/components/layouts/SectionScrollLayout";
-import CompanyGalleryConatiner from "./CompanyGalleryConatiner";
-import States from "./States";
+import dynamic from "next/dynamic";
+
+const ParticlesContainer = dynamic( () => import( "@/components/animations/bg/particles/ParticlesContainer" ) );
+const GradContainer = dynamic( () => import( "@/components/animations/gradientText/GradContainer" ) );
+const SectionScrollLayout = dynamic( () => import( "@/components/layouts/SectionScrollLayout" ) );
+const CompanyGalleryConatiner = dynamic( () => import( "./CompanyGalleryConatiner" ) );
+const MeetingButton = dynamic( () => import( "@/components/common/MeetingButton" ) );
+const States = dynamic( () => import( "./States" ) );
 
 export default async function Client() {
     return (

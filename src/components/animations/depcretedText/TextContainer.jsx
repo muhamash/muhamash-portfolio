@@ -1,6 +1,6 @@
 import DecryptedText from "./Text";
 
-export default async function TextContainer({text}) {
+export default function TextContainer({text}) {
     return (
         <div>
             <DecryptedText

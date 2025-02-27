@@ -1,6 +1,6 @@
 import FuzzyText from "./TextPressure";
 
-export default async function TextPressureContainer() {
+export default function TextPressureContainer() {
     return (
         <FuzzyText
             baseIntensity={ 0.01 }

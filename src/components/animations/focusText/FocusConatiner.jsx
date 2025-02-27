@@ -1,6 +1,6 @@
 import TrueFocus from "./Focus";
 
-export default async function FocusConatiner() {
+export default function FocusConatiner() {
     return (
         <TrueFocus
             sentence="Searching for the best one?"

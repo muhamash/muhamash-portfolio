@@ -1,4 +1,8 @@
-import InfiniteMenu from "./Menu";
+"use client"
+
+import dynamic from "next/dynamic";
+
+const InfiniteMenu = dynamic( () => import( "./Menu" ), { ssr: false } );
 
 const items = [
   {

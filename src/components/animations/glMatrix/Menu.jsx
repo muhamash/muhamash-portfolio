@@ -862,14 +862,14 @@ class InfiniteGridMenu {
   }
 }
 
-const defaultItems = [
-  {
-    image: 'https://picsum.photos/900/900?grayscale',
-    link: 'https://google.com/',
-    title: '',
-    description: ''
-  },
-];
+// const defaultItems = [
+//   {
+//     image: 'https://picsum.photos/900/900?grayscale',
+//     link: 'https://google.com/',
+//     title: '',
+//     description: ''
+//   },
+// ];
 
 export default function InfiniteMenu({ items = [] }) {
   const canvasRef = useRef(null);

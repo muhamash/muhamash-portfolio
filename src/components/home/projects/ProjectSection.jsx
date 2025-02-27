@@ -1,7 +1,9 @@
-import NoiseContainer from "@/components/animations/bg/noise/NoiseContainer";
-import MenuContainer from "@/components/animations/glMatrix/MenuContainer";
-import TextPressureContainer from "@/components/animations/stretch/TextPressureContainer";
-import SectionScrollLayout from "@/components/layouts/SectionScrollLayout";
+import dynamic from "next/dynamic";
+
+const SectionScrollLayout = dynamic( () => import( "@/components/layouts/SectionScrollLayout" ) );
+const TextPressureContainer = dynamic( () => import( "@/components/animations/stretch/TextPressureContainer" ) );
+const MenuContainer = dynamic( () => import( "@/components/animations/glMatrix/MenuContainer" ) );
+const NoiseContainer = dynamic( () => import( "@/components/animations/bg/noise/NoiseContainer" ) );
 
 export default async function ProjectSection() {
     return (
