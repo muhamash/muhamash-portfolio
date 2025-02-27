@@ -1,6 +1,6 @@
 "use client";
 
-import { downloadResume } from "@/utils/actions/DownloadResume";
+import { downloadResume } from "@/utils/helper/helper";
 import { useTransition } from "react";
 
 export default function Resume ()
@@ -14,35 +14,23 @@ export default function Resume ()
             try
             {
                 const res = await downloadResume();
+        
                 if ( !res.success )
                 {
                     alert( "Error downloading resume." );
                     return;
                 }
 
-                const byteCharacters = atob( res.data );
-                const byteNumbers = new Uint8Array( byteCharacters.length );
-
-                for ( let i = 0; i < byteCharacters.length; i++ )
-                {
-                    byteNumbers[ i ] = byteCharacters.charCodeAt( i );
-                }
-
-                const blob = new Blob( [ byteNumbers ], { type: "application/pdf" } );
-
-                const url = window.URL.createObjectURL( blob );
                 const a = document.createElement( "a" );
-                a.href = url;
-                a.download = "resume.pdf";
+                a.href = res.data; 
+                a.download = "resume.pdf"; 
                 document.body.appendChild( a );
                 a.click();
                 document.body.removeChild( a );
-                window.URL.revokeObjectURL( url );
-            }
-            catch ( error )
+            } catch ( error )
             {
-                console.error( error || error?.message );
-                return null;
+                console.error( "Error while downloading resume:", error.message || error );
+                alert( "An error occurred while downloading the resume." );
             }
         } );
     };
