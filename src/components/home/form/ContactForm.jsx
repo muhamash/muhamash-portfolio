@@ -1,13 +1,25 @@
 "use client"
 
 import { contactForm } from '@/utils/actions/formActions';
-import { useActionState } from 'react';
+import { useActionState, useEffect } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function ContactForm ()
 {
     const [ state, formAction, pending ] = useActionState( contactForm );
 
     console.log( state );
+
+    useEffect( () =>
+    {
+        if ( state?.success === true )
+        {
+            toast.success( "Successfully submitted!" );
+        } else if ( state?.success === false )
+        {
+            toast.error( "Error!!!!!!!" );
+        }
+    }, [ state?.success ] );
 
     return (
         <div className="w-full md:w-[500px] h-fit flex flex-col gap-3 text-left items-center md:items-start justify-center bg-black/50 backdrop-blur-md md:p-10 p-3 rounded-md">
@@ -43,6 +55,12 @@ export default function ContactForm ()
                     </button>
                 </div>
             </form>
+
+            <div className="font-nunito">
+                <Toaster
+                position="top-right"
+                reverseOrder={false}/>
+            </div>
         </div>
     );
 }

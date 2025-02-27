@@ -2,6 +2,7 @@
 
 import { downloadResume } from "@/utils/helper/helper";
 import { useTransition } from "react";
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Resume ()
 {
@@ -17,7 +18,7 @@ export default function Resume ()
         
                 if ( !res.success )
                 {
-                    alert( "Error downloading resume." );
+                    toast.error('Error!!!!!!!')
                     return;
                 }
 
@@ -27,6 +28,7 @@ export default function Resume ()
                 document.body.appendChild( a );
                 a.click();
                 document.body.removeChild( a );
+                toast.success('Successfully downloaded!')
             } catch ( error )
             {
                 console.error( "Error while downloading resume:", error.message || error );
@@ -44,6 +46,11 @@ export default function Resume ()
                 <span className="absolute inset-0 bg-gradient-to-r from-amber-500 to-green-500 rounded-lg blur-md opacity-50 group-hover:opacity-100 transition duration-300"></span>
                 <span className="relative z-10">{isPending ? "Downloading..." : "Resume"}</span>
             </button>
+            <div className="font-nunito">
+                <Toaster
+                position="top-right"
+                reverseOrder={false}/>
+            </div>
         </div>
     );
 }
