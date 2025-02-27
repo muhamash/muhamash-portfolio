@@ -8,7 +8,7 @@ import { Socialicons } from "./Stamp";
 
 export default async function HeaderComponent() {
     return (
-        <div className="relative z-10 min-h-screen min-w-screen flex md:flex-row flex-col md:justify-between justify-center gap-10 items-center mx-auto py-20">
+        <div className="relative z-10 min-h-screen min-w-screen flex md:flex-row flex-col md:justify-between justify-center gap-10 items-center mx-auto py-20 mb-10">
             <div className="absolute md:-left-20 -left-[17px] top-[70px]">
                 <Socialicons />
             </div>
