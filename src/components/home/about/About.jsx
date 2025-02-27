@@ -13,7 +13,7 @@ const About = async () =>
 {
   return (
     <SectionScrollLayout
-      className={ "min-h-screen min-w-screen sticky top-0 z-20 w-full bg-gradient-to-br from-slate-900 via-gray-800 backdrop-blur-md" }
+      className={ "min-h-screen min-w-screen sticky top-0 left-0 right-0 z-20 w-full bg-gradient-to-br from-slate-900 via-gray-800 backdrop-blur-md" }
     >
       <AuoraContainer />
 
@@ -25,9 +25,9 @@ const About = async () =>
         <TechSlider />
       </div>
 
-      <div className="p-4 my-10 gap-5 flex md:flex-row flex-col-reverse items-center justify-center w-full">
+      <div className="p-4 my-10  flex md:flex-row flex-col-reverse items-center gap-5 justify-around justify-center w-full">
 
-        <div className="md:w-1/2 w-fit font-edu font-semibold z-50">
+        <div className="md:w-fit w-fit font-edu font-semibold z-50">
 
           <TextContainer text={ "Hey, I'm Ashraful! With 2.5 years of experience as a full-stack developer, I love working with a variety of technologies to build innovative, scalable applications. I’m passionate about staying on top of new trends, and I’ve worked with everything from the MERN stack and Next.js to Nest.js, Three.js, OpenGL, and both SQL and NoSQL databases. I’m always exploring new tools to create efficient, high-performance solutions that solve real-world problems. If you're looking to build something exciting, let’s connect and make it happen! How does that sound?" } />
 

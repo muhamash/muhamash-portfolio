@@ -8,7 +8,7 @@ const NoiseContainer = dynamic( () => import( "@/components/animations/bg/noise/
 export default async function ProjectSection() {
     return (
         <SectionScrollLayout
-            className={ "min-h-screen min-w-screen sticky top-0 z-20 w-full bg-gray-900 p-4" }>
+            className={ "min-h-screen min-w-screen sticky top-0 z-20 w-full bg-gray-900 p-4 mb-5" }>
             
             {/* background */ }
             <NoiseContainer />

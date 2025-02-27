@@ -113,3 +113,20 @@
 @keyframes blinkblink {
   50% { opacity: 0.1; }
 }
+
+/* css loading */
+/* HTML: <div class="loader"></div> */
+.pendingLoader {
+  width: 90px;
+  height: 12px;
+  --c:#077c53 50%,#d9b0e06a 0;
+  background: 
+    linear-gradient( 90deg,var(--c)) 0 0,
+    linear-gradient(-90deg,var(--c)) 0 0;
+  background-size: 20px 100%;
+  background-repeat: repeat-x;
+  animation: l10 1s infinite linear;
+}
+@keyframes l10 {
+    100% {background-position: -20px 0,20px 0}
+}

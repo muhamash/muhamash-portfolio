@@ -1,4 +1,3 @@
-import GridContainer from "@/components/animations/grid/GridContainer";
 import About from "@/components/home/about/About";
 import Contact from "@/components/home/contact/Contact";
 import HeaderComponent from "@/components/home/header/Header";
