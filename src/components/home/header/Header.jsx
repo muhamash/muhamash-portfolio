@@ -32,7 +32,7 @@ export default async function HeaderComponent() {
             </div>
 
             <div className="flex flex-col gap-5">
-                <div className="text-center w-fit mx-auto flex gap-[10px] items-center md:mt-10 mt-3">
+                <div className="text-center w-fit mx-auto flex gap-[10px] items-center">
                     <p className="text-white text-[28px] md:text-[35px] font-extrabold font-outfit">Creative</p>
                     <GlitchText
                         texts={ [ 'Thinking!!', 'Coding!!', 'Features!!', 'Design!!!' ] }
