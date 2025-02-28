@@ -1,13 +1,15 @@
-import GridContainer from "@/components/animations/bg/grid/GridContainer";
-import HireMeButton from "@/components/common/HireMeButton";
-import Resume from "@/components/common/Resume";
-import GlitchText from "../../animations/glitch/Glitch";
-import SplitTextContainer from "../../animations/splitText/SplitTextContainer";
-import CodeEditor from "../AnimatedCode";
-import AnimatedText from "../AnimatedText";
-import Socialicons from "./Stamp";
+import dynamic from "next/dynamic";
 
-export const dynamic = "force-static"; 
+const GridContainer = dynamic(() => import("@/components/animations/bg/grid/GridContainer"));
+const HireMeButton = dynamic(() => import("@/components/common/HireMeButton"));
+const Resume = dynamic(() => import("@/components/common/Resume"));
+const GlitchText = dynamic(() => import("../../animations/glitch/Glitch"));
+const SplitTextContainer = dynamic(() => import("../../animations/splitText/SplitTextContainer"));
+const CodeEditor = dynamic(() => import("../AnimatedCode"));
+const AnimatedText = dynamic(() => import("../AnimatedText"));
+const Socialicons = dynamic(() => import("./Stamp"));
+
+// export const dynamic = "force-static"; 
 
 export default function HeaderComponent() {
     return (

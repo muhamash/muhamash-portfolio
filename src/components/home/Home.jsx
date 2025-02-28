@@ -6,7 +6,7 @@ import Client from "./clients/Client";
 import Footer from "./footer/Footer";
 import ProjectSection from "./projects/ProjectSection";
 
-// export const dynamic = "force-static";
+export const dynamic = "force-static";
 
 export default async function Home ()
 {
