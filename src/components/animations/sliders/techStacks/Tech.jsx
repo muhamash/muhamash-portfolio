@@ -1,3 +1,5 @@
+"use client";
+
 import
   {
     motion,
@@ -19,9 +21,8 @@ function useElementWidth(ref) {
     updateWidth();
     window.addEventListener("resize", updateWidth);
     return () => window.removeEventListener("resize", updateWidth);
-  }, [ref]);
-
-  // console.log( width );
+  }, [ ref ] );
+  
   return width;
 }
 
@@ -47,7 +48,7 @@ export const ScrollVelocity = ({
   const velocityFactor = useTransform(smoothVelocity, velocityMapping.input, velocityMapping.output, { clamp: false });
 
   if (isMobile) {
-    velocityFactor.set(velocityFactor.get() / 2); // Reduce velocity on mobile
+    velocityFactor.set(velocityFactor.get() / 2);
   }
 
   const copyRef = useRef(null);

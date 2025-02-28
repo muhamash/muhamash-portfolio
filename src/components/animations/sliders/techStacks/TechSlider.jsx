@@ -1,7 +1,9 @@
+"use client"
+
 import dynamic from "next/dynamic";
 
-const ScrollVelocity = dynamic( () => import( "./Tech" ) );
-const SlideCards = dynamic( () => import( "./SlideCards" ));
+const ScrollVelocity = dynamic( () => import( "./Tech" ), { ssr: false } );
+const SlideCards = dynamic( () => import( "./SlideCards" ), { ssr: false } );
 
 const techStack = [
   "react",
@@ -44,7 +46,7 @@ const techStack = [
   "nextAuth",
 ];
 
-export default async function TechSlider() {
+export default function TechSlider() {
   return (
     <div className="w-screen px-4 py-8 font-nunito">
       <ScrollVelocity
