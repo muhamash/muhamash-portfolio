@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 
 const DecryptedText = dynamic( () => import( "./Text" ) );
 
-export default async function TextContainer({text}) {
+export default  function TextContainer({text}) {
     return (
         <div>
             <DecryptedText

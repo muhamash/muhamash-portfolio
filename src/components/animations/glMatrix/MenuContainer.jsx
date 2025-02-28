@@ -35,7 +35,7 @@ const items = [
   }
 ];
 
-export default async function MenuContainer() {
+export default function MenuContainer() {
     return (
         <div className="rounded-lg" style={ { height: '580px', position: 'relative', borderRadius: "10px" } }>
             <InfiniteMenu items={ items } />

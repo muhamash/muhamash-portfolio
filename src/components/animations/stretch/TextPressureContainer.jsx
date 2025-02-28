@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 
 const FuzzyText = dynamic( () => import( "./TextPressure.jsx" ) );
 
-export default async function TextPressureContainer() {
+export default function TextPressureContainer() {
     return (
         <FuzzyText
             baseIntensity={ 0.01 }
