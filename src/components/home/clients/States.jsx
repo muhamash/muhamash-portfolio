@@ -1,7 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import CountUp from "./Counter";
+import dynamic from "next/dynamic";
+
+const CountUp = dynamic(()=> import("./Counter"), {ssr: false})
 
 const stats = [
     { label: "Years of Experience", value: 2.5 },

@@ -1,10 +1,8 @@
-"use client"
-
 import dynamic from "next/dynamic";
 
-const Particles = dynamic( () => import( "./Particles.jsx" ), { ssr: false } );
+const Particles = dynamic( () => import( "./Particles.jsx" ) );
 
-export default function ParticlesContainer() {
+export default async function ParticlesContainer() {
     return (
         <Particles
             particleColors={ [ '#04866c', '#9a9309', '#087421', '#5a068e', '#ffffff', '#e70e0e', '#ab07ab', '#c47021', '#0576aa' ] }

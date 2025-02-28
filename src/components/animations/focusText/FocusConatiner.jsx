@@ -1,10 +1,8 @@
-"use client"
-
 import dynamic from "next/dynamic";
 
-const TrueFocus = dynamic( () => import( "./Focus" ), { ssr: false } );
+const TrueFocus = dynamic( () => import( "./Focus" ) );
 
-export default function FocusConatiner() {
+export default async function FocusConatiner() {
     return (
         <TrueFocus
             sentence="Searching for the best one?"

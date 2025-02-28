@@ -1,10 +1,8 @@
-"use client"
-
 import dynamic from "next/dynamic";
 
-const Hyperspeed = dynamic( () => import( "./HyperSpeed" ), { ssr: false } );
+const Hyperspeed = dynamic( () => import( "./HyperSpeed" ));
 
-export default function HypeContainer() {
+export default async function HypeContainer() {
     return (
         <>
             <Hyperspeed

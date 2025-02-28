@@ -1,8 +1,6 @@
-"use client"
-
 import dynamic from "next/dynamic";
 
-const InfiniteMenu = dynamic( () => import( "./Menu" ), { ssr: false } );
+const InfiniteMenu = dynamic( () => import( "./Menu" ));
 
 const items = [
   {
@@ -37,7 +35,7 @@ const items = [
   }
 ];
 
-export default function MenuContainer() {
+export default async function MenuContainer() {
     return (
         <div className="rounded-lg" style={ { height: '580px', position: 'relative', borderRadius: "10px" } }>
             <InfiniteMenu items={ items } />

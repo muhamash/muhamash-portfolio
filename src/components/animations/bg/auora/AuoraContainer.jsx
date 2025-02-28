@@ -1,10 +1,8 @@
-"use client"
-
 import dynamic from "next/dynamic";
 
-const Aurora = dynamic( () => import( "./Auora" ), { ssr: false } );
+const Aurora = dynamic( () => import( "./Auora" ) );
 
-export default function AuoraContainer() {
+export default async function AuoraContainer() {
     return (
         <Aurora
             colorStops={ [ "#0e84b2", "#95a69f", "#9d8f9d" ] }

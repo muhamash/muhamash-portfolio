@@ -1,10 +1,8 @@
-"use client"
-
 import dynamic from "next/dynamic";
 
-const DecryptedText = dynamic( () => import( "./Text" ), { ssr: false } );
+const DecryptedText = dynamic( () => import( "./Text" ) );
 
-export default function TextContainer({text}) {
+export default async function TextContainer({text}) {
     return (
         <div>
             <DecryptedText
