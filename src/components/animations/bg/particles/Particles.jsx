@@ -231,7 +231,7 @@ const Particles = ({
   return (
     <div
       ref={containerRef}
-      className={`w-screen h-screen ${className}`}
+      className={`w-screen h-screen ${className} overflow-hidden`}
     />
   );
 };

@@ -27,12 +27,12 @@ export const Sidebar = ({ activePage, setActivePage }) => {
             </motion.button>
 
             {/* Desktop Sidebar */}
-            <div className="hidden md:block md:col-span-1 bg-white/10 backdrop-blur-lg rounded-lg p-6 shadow-xl md:h-full">
+            <div className="hidden md:block md:col-span-1 bg-gray-900 backdrop-blur-md pt-[100px] px-6 shadow-xl h-screen z-50">
                 <NavLinks activePage={activePage} setActivePage={setActivePage} />
             </div>
 
             {/* Mobile Drawer with AnimatePresence */}
-            <AnimatePresence>
+            <AnimatePresence mode='wait'>
                 {isDrawerOpen && (
                     <motion.div
                         className="fixed inset-0 bg-black/50 z-50"

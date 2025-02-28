@@ -1,17 +1,26 @@
-import ClientLayout from "@/components/layouts/AboutLayout";
+import Footer from "@/components/home/footer/Footer";
+import dynamic from "next/dynamic";
 
-export default async function AboutLayout({profile,experiences, educations, skills, achievements}) {
+const ClientLayout = dynamic( () => import( '@/components/layouts/AboutLayout' ) );
+const SectionScrollLayout = dynamic( () => import( '@/components/layouts/SectionScrollLayout' ) );
+
+export default async function AboutLayout ( { profile, experiences, educations, skills, achievements} )
+{ 
+
   return (
-    <div className="min-h-screen bg-gradient-to-br pt-[100px]">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <ClientLayout
-          profile={ profile }
-          experiences={ experiences }
-          educations={ educations }
-          skills={ skills }
-          achievements={ achievements }
-        />
-      </div>
-    </div>
+    <>
+      <SectionScrollLayout>
+        <div className="flex">
+          <ClientLayout
+            profile={ profile }
+            experiences={ experiences }
+            educations={ educations }
+            skills={ skills }
+            achievements={ achievements }
+          />
+        </div>
+      </SectionScrollLayout>
+      <Footer />
+    </>
   );
 }
