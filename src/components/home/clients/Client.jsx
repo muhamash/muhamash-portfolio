@@ -6,6 +6,7 @@ const SectionScrollLayout = dynamic( () => import( "@/components/layouts/Section
 const CompanyGalleryConatiner = dynamic( () => import( "./CompanyGalleryConatiner" ) );
 const MeetingButton = dynamic( () => import( "@/components/common/MeetingButton" ) );
 const States = dynamic( () => import( "./States" ) );
+const DownloadRecommendation = dynamic(()=> import("@/components/common/DownloadRecommendation"))
 
 export default async function Client() {
     return (
@@ -36,8 +37,9 @@ export default async function Client() {
 
                     {/* <CompanyGalleryConatiner /> */}
                 </div>
-                <div className="flex items-center justify-center font-edu font-semibold">
-                    <MeetingButton/>
+                <div className="flex flex-wrap-reverse items-center gap-5 justify-center font-edu font-semibold my-5">
+                    <MeetingButton />
+                    <DownloadRecommendation/>
                 </div>
             </div>
         </SectionScrollLayout>

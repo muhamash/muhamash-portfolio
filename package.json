@@ -12,6 +12,7 @@
     "@react-spring/web": "^9.7.5",
     "@typescript-eslint/eslint-plugin": "^8.25.0",
     "@typescript-eslint/parser": "^8.25.0",
+    "@uidotdev/usehooks": "^2.4.1",
     "framer-motion": "^12.4.7",
     "gl-matrix": "^3.4.3",
     "next": "15.1.6",

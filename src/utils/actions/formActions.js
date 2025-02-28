@@ -1,6 +1,5 @@
 'use server'
 
-
 export async function contactForm(prevState, formData) {
     try
     {

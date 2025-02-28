@@ -4,3 +4,10 @@ export async function downloadResume() {
         data: "/resume.pdf",
     };
 }
+
+export async function downloadRecommendation() {
+    return {
+        success: true,
+        data: "/lwsReco.pdf",
+    };
+}

@@ -14,7 +14,7 @@ export default function AnimatedText() {
 
   return (
     <div
-      className=" font-thin w-full bg-clip-text flex h-md:[105px] h-[60px] text-xl text-violet-200 font-code"
+      className=" font-thin w-full bg-clip-text flex h-md:[105px] h-[60px] md:text-[16px] text-[14px] text-violet-200 font-code"
     >
       <Typewriter
         options={ {
