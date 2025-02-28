@@ -115,7 +115,7 @@
 }
 
 /* css loading */
-/* HTML: <div class="loader"></div> */
+/* HTML: <div class="loaderMain"></div> */
 .pendingLoader {
   width: 90px;
   height: 12px;
@@ -129,4 +129,199 @@
 }
 @keyframes l10 {
     100% {background-position: -20px 0,20px 0}
+}
+
+/* HTML: <div class="loader"></div> */
+.loaderMain {
+  width: 60px;
+  aspect-ratio: .5;
+  display: grid;
+}
+.loaderMain:before {
+  content: "";
+  width: 30%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin: auto auto 0;
+  background: #CF4647;
+  animation: l9-0 .5s cubic-bezier(0,800,1,800) infinite;
+}
+.loaderMain:after {
+  content: "";
+  width: 100%;
+  aspect-ratio: 1/cos(30deg);
+  margin: 0 auto auto;
+  clip-path: polygon(50% -50%,100% 50%,50% 150%,0 50%);
+  background: #524656;
+  animation: l9-1 .5s linear infinite;
+}
+@keyframes l9-0 {
+  0%,2%  {translate: 0   0%}
+  98%,to {translate: 0 -.2%}
+}
+@keyframes l9-1 {
+  0%,5%  {rotate:  0deg}
+  95%,to {rotate:-60deg}
+}
+
+/* HTML: <div class="loader"></div> */
+.loaderProject {
+  width: 60px;
+  aspect-ratio: 1;
+  display: flex;
+  animation: l8-0 2s infinite sptes(1);
+}
+.loaderProject::before,
+.loaderProject::after {
+  content: "";
+  flex: 1;
+  animation: 
+    l8-1 1s infinite linear alternate,
+    l8-2 2s infinite steps(1) -.5s;
+}
+.loaderProject::after {
+  --s:-1,-1;
+}
+@keyframes l8-0 {
+  0%  {transform: scaleX(1)  rotate(0deg)}
+  50% {transform: scaleX(-1) rotate(-90deg)}
+}
+@keyframes l8-1 {
+  0%,
+  5%   {transform:scale(var(--s,1)) translate(0px)   perspective(150px) rotateY(0deg) }
+  33%  {transform:scale(var(--s,1)) translate(-10px) perspective(150px) rotateX(0deg) }
+  66%  {transform:scale(var(--s,1)) translate(-10px) perspective(150px) rotateX(-180deg)}
+  95%,
+  100% {transform:scale(var(--s,1)) translate(0px)   perspective(150px) rotateX(-180deg)}
+}
+@keyframes l8-2 {
+  0%  {background:#f03355}
+  50% {background:#ffa516}
+}
+
+/* HTML: <div class="loader"></div> */
+.loaderExtra {
+  width: 60px;
+  aspect-ratio: 1;
+  background: 
+    linear-gradient(45deg,#60B99A 50%,#0000 0),
+    linear-gradient(45deg,#0000 50%,#60B99A 0),
+    linear-gradient(-45deg,#f77825 50%,#0000 0),
+    linear-gradient(-45deg,#0000 50%,#f77825 0),
+    linear-gradient(#554236 0 0);
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  animation: l18 1.5s infinite;
+}
+@keyframes l18{
+  0%   {background-position:50% 50%,50% 50%,50%  50% ,50% 50%,50% 50%}
+  25%  {background-position:0  100%,100%  0,50%  50% ,50% 50%,50% 50%}
+  50%  {background-position:0  100%,100%  0,100% 100%,0   0  ,50% 50%}
+  75%  {background-position:50% 50%,50% 50%,100% 100%,0   0  ,50% 50%}
+  100% {background-position:50% 50%,50% 50%,50%  50% ,50% 50%,50% 50%}
+}
+
+/* HTML: <div class="loader"></div> */
+.loaderFetch {
+  width: 40px;
+  aspect-ratio: 1;
+  color: #f03355;
+  background: conic-gradient(currentColor 0 270deg,#0000 0);
+  border-radius: 50%;
+  animation: l14-0 4s infinite linear;
+}
+.loaderFetch::before {
+  content: "";
+  display: block;
+  height: 50%;
+  width: 50%;
+  border-top-left-radius: 100px;
+  background: currentColor;
+  animation: l14 0.5s infinite alternate;
+}
+@keyframes l14-0 {
+    0%,24.99%  {transform: rotate(0deg)}
+    25%,49.99% {transform: rotate(90deg)}
+    50%,74.99% {transform: rotate(180deg)}
+    75%,100%   {transform: rotate(270deg)}
+}
+@keyframes l14 {
+    100%  {transform: translate(-10px,-10px)}
+}
+
+/* HTML: <div class="loader"></div> */
+.loaderLoading {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  color: #854f1d;
+  background: radial-gradient(farthest-side, currentColor calc(100% - 6px),#0000 calc(100% - 5px) 0);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 13px),#000 calc(100% - 12px));
+  border-radius: 50%;
+  animation: l19 2s infinite linear;
+}
+.loaderLoading::before,
+.loaderLoading::after {    
+  content: "";
+  grid-area: 1/1;
+  background:
+    linear-gradient(currentColor 0 0) center,
+    linear-gradient(currentColor 0 0) center;
+  background-size: 100% 10px,10px 100%;
+  background-repeat: no-repeat;
+}
+.loaderLoading::after {
+   transform: rotate(45deg);
+}
+
+@keyframes l19 { 
+  100%{transform: rotate(1turn)}
+}
+
+/* HTML: <div class="loader"></div> */
+.loaderPendingAction {
+  width: 70px;
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+}
+.loaderPendingAction:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius:50%;
+  inset:0;
+  margin:auto; 
+  background: #000;
+  transform-origin: bottom;
+  animation: l10-1 3s infinite;
+}
+.loaderPendingAction:after {
+  content: "";
+  position: absolute;
+  width:8px;
+  height:14px;
+  bottom:calc(50% - 4px);
+  background: #000;
+  animation: l10-2 3s infinite;
+}
+@keyframes l10-1 {
+ 0%,
+ 10% {transform:translate(0)     scale(1)  ;box-shadow: 60px 0 ,60px 0}
+ 20%,
+ 40% {transform:translate(20px)  scale(1)  ;box-shadow: 60px 0 ,60px 0}
+ 48% {transform:translate(20px)  scale(1)  ;box-shadow: 8px  0 ,60px 0}
+ 50% {transform:translate(20px)  scale(1.5);box-shadow: 0    0 ,60px 0}
+ 58% {transform:translate(20px)  scale(1.5);box-shadow: 0    0 ,8px  0}
+ 60%,
+ 70% {transform:translate(20px)  scale(2)  ;box-shadow: 0    0 ,0    0}
+
+ 85% {transform:translate(-50px) scale(2)  ;box-shadow: 0    0 ,0    0}
+ 87% {transform:translate(-50px) scale(1)  ;box-shadow: 0    0 ,0    0}
+ 100%{transform:translate(0)     scale(1)  ;box-shadow: 0    0 ,0    0}
+}
+@keyframes l10-2 {
+ 20%,70% {left:50%}
+ 0%,10%,85%,100% {left:-25px}
 }
