@@ -51,7 +51,7 @@ export default function Socialicons ()
                 } ) }
             </ul>
             <div  className="-rotate-90 w-[60px] h-[2px] bg-cyan-500  mt-10 -translate-x-[23px] rounded-lg"/>
-            <p className="font-outfit text-[13px] font-bold text-gray-300 -rotate-90 mt-[60px] -translate-x-[25px] hover:scale-110 transition duration-300 ">
+            <p className="font-outfit text-[12px] font-bold text-gray-300 -rotate-90 mt-[62px] -translate-x-[26px] hover:scale-110 transition duration-300 ">
                 Connect Me
             </p>
         </div>
