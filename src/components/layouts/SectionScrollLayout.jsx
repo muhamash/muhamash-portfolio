@@ -24,7 +24,7 @@ export default function SectionScrollLayout ( { className, children } )
     return (
         <section
             ref={ sectionRef }
-            className={`${className} sticky top-0 z-40`}
+            className={`${className} sticky top-0 z-30`}
         >
             {children}
         </section>

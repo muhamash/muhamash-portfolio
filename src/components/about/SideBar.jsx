@@ -16,7 +16,7 @@ export const Sidebar = ({ activePage, setActivePage }) => {
         <>
             <motion.button
                 onClick={toggleDrawer}
-                className="md:hidden fixed top-7 left-5 z-50 p-3 rounded-full shadow-lg"
+                className="md:hidden fixed top-[30px] left-1 z-50 p-3 rounded-full shadow-lg"
                 aria-label="Toggle navigation menu"
             >
                 <FontAwesomeIcon 
@@ -27,7 +27,7 @@ export const Sidebar = ({ activePage, setActivePage }) => {
             </motion.button>
 
             {/* Desktop Sidebar */}
-            <div className="hidden md:block md:col-span-1 bg-gray-900 backdrop-blur-md pt-[100px] px-6 shadow-xl h-screen z-50">
+            <div className="hidden md:block md:col-span-1 bg-gray-900 backdrop-blur-md pt-[120px] px-6 shadow-xl h-screen z-50">
                 <NavLinks activePage={activePage} setActivePage={setActivePage} />
             </div>
 
@@ -43,7 +43,7 @@ export const Sidebar = ({ activePage, setActivePage }) => {
                         onClick={closeDrawer}
                     >
                         <motion.div
-                            className="absolute left-0 top-0 w-64 h-full bg-white/10 backdrop-blur-lg shadow-xl p-6"
+                            className="absolute left-0 top-0 w-64 h-full bg-white/10 backdrop-blur-lg shadow-xl p-6 pt-[40px]"
                             initial={{ x: "-100%" }}
                             animate={{ x: 0 }}
                             exit={{ x: "-100%" }}

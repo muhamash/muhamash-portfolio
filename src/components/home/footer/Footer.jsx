@@ -7,7 +7,7 @@ const SectionScrollLayout = dynamic( () => import( "@/components/layouts/Section
 
 export default async function Footer() {
     return (
-        <SectionScrollLayout className="w-full sticky h-min-screen bg-gradient-to-br from-slate-900 via-gray-900 via-black/50 backdrop-blur-lg text-white px-4 md:px-[50px] min-w-screen flex md:flex-row flex-col md:justify-between justify-center md:items-end items-center gap-10 mx-auto py-[20px] md:py-[80px] shadow-lg hover:shadow-2xl hover:shadow-white shadow-rose-600">
+        <SectionScrollLayout className="w-full h-min-screen bg-gradient-to-br from-slate-900 via-gray-900 via-black/50 backdrop-blur-lg text-white px-4 md:px-[50px] min-w-screen flex md:flex-row flex-col md:justify-between justify-center md:items-end items-center gap-10 mx-auto py-[20px] md:py-[80px] shadow-lg hover:shadow-2xl hover:shadow-white shadow-rose-200">
             <div className="flex flex-col items-center md:items-start gap-5">
                 <div className="flex flex-col gap-3 justify-center items-center">
                     <Image
@@ -57,7 +57,7 @@ export default async function Footer() {
 
                 <div className="mt-6 text-center flex flex-wrap md:py-0 py-5 gap-1 items-center font-mono font-code">
                     <p className="md:text-sm text-[10px]">© Md Ashraful Alam ;</p>
-                    <Link className="text-rose-500 md:text-sm text-[12px] font-edu" href={ "https://github.com/muhamash" }>github.com/muhamash,</Link>
+                    <Link className="text-violet-300 text-[15px] font-code font-bold" href={ "https://github.com/muhamash" }>github.com/muhamash,</Link>
                     <span className="md:text-sm text-[10px] font-code"> All rights reserved.</span>
                 </div>
             </div>
