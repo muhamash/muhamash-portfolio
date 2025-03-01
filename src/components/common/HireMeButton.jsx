@@ -1,4 +1,7 @@
-export default function HireMeButton() {
+"use client"
+
+export default function HireMeButton ()
+{
   return (
     <div className=" bg-gradient-to-r from-violet-500 via-cyan-600 via-sky-400 to-slate-400 w-[130px] p-[1px] rounded-lg">
       <button className="relative px-6 py-3 font-semibold text-white bg-gray-900 rounded-lg w-full group">

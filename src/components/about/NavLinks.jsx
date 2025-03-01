@@ -19,7 +19,7 @@ export const NavLinks = ({ activePage, setActivePage, closeDrawer }) => (
                 }}
                 className={`flex items-center p-3 w-full text-left rounded-xl transition-all duration-300 ${
                     activePage === item
-                        ? "bg-green-600 text-white shadow-lg"
+                        ? "bg-slate-700 text-white shadow-lg"
                         : "text-white/80 hover:bg-white/5"
                 }`}
             >

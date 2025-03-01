@@ -4,6 +4,8 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import HireMeButton from '../common/HireMeButton';
+import Resume from '../common/Resume';
 import { NavLinks } from "./NavLinks";
 
 export const Sidebar = ({ activePage, setActivePage }) => {
@@ -27,8 +29,14 @@ export const Sidebar = ({ activePage, setActivePage }) => {
             </motion.button>
 
             {/* Desktop Sidebar */}
-            <div className="hidden md:block md:col-span-1 bg-gray-900 backdrop-blur-md pt-[120px] px-6 shadow-xl h-screen z-50">
-                <NavLinks activePage={activePage} setActivePage={setActivePage} />
+            <div className="hidden md:block md:col-span-1 backdrop-blur-md pt-[120px] px-6 min-h-screen border-r-4 border-slate-800 z-50 ">
+                <NavLinks activePage={ activePage } setActivePage={ setActivePage } />
+                <div className='mt-10'>
+                    <HireMeButton/>
+                </div>
+                <div className='mt-3'>
+                    <Resume/>
+                </div>
             </div>
 
             {/* Mobile Drawer with AnimatePresence */}
@@ -69,6 +77,7 @@ export const Sidebar = ({ activePage, setActivePage }) => {
                                 closeDrawer={closeDrawer}
                             />
                         </motion.div>
+                        
                     </motion.div>
                 )}
             </AnimatePresence>
