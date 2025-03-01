@@ -17,10 +17,10 @@ export const NavLinks = ({ activePage, setActivePage, closeDrawer }) => (
                     setActivePage(item);
                     if (closeDrawer) closeDrawer();
                 }}
-                className={`flex items-center p-3 w-full text-left rounded-xl transition-all duration-300 ${
+                className={`flex items-center p-3 w-full text-left rounded-md transition-all duration-300 ${
                     activePage === item
-                        ? "bg-slate-700 text-white shadow-lg"
-                        : "text-white/80 hover:bg-white/5"
+                        ? "bg-slate-700 text-green-400 shadow-sm shadow-green-300"
+                        : "text-white/80 hover:bg-white/20"
                 }`}
             >
                 {icons[item]}

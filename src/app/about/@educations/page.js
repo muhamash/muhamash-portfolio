@@ -1,7 +1,9 @@
-export default function EducationsPage() {
+import ThreeScene from "@/components/animations/threejs/new";
+
+export default async function EducationsPage() {
   return (
-    <div>
-      EducationsPage
+    <div className="relative">
+      <ThreeScene/>
     </div>
   )
 }

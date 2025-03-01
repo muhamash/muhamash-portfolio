@@ -1,4 +1,4 @@
-import CompaniesWorked from "@/components/home/clients/Companies";
+import GradContainer from "@/components/animations/gradientText/GradContainer";
 import States from "@/components/home/clients/States";
 import dynamic from "next/dynamic";
 
@@ -8,6 +8,48 @@ export const metadata = {
 };
 
 const ParticlesContainer = dynamic( () => import( "@/components/animations/bg/particles/ParticlesContainer" ) );
+const Company = dynamic( () => import( "@/components/about/experiences/Company" ) );
+
+const companies = [
+    {
+        name: "XpeedLab",
+        role: "Software Developer",
+        duration: "2024 - Present",
+        logo: "/logos/flyte.png",
+        description: "XpeedLab is a leading IT solutions company specializing in SaaS products, AI-based systems, and enterprise software solutions.",
+        projects: [
+            {
+                title: "Swachchhota (স্বচ্ছতা)",
+                tech: ["MERN Stack", "Next.js", "GraphQL", "NextAuth"],
+                details: "Developed a cloud-based anti-corruption platform with secure reporting and case tracking."
+            },
+            {
+                title: "AI-Based ATS System",
+                tech: ["Next.js", "Node.js", "MySQL", "Prisma"],
+                details: "Building an automated cloud-based CV Analysis Applicant Tracking System."
+            }
+        ]
+    },
+    {
+        name: "DesignLadder",
+        role: "Full-Stack Developer",
+        duration: "2022 - 2024",
+        logo: "/logos/techstartup.png",
+        description: "DesignLadder is a creative agency providing web solutions, branding, and SaaS product development.",
+        projects: [
+            {
+                title: "Task Management System",
+                tech: ["Next.js", "Node.js", "Prisma", "MySQL"],
+                details: "Built a full-stack task management system with JWT-based authentication and task tracking."
+            },
+            {
+                title: "E-Commerce Platform",
+                tech: ["React.js", "Node.js", "MongoDB"],
+                details: "Developed an e-commerce platform with admin dashboards and product management features."
+            }
+        ]
+    }
+];
 
 export default async function ExperiencesPage() {
   return (
@@ -19,7 +61,19 @@ export default async function ExperiencesPage() {
       <States />
 
       <div>
-        <CompaniesWorked />
+        <GradContainer
+          showBorder={ true }
+          text={ "Companies I have worked with!!" }
+          className="px-5 py-2 text-xl md:text-3xl font-arsenal mt-10"
+        />
+
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+          {
+            companies && companies?.map( ( company, index ) => (
+              <Company index={index} key={index} company={company}/>
+            ))
+          }
+        </div>
       </div>
     </div>
   );

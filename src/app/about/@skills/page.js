@@ -1,7 +1,8 @@
+
 export default function page() {
   return (
-    <div>
-      profile
+    <div className="relative">
+      {/* <SeaScene/> */}
     </div>
   )
 }
