@@ -34,7 +34,7 @@ export default async function AboutPage() {
           <p className="text-gray-300 font-nunito"><strong>Name:</strong> Md Ashraful Alam</p>
           <p className="text-gray-300"><strong>Location:</strong> Dhaka, Bangladesh</p>
           <p className="text-gray-300"><strong>Phone:</strong> +880 1306567164</p>
-          <p className="text-gray-300"><strong>Email:</strong> muhammad-ashrafull@outlook.com</p>
+          <p className="text-gray-300"><strong>Email:</strong> muhammad-ashraful@outlook.com</p>
         </div>
 
         <div className="bg-gray-100 backdrop-blur-sm bg-opacity-20 flex flex-col items-center justify-center p-5 rounded-md shadow-md">
