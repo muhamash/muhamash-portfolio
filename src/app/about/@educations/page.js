@@ -1,3 +1,4 @@
+import InstituteCard from "@/components/about/education/InstituteCard";
 import ForestContainer from "@/components/animations/bg/threejs/forest/ForestContainer";
 
 export const metadata = {
@@ -7,14 +8,36 @@ export const metadata = {
 
 export default async function EducationsPage() {
   return (
-    <div className="relative">
+    <div className="relative w-full h-full md:my-20 my-[100px] px-5">
       <ForestContainer />
       
-      <div className="relative z-20">
-         <p >hello</p>
-      </div>
+      <div className="relative flex items-center justify-center w-full h-full">
+        <div className="relative z-20 p-8 bg-gray-100 backdrop-blur-sm bg-opacity-20  rounded-lg shadow-lg max-w-4xl mx-auto mt-10">
+          <h1 className="text-3xl font-bold text-center mb-6 font-arsenal text-violet-700">Education Details</h1>
+        
+          <div className="space-y-6">
+            {/* Current Education */ }
 
-      
+            <div className="bg-gray-100 p-6 rounded-lg shadow-sm">
+              <h2 className="text-xl font-semibold mb-2">Institute of Science & Technology, Dhanmondi</h2>
+              <p className="text-gray-700">05/2023 - Present, Dhaka, Bangladesh - 1207</p>
+              <p className="text-gray-700">5th Semester</p>
+              <p className="text-gray-700">GPA - 3.20</p>
+            </div>
+
+            {/* Higher Secondary School Certificate */ }
+            <div className="bg-gray-100 p-6 rounded-lg shadow-sm">
+              <h2 className="text-xl font-semibold mb-2">Cantt. Public School & College, Saidpur</h2>
+              <p className="text-gray-700">06/2016 - 10/2018, Nilphamari, Bangladesh</p>
+              <p className="text-gray-700">Higher Secondary School Certificate</p>
+              <p className="text-gray-700">GPA - 4.92</p>
+            </div>
+
+            {/* Secondary School Certificate */ }
+            <InstituteCard/>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

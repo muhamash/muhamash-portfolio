@@ -6,7 +6,7 @@ const MonsterForestAnimation = dynamic( () => import( "./Forest" ), { ssr: false
 
 export default function ForestContainer() {
   return (
-    <div className="-z-10">
+    <div className="fixed inset-0 w-full h-full overflow-hidden z-0">
       <MonsterForestAnimation/>
     </div>
   )
