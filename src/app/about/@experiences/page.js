@@ -13,9 +13,9 @@ const Company = dynamic( () => import( "@/components/about/experiences/Company" 
 const companies = [
     {
         name: "XpeedLab",
-        role: "Software Developer",
+        role: "Software Engineer Intern",
         duration: "2024 - Present",
-        logo: "/logos/flyte.png",
+        logo: "/logos/xpeedlab.jpg",
         description: "XpeedLab is a leading IT solutions company specializing in SaaS products, AI-based systems, and enterprise software solutions.",
         projects: [
             {
@@ -32,9 +32,9 @@ const companies = [
     },
     {
         name: "DesignLadder",
-        role: "Full-Stack Developer",
+        role: "Jr Software Developer",
         duration: "2022 - 2024",
-        logo: "/logos/techstartup.png",
+        logo: "/logos/designLadder.jpeg",
         description: "DesignLadder is a creative agency providing web solutions, branding, and SaaS product development.",
         projects: [
             {

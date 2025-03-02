@@ -18,6 +18,7 @@
     "@typescript-eslint/eslint-plugin": "^8.25.0",
     "@typescript-eslint/parser": "^8.25.0",
     "@uidotdev/usehooks": "^2.4.1",
+    "babel-plugin-glsl": "^1.0.0",
     "framer-motion": "^12.4.7",
     "gl-matrix": "^3.4.3",
     "gsap": "^3.12.7",
@@ -33,6 +34,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "babel-loader": "^10.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
     "postcss": "^8",
