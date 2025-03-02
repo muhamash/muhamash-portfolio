@@ -7,8 +7,8 @@ const WaterShader = dynamic( () => import( "./Water" ) );
 
 export default function WaterConatainer() {
   return (
-    <div className="absolute opacity-70">
-      <WaterShader/>
+    <div className="fixed inset-0 w-full h-full overflow-hidden opacity-70 z-0">
+      <WaterShader/> 
     </div>
   )
 }

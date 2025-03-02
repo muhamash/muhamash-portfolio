@@ -125,7 +125,7 @@ const WaterShader = () => {
     };
   }, [scene, camera, renderer]);
 
-  return <div className='w-screen h-screen' ref={containerRef} />;
+  return <div className='min-w-screen min-h-screen h-[100%] w-[100%]' ref={containerRef} />;
 };
 
 // Vertex shader
