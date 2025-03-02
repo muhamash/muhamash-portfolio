@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-const MonsterForestAnimation = dynamic( () => import( "./Forest" ) );
+const MonsterForestAnimation = dynamic( () => import( "./Forest" ), { ssr: false } );
 
 export default function ForestContainer() {
   return (
