@@ -339,7 +339,7 @@ const MonsterForestAnimation = () => {
   }, [loaded, images]);
 
   return (
-    <div className="w-screen h-screen bg-black flex items-center justify-center overflow-hidden">
+    <div className="w-screen h-screen fixed bg-black flex items-center justify-center overflow-hidden">
       <canvas 
           ref={canvasRef} 
           className="w-full h-full bg-black"

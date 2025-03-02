@@ -1,7 +1,11 @@
-export default function AchievementPage() {
+
+export default  function AchievementPage() {
   return (
-    <div>
-      Achievement page
+    <div className="relative">
+      
+      <div>
+        {/* <StarConatiner/> */}
+      </div>
     </div>
   )
 }

@@ -2,12 +2,14 @@ import ForestContainer from "@/components/animations/bg/threejs/forest/ForestCon
 
 export default function EducationsPage() {
   return (
-    <div className="">
+    <div className="relative">
+      <ForestContainer />
       
-      <div>
-          <ForestContainer/>
+      <div className="relative z-20">
+         <p >hello</p>
       </div>
 
+      
     </div>
   );
 }

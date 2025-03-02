@@ -1,15 +1,16 @@
 "use client";
 
-import StarsAnimation from "./Star";
+import dynamic from 'next/dynamic.js';
 
-const StarsAnimation = dynamic( () => import( '../components/StarsAnimation' ), {
+
+const StarFieldAnimation = dynamic( () => import( './Star.jsx' ), {
     ssr: false
 } );
 
 export default function StarConatiner() {
     return (
         <div>
-            <StarsAnimation />
+            <StarFieldAnimation />
         </div>
     );
 }
