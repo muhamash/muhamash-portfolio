@@ -125,7 +125,7 @@ const WaterShader = () => {
     };
   }, [scene, camera, renderer]);
 
-  return <div ref={containerRef} style={{ width: '100%', height: '100vh' }} />;
+  return <div className='w-screen h-screen' ref={containerRef} />;
 };
 
 // Vertex shader
