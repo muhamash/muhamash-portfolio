@@ -1,9 +1,11 @@
-import AuoraContainer from "@/components/animations/bg/auora/AuoraContainer";
+import WaterShader from "@/components/animations/bg/threejs/water/Water";
 
 export default function AboutPage() {
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen w-full p-6 bg-black text-white overflow-hidden">
-      <AuoraContainer />
+      <div>
+          <WaterShader/>
+      </div>
       
       <div className="relative z-10 max-w-5xl w-full text-center">
         

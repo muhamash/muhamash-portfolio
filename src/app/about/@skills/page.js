@@ -1,8 +1,9 @@
 
-export default function page() {
+export default function SkillsPage() {
   return (
     <div className="relative">
-      {/* <SeaScene/> */}
+      {/* <SeaScene/> */ }
+      
     </div>
   )
 }

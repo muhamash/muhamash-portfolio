@@ -1,26 +1,150 @@
 "use client"
 
-import { Canvas, extend, useFrame, useThree } from '@react-three/fiber';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
-// Extend the THREE namespace to include PlaneBufferGeometry
-extend({ PlaneBufferGeometry: THREE.PlaneGeometry });
+// Water Shader Component
+const WaterShader = () => {
+  const containerRef = useRef(null);
+  const [renderer, setRenderer] = useState(null);
+  const [scene, setScene] = useState(null);
+  const [camera, setCamera] = useState(null);
 
+  // Initialize scene on component mount
+  useEffect(() => {
+    // Only run once on mount
+    if (!containerRef.current) return;
+
+    // Create scene
+    const newScene = new THREE.Scene();
+    setScene(newScene);
+
+    // Create camera
+    const fov = 30;
+    const newCamera = new THREE.PerspectiveCamera(
+      fov,
+      window.innerWidth / window.innerHeight,
+      1,
+      10000
+    );
+    newCamera.position.set(20, 10, 20);
+    newCamera.lookAt(newScene.position);
+    newScene.add(newCamera);
+    setCamera(newCamera);
+
+    // Add axis helper
+    const axis = new THREE.AxesHelper(10);
+    newScene.add(axis);
+
+    // Create renderer
+    const newRenderer = new THREE.WebGLRenderer();
+    newRenderer.setSize(window.innerWidth, window.innerHeight);
+    containerRef.current.appendChild(newRenderer.domElement);
+    setRenderer(newRenderer);
+
+    // Cleanup on unmount
+    return () => {
+      if (containerRef.current && containerRef.current.contains(newRenderer.domElement)) {
+        containerRef.current.removeChild(newRenderer.domElement);
+      }
+      newRenderer.dispose();
+    };
+  }, []);
+
+  // Setup shader and objects after initial scene creation
+  useEffect(() => {
+    if (!scene || !camera || !renderer) return;
+
+    // Create timeUniform for shader
+    const timeUniform = {
+      iGlobalTime: {
+        type: 'f',
+        value: 0.1
+      },
+      iResolution: {
+        type: 'v2',
+        value: new THREE.Vector2(window.innerWidth, window.innerHeight)
+      }
+    };
+
+    // Create shader material
+    const material = new THREE.ShaderMaterial({
+      uniforms: timeUniform,
+      vertexShader: vertexShader,
+      fragmentShader: fragmentShader
+    });
+
+    // Create water plane
+    // Using PlaneGeometry instead of PlaneBufferGeometry which is deprecated
+    const water = new THREE.Mesh(
+      new THREE.PlaneGeometry(window.innerWidth, window.innerHeight, 40), 
+      material
+    );
+    scene.add(water);
+
+    // Add sphere
+    const geometry = new THREE.SphereGeometry(10, 32, 32);
+    const sphereMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+    const sphere = new THREE.Mesh(geometry, sphereMaterial);
+    scene.add(sphere);
+
+    // Handle window resize
+    const handleResize = () => {
+      if (camera && renderer) {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        timeUniform.iResolution.value.x = window.innerWidth;
+        timeUniform.iResolution.value.y = window.innerHeight;
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Animation loop
+    const clock = new THREE.Clock();
+    let animationFrameId;
+
+    const animate = () => {
+      timeUniform.iGlobalTime.value += clock.getDelta();
+      renderer.render(scene, camera);
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      cancelAnimationFrame(animationFrameId);
+      scene.remove(water);
+      scene.remove(sphere);
+      material.dispose();
+      geometry.dispose();
+      sphereMaterial.dispose();
+    };
+  }, [scene, camera, renderer]);
+
+  return <div ref={containerRef} style={{ width: '100%', height: '100vh' }} />;
+};
+
+// Vertex shader
 const vertexShader = `
-void main()	{
-  gl_Position = vec4( position, 1.0 );
-}
+  void main() {
+    gl_Position = vec4(position, 1.0);
+  }
 `;
 
+// Fragment shader (fixed)
 const fragmentShader = `
-uniform float iGlobalTime;
+  uniform float iGlobalTime;
   uniform vec2 iResolution;
 
   const int NUM_STEPS = 8;
-  const float PI	 	= 3.1415;
-  const float EPSILON	= 1e-3;
-  const EPSILON_NRM	= 0.1 / iResolution.x;
+  const float PI = 3.1415;
+  const float EPSILON = 1e-3;
+  float EPSILON_NRM;
+  float SEA_TIME;
 
   // sea variables
   const int ITER_GEOMETRY = 3;
@@ -31,8 +155,7 @@ uniform float iGlobalTime;
   const float SEA_FREQ = 0.16;
   const vec3 SEA_BASE = vec3(0.1,0.19,0.22);
   const vec3 SEA_WATER_COLOR = vec3(0.8,0.9,0.6);
-  float SEA_TIME = iGlobalTime * SEA_SPEED;
-  mat2 octave_m = mat2(1.6,1.2,-1.2,1.6);
+  mat2 octave_m;
 
   mat3 fromEuler(vec3 ang) {
     vec2 a1 = vec2(sin(ang.x),cos(ang.x));
@@ -40,35 +163,34 @@ uniform float iGlobalTime;
     vec2 a3 = vec2(sin(ang.z),cos(ang.z));
     mat3 m;
     m[0] = vec3(
-    	a1.y*a3.y+a1.x*a2.x*a3.x,
-    	a1.y*a2.x*a3.x+a3.y*a1.x,
-    	-a2.y*a3.x
+      a1.y*a3.y+a1.x*a2.x*a3.x,
+      a1.y*a2.x*a3.x+a3.y*a1.x,
+      -a2.y*a3.x
     );
     m[1] = vec3(-a2.y*a1.x,a1.y*a2.y,a2.x);
     m[2] = vec3(
-    	a3.y*a1.x*a2.x+a1.y*a3.x,
+      a3.y*a1.x*a2.x+a1.y*a3.x,
       a1.x*a3.x-a1.y*a3.y*a2.x,
       a2.y*a3.y
     );
     return m;
   }
 
-  float hash( vec2 p ) {
+  float hash(vec2 p) {
     float h = dot(p,vec2(127.1,311.7));	
     return fract(sin(h)*43758.5453123);
   }
 
-  float noise( in vec2 p ) {
+  float noise(in vec2 p) {
     vec2 i = floor(p);
     vec2 f = fract(p);	
     vec2 u = f * f * (3.0 - 2.0 * f);
     return -1.0 + 2.0 * mix(
-    	mix(
-      	hash(i + vec2(0.0,0.0)
-      ), 
-    	hash(i + vec2(1.0,0.0)), u.x),
-    	mix(hash(i + vec2(0.0,1.0) ), 
-    	hash(i + vec2(1.0,1.0) ), u.x), 
+      mix(
+        hash(i + vec2(0.0,0.0)), 
+        hash(i + vec2(1.0,0.0)), u.x),
+      mix(hash(i + vec2(0.0,1.0)), 
+        hash(i + vec2(1.0,1.0)), u.x), 
       u.y
     );
   }
@@ -90,7 +212,6 @@ uniform float iGlobalTime;
     ret.z = 0.6+(1.0 - e.y) * 0.4;
     return ret;
   }
-
 
   float sea_octave(vec2 uv, float choppy) {
     uv += noise(uv);         
@@ -141,7 +262,7 @@ uniform float iGlobalTime;
   }
 
   vec3 getSeaColor(
-  	vec3 p,
+    vec3 p,
     vec3 n, 
     vec3 l, 
     vec3 eye, 
@@ -200,6 +321,9 @@ uniform float iGlobalTime;
   }
 
   void main() {
+    SEA_TIME = iGlobalTime * SEA_SPEED;
+    EPSILON_NRM = 0.1 / iResolution.x;
+    octave_m = mat2(1.6, 1.2, -1.2, 1.6);
     vec2 uv = gl_FragCoord.xy / iResolution.xy;
     uv = uv * 2.0 - 1.0;
     uv.x *= iResolution.x / iResolution.y;    
@@ -238,51 +362,4 @@ uniform float iGlobalTime;
   }
 `;
 
-const Ocean = () => {
-  const meshRef = useRef();
-  const { size } = useThree();
-
-  useEffect(() => {
-    meshRef.current.material.uniforms.iResolution.value.set(size.width, size.height);
-  }, [size]);
-
-  useFrame(({ clock }) => {
-    meshRef.current.material.uniforms.iGlobalTime.value = clock.getElapsedTime();
-  });
-
-  return (
-    <mesh ref={meshRef}>
-      <planeBufferGeometry args={[size.width, size.height, 40]} />
-      <shaderMaterial
-        uniforms={{
-          iGlobalTime: { value: 0.1 },
-          iResolution: { value: new THREE.Vector2(size.width, size.height) }
-        }}
-        vertexShader={vertexShader}
-        fragmentShader={fragmentShader}
-      />
-    </mesh>
-  );
-};
-
-const Sphere = () => {
-  return (
-    <mesh position={[0, 0, 0]}>
-      <sphereGeometry args={[10, 32, 32]} />
-      <meshBasicMaterial color={0xffff00} />
-    </mesh>
-  );
-};
-
-const OceanScene = () => {
-  return (
-    <Canvas>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-      <Ocean />
-      <Sphere />
-    </Canvas>
-  );
-};
-
-export default OceanScene;
+export default WaterShader;
