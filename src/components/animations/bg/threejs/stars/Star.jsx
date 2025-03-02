@@ -259,21 +259,29 @@ function fragmentShader() {
     
     // The render function is where we render the pattern to be added to the layer
     vec3 render(vec2 uv, float scale) {
-      vec2 id = floor(uv);
-      vec2 subuv = fract(uv);
-      vec2 rand = hash2(id);
-      float bokeh = abs(scale) * 1.;
-      
-      float particle = 0.;
-      
-      if(length(rand) > 1.3) {
-        vec2 pos = subuv-.5;
-        float field = length(pos);
-        particle = smoothstep(.7, 0., field);
-        particle += smoothstep(.2, 0.2 * bokeh, field);
-      }
-      return vec3(particle*2.);
-    }
+  vec2 id = floor(uv);
+  vec2 subuv = fract(uv);
+  vec2 rand = hash2(id);
+  float bokeh = abs(scale) * 1.;
+  
+  float particle = 0.;
+  vec3 color = vec3(1.0); // Default white
+  
+  if(length(rand) > 1.3) {
+    // Generate a unique color for each star based on its position
+    color = hsb2rgb(vec3(
+      rand.x * 0.1 + rand.y * 0.2 + u_time * 0.05, // Hue shifts slowly with time
+      0.5 + rand.y * 0.5,                          // Saturation 
+      0.8 + rand.x * 0.2                           // Brightness
+    ));
+    
+    vec2 pos = subuv-.5;
+    float field = length(pos);
+    particle = smoothstep(.7, 0., field);
+    particle += smoothstep(.2, 0.2 * bokeh, field);
+  }
+  return color * vec3(particle*2.);
+}
     
     vec3 renderLayer(int layer, int layers, vec2 uv, inout float opacity) {
       vec2 _uv = uv;
@@ -287,8 +295,15 @@ function fragmentShader() {
       uv += vec2(25. + sin(u_time*.1)*.2) * float(layer); // ofsetting the UV by an arbitrary amount to make the layer appear different
   
       // render
-      vec3 pass = render(uv * multiplier, scale) * .2; // render the pass
+      vec3 pass = render(uv * multiplier, scale) * .2;
+
+       vec3 layerTint = hsb2rgb(vec3(
+    float(layer) / float(layers) + u_time * 0.1, // Each layer gets a different hue that shifts with time
+    0.7,                                         // Moderate saturation
+    1.0                                          // Full brightness
+  ));
   
+  pass *= layerTint;
        // this is the opacity of the layer fading in from the "bottom"
       opacity = 1. + scale;
       float _opacity = opacity;
@@ -302,15 +317,18 @@ function fragmentShader() {
   
     void main() {
       vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution.xy) / min(u_resolution.y, u_resolution.x);
-      vec2 sample = gl_FragCoord.xy / u_resolution.xy;
+      vec2 texCoord = gl_FragCoord.xy / u_resolution.xy;
           
       vec4 fragcolour;
       
       if(u_renderpass == true) {
         
-        if(u_frame > 5) {
-          fragcolour = texture2D(u_buffer, sample) * 6.;
-        }
+        vec3 bgColor = hsb2rgb(vec3(u_time * 0.02, 0.5, 0.05)); 
+    fragcolour = vec4(bgColor, 1.0);
+    
+    if(u_frame > 5) {
+      fragcolour = texture2D(u_buffer, texCoord) * 6.;
+    }
         uv *= rotate2d(u_time*.5);
         
         float opacity = 1.;
@@ -323,7 +341,7 @@ function fragmentShader() {
   
         fragcolour *= 1./opacity_sum;
       } else {
-        fragcolour = texture2D(u_buffer, sample) * 5.;
+        fragcolour = texture2D(u_buffer, texCoord) * 5.;
       }
       
       gl_FragColor = fragcolour;

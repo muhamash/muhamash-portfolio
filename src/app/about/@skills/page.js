@@ -1,3 +1,4 @@
+import TextContainerBlackHole from "@/components/animations/bg/threejs/text/TextContainerBlackHole";
 
 export const metadata = {
   title: "About || Skills || Md Ashraful Alam",
@@ -7,7 +8,7 @@ export const metadata = {
 export default async function SkillsPage() {
   return (
     <div className="relative">
-      {/* <SeaScene/> */ }
+      <TextContainerBlackHole/>
       
     </div>
   )

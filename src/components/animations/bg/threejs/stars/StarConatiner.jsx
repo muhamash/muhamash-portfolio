@@ -9,7 +9,7 @@ const StarFieldAnimation = dynamic( () => import( './Star.jsx' ), {
 
 export default function StarConatiner() {
     return (
-        <div>
+        <div className='w-screen h-screen'>
             <StarFieldAnimation />
         </div>
     );

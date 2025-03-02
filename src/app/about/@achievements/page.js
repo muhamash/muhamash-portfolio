@@ -1,3 +1,4 @@
+import StarConatiner from "@/components/animations/bg/threejs/stars/StarConatiner";
 
 export const metadata = {
   title: "About || Achievements || Muhammad Ashraful Alam",
@@ -7,8 +8,7 @@ export const metadata = {
 export default  async function AchievementPage() {
   return (
     <div className="relative">
-      
-
+      <StarConatiner/>
     </div>
   )
 }
