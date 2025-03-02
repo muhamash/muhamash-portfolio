@@ -1,11 +1,9 @@
-import WaterShader from "@/components/animations/bg/threejs/water/Water";
+import WaterConatainer from "@/components/animations/bg/threejs/water/water/water/WaterConatainer";
 
-export default function AboutPage() {
+export default async function AboutPage() {
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen w-full bg-black text-white overflow-hidden">
-      <div className="absolute">
-          <WaterShader/>
-      </div>
+      <WaterConatainer/>
 
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl w-full px-6 text-black">
         <div>
