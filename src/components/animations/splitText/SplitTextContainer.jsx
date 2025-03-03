@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-const SplitText = dynamic( () => import( "./SplitText" ), {ssr: false} );
+const SplitText = dynamic( () => import( "./SplitText" ) );
 // const handleAnimationComplete = () => {
 //   console.log('All letters have animated!');
 // };

@@ -2,8 +2,8 @@
 
 import dynamic from "next/dynamic";
 
-const ScrollVelocity = dynamic( () => import( "./Tech" ), { ssr: false } );
-const SlideCards = dynamic( () => import( "./SlideCards" ), { ssr: false } );
+const ScrollVelocity = dynamic( () => import( "./Tech" ) );
+const SlideCards = dynamic( () => import( "./SlideCards" ) );
 
 const techStack = [
   "react",
