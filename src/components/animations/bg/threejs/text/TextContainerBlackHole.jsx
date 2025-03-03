@@ -1,15 +1,33 @@
 "use client"
 
-import { useState } from 'react';
-import AnimatedBackground from './Text';
+import { useWindowSize } from "@uidotdev/usehooks";
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
+
+const AnimatedBackground = dynamic( () => import( "./Text" ) );
 
 export default function TextContainerBlackHole() {
-  const [text, setText] = useState('Hire me\n Right now!!');
+  const [ textSize, setTextSize ] = useState( 5 );
+  const size = useWindowSize();
+  // const isSmallDevice = useMediaQuery( "only screen and (max-width : 768px)" );
+  // console.log( size );
   
+  useEffect( () =>
+  {
+    if ( size?.width > 650 )
+    {
+      setTextSize(10)
+    }
+    else
+    {
+      setTextSize(4)
+    }
+  }, [ size ] );
+
   return (
-    <div className='relative'>
-      <AnimatedBackground text={text} textSize={16} 
-          particleSize={1.2}/>
+    <div className='w-screen h-screen relative'>
+      <AnimatedBackground text={ 'Welcome to\nMuhamash!!' } textSize={ textSize }
+        particleSize={ 0.6 } />
     </div>
   );
 }

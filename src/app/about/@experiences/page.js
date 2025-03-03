@@ -55,7 +55,7 @@ export default async function ExperiencesPage ()
   
   return (
     <div className="bg-gradient backdrop-blur-md min-h-screen sticky top-0 w-full pt-[100px] px-4 md:px-7 -z-20 py-10">
-      <div className="absolute -z-50">
+      <div className="absolute -z-50 top-0">
         <ParticlesContainer />
       </div>
 

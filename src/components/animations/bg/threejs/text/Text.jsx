@@ -5,7 +5,7 @@ import * as THREE from 'three';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import { ShapeGeometry } from 'three/src/geometries/ShapeGeometry.js';
 
-const AnimatedBackground = ({ text = "FUTURE\nIS NOW", textSize = 16, particleSize = 1 }) => {
+const AnimatedBackground = ({ text , textSize, particleSize = 1 }) => {
   const containerRef = useRef(null);
   
   useEffect(() => {
@@ -113,7 +113,7 @@ const AnimatedBackground = ({ text = "FUTURE\nIS NOW", textSize = 16, particleSi
       
       for (let x = 0; x < shapes.length; x++) {
         let shape = shapes[x];
-        const amountPoints = (shape.type == 'Path') ? 1500 / 2 : 1500;
+        const amountPoints = (shape.type == 'Path') ? 1200 / 2 : 1200;
         let points = shape.getSpacedPoints(amountPoints);
         
         points.forEach((element) => {
@@ -356,8 +356,10 @@ const AnimatedBackground = ({ text = "FUTURE\nIS NOW", textSize = 16, particleSi
   }, [text, textSize, particleSize]);
   
   return (
-    <div className="relative w-full h-full">
-      <div ref={containerRef} className="absolute top-0 left-0 w-full h-full -z-10" />
+    <div className="relative min-w-screen min-h-screen">
+      <div
+        ref={ containerRef } 
+        className="fixed left-0 right-0  w-full h-full z-20" />
     </div>
   );
 };

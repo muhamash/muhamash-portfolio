@@ -150,7 +150,7 @@ const Squares = ({
   return (
     <canvas
       ref={canvasRef}
-      className="w-full h-full border-none block"
+      className="h-screen w-screen border-none block overflow-hidden"
     ></canvas>
   );
 };

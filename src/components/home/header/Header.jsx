@@ -11,11 +11,11 @@ const Socialicons = dynamic(() => import("./Stamp"));
 
 // export const dynamic = "force-static"; 
 
-export default function HeaderComponent() {
+export default async function HeaderComponent() {
     return (
-        <div className="relative z-10 min-h-screen min-w-screen flex md:flex-row flex-col md:justify-between justify-center gap-10 items-center mx-auto py-20 mb-10">
+        <div className="relative z-10 min-h-screen min-w-screen flex md:flex-row flex-col md:justify-between justify-center gap-10 items-center mx-auto py-10 mb-10">
             
-            <div className="absolute top-0 left-0 w-full h-full -z-20 opacity-30">
+            <div className="absolute top-0 md:-left-20 w-screen h-screen -z-20 opacity-30">
                 <GridContainer />
             </div>
             

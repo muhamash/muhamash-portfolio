@@ -42,7 +42,7 @@ export default function Socialicons ()
                 {
                     const IconComponent = ICON_MAPPING[ platform ] || ICON_MAPPING.default;
                     return (
-                        <li key={ platform } className="hover:text-gray-400 transition duration-200">
+                        <li key={ platform } className="hover:text-gray-400 transition duration-200  pointer-events-aut">
                             <Link href={ url } className="flex items-center gap-2">
                                 <IconComponent className="text-[16px] hover:text-blue-500 transition duration-300" />
                             </Link>
