@@ -1,15 +1,30 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 import { Sidebar } from "../about/SideBar";
 
 const ClientLayout = ( { profile, experiences, educations, skills, achievements } ) =>
 {
     const searchParams = useSearchParams();
-    const activeData = searchParams.get( "view" );
+    const router = useRouter();
 
-    const [ activePage, setActivePage ] = useState( activeData || 'profile' );
+    const getInitialPage = () =>
+    {
+        return searchParams.get( "view" ) || localStorage.getItem( "activePage" ) || "profile";
+    };
+
+    const [ activePage, setActivePage ] = useState( getInitialPage() );
+
+    useEffect( () =>
+    {
+        localStorage.setItem( "activePage", activePage );
+
+        const currentParams = new URLSearchParams( window.location.search );
+        currentParams.set( "view", activePage );
+        router.push( `?${currentParams.toString()}`, { scroll: false } );
+
+    }, [ activePage, router ] );
 
     return (
         <>
