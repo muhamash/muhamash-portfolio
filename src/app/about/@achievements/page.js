@@ -1,4 +1,6 @@
-import WaterConatainer from "@/components/animations/bg/threejs/water/water/water/WaterConatainer";
+import dynamic from "next/dynamic";
+
+const WaterConatainer = dynamic( () => import( "@/components/animations/bg/threejs/water/water/water/WaterConatainer" ) );
 
 export const metadata = {
   title: "About || Achievements || Muhammad Ashraful Alam",

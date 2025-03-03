@@ -358,8 +358,9 @@ const AnimatedBackground = ({ text , textSize, particleSize = 1 }) => {
   return (
     <div className="relative min-w-screen min-h-screen">
       <div
-        ref={ containerRef } 
-        className="fixed left-0 right-0  w-full h-full z-20" />
+        ref={ containerRef }
+        className="fixed left-0 right-0  w-full h-full z-20"
+      />
     </div>
   );
 };

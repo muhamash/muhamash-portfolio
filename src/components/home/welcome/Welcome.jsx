@@ -18,6 +18,12 @@ export default async function Welcome() {
             <div className="absolute -z-50 top-0 md:-left-20 w-screen h-screen font-arsenal">
                 <TextContainerBlackHole />
             </div>
+
+            <div className="absolute flex flex-col gap-1 md:bottom-20 md:right-0 md:left-0  bottom-10 text-center">
+                <p className="text-yellow-300 text-2xl md:text-5xl font-edu font-bold">Md Ashraful Alam</p>
+                <p className="text-yellow-100 font-arsenal font-semibold">Full stack Software Engineer</p>
+                <p className="text-yellow-100 font-arsenal font-semibold">muhammad-ashraful@outlook.com</p>
+            </div>
         </div>
     );
 }
