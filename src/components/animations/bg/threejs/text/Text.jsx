@@ -356,23 +356,8 @@ const AnimatedBackground = ({ text = "FUTURE\nIS NOW", textSize = 16, particleSi
   }, [text, textSize, particleSize]);
   
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-full">
       <div ref={containerRef} className="absolute top-0 left-0 w-full h-full -z-10" />
-      
-      <div className="absolute bottom-0 left-0 w-full flex flex-col items-center justify-end pb-12 text-white">
-        <div className="text-center">
-          <svg className="w-12 h-12 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 278.8 278.8">
-            <circle fill="#000205" cx="139.4" cy="139.4" r="139.4"/>
-            <g fill="none" stroke="#FFF" strokeWidth="6.062" strokeMiterlimit="10">
-              <path d="M214 183.4l-74.6 43.1-75.5-43.6V95.8l75.5-43.5 75.4 43.5v59.8l-11.3 6.5z"/>
-              <path d="M139.4 226.5l-18.8-38.2 18.8 10.8 75.4-43.5M63.9 95.8l75.3 43.6 75.6-43.6M139.2 139.4v59.7"/>
-            </g>
-          </svg>
-          <h1 className="text-2xl font-bold mt-4">YOUR NAME HERE <br/>
-            <span className="text-sm font-normal">Creative Developer</span>
-          </h1>
-        </div>
-      </div>
     </div>
   );
 };
