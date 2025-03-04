@@ -16,14 +16,14 @@ const GradContainer = dynamic( () => import( "@/components/animations/gradientTe
 export default async function ProjectsPage ({searchParams})
 {
   const getSearchParams = await searchParams;
-  const getProjects = getAllProjects( "all", getSearchParams?.page );
+  const getProjects = getAllProjects( getSearchParams?.tags || "all", getSearchParams?.page );
 
   
   if ( !getSearchParams?.page )
   {
     redirect("/projects?page=1");
   }
-  // console.log( getSearchParams );
+  console.log( getSearchParams );
 
   return (
     <div className="h-full relative top-0 left-0 right-0 z-20 w-full bg-gradient-to-br from-gray-900 via-slate-900 via-cyan-900">
