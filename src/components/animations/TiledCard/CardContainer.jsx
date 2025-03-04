@@ -2,7 +2,8 @@ import dynamic from "next/dynamic";
 
 const TiltedCard = dynamic( () => import( "./Crad.jsx" ) );
 
-export default async function CardContainer({src, name, height = '300px', width = '300px'}) {
+export default async function CardContainer ( { src, name, height = '300px', width = "300px" } )
+{
     return (
         <TiltedCard
             imageSrc={src}

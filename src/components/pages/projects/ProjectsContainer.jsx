@@ -16,7 +16,7 @@ export default async function ProjectsContainer ({projectPromise})
                 {
                     projects?.data?.map( ( d, i ) => (
                         <Link className="w-fit h-fit shadow-md rounded-[20px] shadow-black" href={ `/projects/${i}` } key={ i }>
-                            <CardContainer src={ d?.image } name={ d?.title } height={ "280px" } width={ "520px" } />
+                            <CardContainer src={ d?.image } name={ d?.title } height={ "280px"} width={"340px"} />
                         </Link>
                     ) )
                 }
