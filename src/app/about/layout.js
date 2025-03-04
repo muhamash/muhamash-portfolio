@@ -1,7 +1,6 @@
 import Footer from "@/components/home/footer/Footer";
 import dynamic from "next/dynamic";
 
-
 const ClientLayout = dynamic( () => import( '@/components/layouts/AboutLayout' ) );
 const SectionScrollLayout = dynamic( () => import( '@/components/layouts/SectionScrollLayout' ) );
 

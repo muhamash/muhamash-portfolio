@@ -12,9 +12,9 @@ const About = async () =>
 {
   return (
     <SectionScrollLayout
-      className={ "min-h-screen min-w-screen sticky top-0 left-0 right-0 z-20 w-full bg-gradient-to-br from-slate-900 via-gray-800 backdrop-blur-md" }
+      className={ "min-h-screen min-w-screen sticky top-0 left-0 right-0 z-20 w-full bg-gradient-to-br from-slate-800 via-gray-800 via-cyan-900 via-teal-900 backdrop-blur-md" }
     >
-      <AuoraContainer />
+      {/* <AuoraContainer /> */}
 
       <div className="max-w-6xl mx-auto text-white relative pt-20 md:px-10 px-5 z-20 overflow-hidden">
         <div className="py-10 font-arsenal">
