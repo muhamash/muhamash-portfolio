@@ -7,17 +7,38 @@ export const metadata = {
 
 const TextContainerBlackHole =dynamic(()=> import("@/components/animations/bg/threejs/text/TextContainerBlackHole"))
 const ParticlesContainer = dynamic( () => import( "@/components/animations/bg/particles/ParticlesContainer" ) );
+const GradContainer = dynamic( () => import( "@/components/animations/gradientText/GradContainer" ) );
+const CompanyGalleryConatiner = dynamic( () => import( "../../../components/home/clients/CompanyGalleryConatiner" ) );
 
 export default async function SkillsPage() {
   return (
-    <div className="relative w-screen h-full">
+    <div className="relative w-screen h-screen flex flex-col items-center justify-center">
      
       <div className="absolute -z-50 top-0 w-screen h-screen">
         <ParticlesContainer />
       </div>
-      {/* <TextContainerBlackHole/> */}
+      
 
+      <div className="flex flex-col justify-center items-center justify-between gap-10 w-full">
+
+        <GradContainer
+          showBorder={ true }
+          text={ "Organizations I've Engaged With!!" }
+          className="px-5 py-2 text-xl md:text-3xl font-arsenal"
+        />
+
+        <CompanyGalleryConatiner />
+      </div>
+
+      <div className="pt-10">
+
+        <GradContainer
+          showBorder={ false }
+          text={ "The skills i have owned!!!!" }
+          className="px-5 py-2 text-xl md:text-3xl font-arsenal"
+        />
+      </div>
 
     </div>
-  )
+  );
 }
