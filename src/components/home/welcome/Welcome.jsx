@@ -15,11 +15,11 @@ export default async function Welcome() {
                 <ParticlesContainer />
             </div>
       
-            <div className="absolute -z-50 -top-10 md:-left-20 w-screen h-screen">
+            <div className="absolute -z-50 md:-left-20 w-screen h-screen">
                 <TextContainerBlackHole />
             </div>
 
-            <div className="absolute flex flex-col gap-1 md:bottom-20 md:right-0 md:left-0  bottom-[50px] text-center">
+            <div className="absolute flex flex-col gap-1 md:bottom-20 md:right-0 md:left-0  bottom-[60px] text-center">
                 <p className="text-yellow-300 text-2xl md:text-5xl font-edu font-semibold">Md Ashraful Alam</p>
                 <p className="text-yellow-100 font-arsenal font-semibold">Full stack Software Engineer</p>
                 <p className="text-yellow-100 font-arsenal font-semibold">muhammad-ashraful@outlook.com</p>
