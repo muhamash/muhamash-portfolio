@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const tags = [
-  "All", "React.js", "Next.js", "Tailwind CSS", "Node.js", "NestJS",
-  "MySQL", "Prisma", "GraphQL", "PostgreSQL"
+  "All", "React.js", "Next.js", "Tailwind", "Node.js", "NestJS",
+  "MySQL", "Prisma", "GraphQL", "PostgreSQL", "MongoDB", "Express.js"
 ];
 
 const TagBar = () => {
