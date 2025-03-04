@@ -5,7 +5,7 @@ export default async function ProjectsContainer ({data})
 {
 
     // const size = useWindowSize();
-    console.log( data );
+    // console.log( data );
     return (
         <div className="flex flex-wrap gap-10 justify-center items-center w-full">
             {
