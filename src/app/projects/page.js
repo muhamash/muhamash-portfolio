@@ -1,4 +1,5 @@
 import ProjectsContainer from "@/components/pages/projects/ProjectsContainer";
+import TagBar from "@/components/pages/projects/Tags";
 import dynamic from "next/dynamic";
 import { redirect } from "next/navigation";
 
@@ -63,6 +64,9 @@ export default async function ProjectsPage ({searchParams})
           className="px-5 py-2 text-xl md:text-3xl font-arsenal"
         />
 
+        <div className="py-5">
+          <TagBar/>
+        </div>
         <div className="py-10">
           <ProjectsContainer data={ items } />
         </div>
