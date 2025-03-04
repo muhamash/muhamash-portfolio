@@ -28,7 +28,7 @@ const TagBar = () => {
 
   return (
     <motion.div 
-      className="w-full flex items-center justify-center flex-wrap gap-5 p-4  shadow-md bg-gradient-to-r from-cyan-900 via-teal-600 via-sky-900 via-violet-900"
+      className="w-full flex items-center justify-center flex-wrap gap-5 p-4  shadow-sm bg-gradient-to-r from-gray-900 via-teal-900 via-sky-900"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeInOut" }}

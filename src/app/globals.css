@@ -325,3 +325,64 @@
  20%,70% {left:50%}
  0%,10%,85%,100% {left:-25px}
 }
+
+/* HTML: <div class="loader"></div> */
+.loaderS {
+  width: 30px;
+  aspect-ratio: 1.154;
+  display: grid;
+  background: conic-gradient(from 149deg at top,#0000, #BF1E62 1deg 60deg,#0000 61deg);
+  animation: ls14 2s infinite cubic-bezier(0.5,500,0.5,-500);
+  transform-origin: top;
+}
+.loaderS:before,
+.loaderS:after {
+  content: "";
+  grid-area: 1/1;
+  background: conic-gradient(from 149deg at top,#0000, #FFA588 1deg 60deg,#0000 61deg);
+  transform-origin: inherit;
+  animation: inherit;
+}
+.loaderS:after {
+  background: conic-gradient(from 149deg at top,#0000, #027B7F 1deg 60deg,#0000 61deg);
+  animation-timing-function: cubic-bezier(0.5,800,0.5,-800);
+}
+@keyframes ls14{
+  100% {transform: rotate(0.2deg)}
+}
+
+/* HTML: <div class="loader"></div> */
+.loaderHast {
+  width: 20px;
+  aspect-ratio: 1;
+  background: #25b09b;
+  box-shadow: 0 0 60px 15px #25b09b;
+  transform: translate(-80px);
+  clip-path: inset(0);
+  animation:
+    l4-1 0.5s ease-in-out infinite alternate,
+    l4-2 1s   ease-in-out infinite;
+}
+@keyframes l4-1 {
+  100% {transform: translateX(80px)}
+}
+@keyframes l4-2 {
+   33% {clip-path: inset(0 0 0 -100px)}
+   50% {clip-path: inset(0 0 0 0)     }
+   83% {clip-path: inset(0 -100px 0 0)}
+}
+
+/* HTML: <div class="loader"></div> */
+.loaderNotFound {
+  width: 150px;
+  aspect-ratio: 1;
+  background:
+    radial-gradient(farthest-side,#000000 90%,#0000) 50%/8px 8px no-repeat,
+    conic-gradient(from -90deg at 15px 15px,#0000 90deg,#a8a8a2 0) 0 0/25px 25px;
+  animation: l7loaderNotFound 1s infinite;
+}
+@keyframes l7loaderNotFound {
+  0%   {background-position:50%,0 0}
+  50%  {background-position:50%,25px 0}
+  100% {background-position:50%,25px 25px}
+}

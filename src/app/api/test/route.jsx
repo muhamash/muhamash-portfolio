@@ -30,17 +30,21 @@ export async function GET(request) {
   const startIndex = (page - 1) * limit;
   const paginatedItems = filteredItems.slice(startIndex, startIndex + limit);
 
-  return new Response(JSON.stringify({
+  return new Response( JSON.stringify( {
     data: paginatedItems,
     page,
     limit,
-    totalPages,
-    totalData,
-    hasNextPage: page < totalPages,
-    hasPreviousPage: page > 1
-  }), {
+    pageData: {
+      totalPages,
+      page,
+      limit,
+      totalData,
+      hasNextPage: page < totalPages,
+      hasPreviousPage: page > 1
+    }
+  } ), {
     headers: { 'Content-Type': 'application/json' },
-  });
+  } );
 }
 
 // Sample Data
