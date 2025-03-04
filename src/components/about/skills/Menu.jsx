@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const menuItems = {
-  Frontend: ["React.js", "Next.js", "Vue.js", "Svelte"],
+  Frontend: ["React.js", "Next.js", "Vue.js", "Svelte", "HTML", "Css"],
   Backend: ["Node.js", "Nest.js", "Express.js", "Django"],
   Database: ["MongoDB", "PostgreSQL", "MySQL", "Redis"],
   DevOps: ["Docker", "Kubernetes", "CI/CD", "AWS"],
@@ -23,8 +23,8 @@ export default function DynamicMenu() {
         {Object.keys(menuItems).map((menu) => (
           <button
             key={menu}
-            className={`px-4 py-2 rounded-lg text-white transition-all duration-200 ${
-              activeMenu === menu ? "bg-violet-600 shadow-sm shadow-violet-300" : "bg-gray-700 hover:bg-gray-600"
+            className={`px-4 py-2 font-nunito rounded-lg text-white transition-all duration-200 ${
+              activeMenu === menu ? "bg-violet-600 shadow-sm shadow-violet-300" : "bg-gray-700 hover:bg-gray-600 text-violet-100"
             }`}
             onClick={() => setActiveMenu(menu)}
           >
@@ -66,8 +66,8 @@ export default function DynamicMenu() {
         transition={{ duration: 0.3 }}
         className="mt-6 p-4  bg-gray-600 backdrop-blur-sm bg-opacity-50 text-white rounded-xl shadow-md"
       >
-        <h2 className="text-xl font-bold mb-3">{activeMenu} Technologies</h2>
-        <ul className="grid grid-cols-2 gap-3">
+        <h2 className="text-xl font-bold pb-3 font-edu text-violet-100 text-center">{activeMenu} Technologies</h2>
+        <ul className="grid grid-cols-2 gap-3 font-outfit">
           {menuItems[activeMenu].map((item) => (
             <li
               key={item}
