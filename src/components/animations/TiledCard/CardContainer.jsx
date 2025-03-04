@@ -1,19 +1,17 @@
-"use client"
-
 import dynamic from "next/dynamic";
 
-const TiltedCard = dynamic( () => import( "./Crad.jsx" ), { ssr: false } );
+const TiltedCard = dynamic( () => import( "./Crad.jsx" ) );
 
-export default function CardContainer({src, name}) {
+export default async function CardContainer({src, name, height = '300px', width = '300px'}) {
     return (
         <TiltedCard
             imageSrc={src}
             altText={name}
             captionText={name}
-            containerHeight="300px"
-            containerWidth="300px"
-            imageHeight="300px"
-            imageWidth="300px"
+            containerHeight={height}
+            containerWidth={width}
+            imageHeight={height}
+            imageWidth={width}
             rotateAmplitude={ 12 }
             scaleOnHover={ 1.2 }
             showMobileWarning={ false }

@@ -1,8 +1,8 @@
 "use client";
 
-import { useSearchParams, useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
-import { Sidebar } from "../about/SideBar";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Sidebar } from "../pages/about/SideBar";
 
 const ClientLayout = ( { profile, experiences, educations, skills, achievements } ) =>
 {

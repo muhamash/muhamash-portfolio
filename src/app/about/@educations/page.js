@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-const InstituteCard = dynamic( () => import( "@/components/about/education/InstituteCard" ) );
+const InstituteCard = dynamic( () => import( "@/components/pages/about/education/InstituteCard" ) );
 const ForestContainer = dynamic( () => import( "@/components/animations/bg/threejs/forest/ForestContainer" ) );
 
 export const metadata = {

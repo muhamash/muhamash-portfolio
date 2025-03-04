@@ -14,7 +14,7 @@ const About = async () =>
     <SectionScrollLayout
       className={ "min-h-screen min-w-screen sticky top-0 left-0 right-0 z-20 w-full bg-gradient-to-br from-slate-800 via-gray-800 via-cyan-900 via-teal-900 backdrop-blur-md" }
     >
-      {/* <AuoraContainer /> */}
+      {/* <AuoraContainer /> */ }
 
       <div className="max-w-6xl mx-auto text-white relative pt-20 md:px-10 px-5 z-20 overflow-hidden">
         <div className="py-10 font-arsenal">
@@ -31,16 +31,25 @@ const About = async () =>
           <TextContainer text={ "Hey, I'm Ashraful! With 2.5 years of experience as a full-stack developer, I love working with a variety of technologies to build innovative, scalable applications. I’m passionate about staying on top of new trends, and I’ve worked with everything from the MERN stack and Next.js to Nest.js, Three.js, OpenGL, and both SQL and NoSQL databases. I’m always exploring new tools to create efficient, high-performance solutions that solve real-world problems. If you're looking to build something exciting, let’s connect and make it happen! How does that sound?" } />
 
           {/* learn more button */ }
-          <Link href={ "/about?view=skills" } className="mt-5 block bg-gradient-to-r from-yellow-500 via-cyan-600 via-blue-400 to-green-600 w-[160px] p-[1px] rounded-lg">
-            <button className="relative px-6 py-3 font-semibold text-white bg-gray-900 rounded-lg w-full group">
-              <span className="absolute inset-0 bg-gradient-to-r from-amber-500 to-green-500 rounded-lg blur-md opacity-50 group-hover:opacity-100 transition duration-300"></span>
-              <span className="relative z-10">Learn more!</span>
-            </button>
-          </Link>
+          <div className="flex gap-5">
+            <Link href={ "/about?view=skills" } className="mt-5 block bg-gradient-to-r from-yellow-500 via-cyan-600 via-blue-400 to-green-600 w-[160px] p-[1px] rounded-lg">
+              <button className="relative px-6 py-3 font-semibold text-white bg-gray-900 rounded-lg w-full group">
+                <span className="absolute inset-0 bg-gradient-to-r from-amber-500 to-green-500 rounded-lg blur-md opacity-50 group-hover:opacity-100 transition duration-300"></span>
+                <span className="relative z-10">Learn more!</span>
+              </button>
+            </Link>
+
+            <Link href={ "/projects" } className="mt-5 block bg-gradient-to-r from-violet-500 via-cyan-600 via-sky-400 to-slate-400 w-[150px] p-[1px] rounded-lg">
+              <button className="relative px-6 py-3 font-semibold text-white bg-gray-900 rounded-lg w-full group">
+                <span className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 w-[130px] p-[1px] rounded-lg  blur-md opacity-50 group-hover:opacity-100 transition duration-300"></span>
+                <span className="relative z-10">See my projects</span>
+              </button>
+            </Link>
+          </div>
         </div>
         
         {/* image */ }
-        <AboutPhoto/>
+        <AboutPhoto />
       </div>
     </SectionScrollLayout>
   )

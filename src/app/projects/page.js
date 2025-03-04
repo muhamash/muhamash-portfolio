@@ -1,3 +1,4 @@
+import ProjectsContainer from "@/components/pages/projects/ProjectsContainer";
 import dynamic from "next/dynamic";
 import { redirect } from "next/navigation";
 
@@ -8,6 +9,39 @@ export const metadata = {
 
 const AuoraContainer = dynamic( () => import( "@/components/animations/bg/auora/AuoraContainer" ) );
 const GradContainer = dynamic( () => import( "@/components/animations/gradientText/GradContainer" ) );
+
+const items = [
+  {
+    image: '/ss/hotel.png',
+    link: 'https://muhamash-portfolio.vercel.app/projects',
+    title: 'Booking hub',
+    description: 'Typescript, MERN, Tailwindcss'
+  },
+  {
+    image: '/ss/movie.png',
+    link: 'https://muhamash-portfolio.vercel.app/projects',
+    title: 'MovieDb',
+    description: 'Javascript, MERN, Tailwindcss'
+  },
+  {
+    image: '/ss/portfolio.png',
+    link: 'https://muhamash-portfolio.vercel.app/projects',
+    title: 'Portfolio',
+    description: 'Javascript, MERN, Tailwindcss'
+  },
+  {
+    image: '/ss/task.png',
+    link: 'https://muhamash-portfolio.vercel.app/projects',
+    title: 'Tasks',
+    description: 'Javascript, Mysql, MERN, Prisma'
+  },
+  {
+    image: '/ss/web.png',
+    link: 'https://muhamash-portfolio.vercel.app/projects',
+    title: 'Web',
+    description: 'Javascript, MERN, Tailwindcss'
+  }
+];
 
 export default async function ProjectsPage ({searchParams})
 {
@@ -20,14 +54,19 @@ export default async function ProjectsPage ({searchParams})
   // console.log( getSearchParams );
 
   return (
-    <div className="h-screen sticky top-0 left-0 right-0 z-20 w-screen bg-gradient-to-br from-gray-900 via-slate-700 via-cyan-900">
-      <AuoraContainer />
-      <div className=" relative pt-[100px]">
+    <div className="h-full relative top-0 left-0 right-0 z-20 w-full bg-gradient-to-br from-gray-700 via-sky-950 via-cyan-900">
+      {/* <AuoraContainer /> */}
+      <div className=" relative py-[150px]">
         <GradContainer
           showBorder={ true }
           text={ "See my all works!!" }
           className="px-5 py-2 text-xl md:text-3xl font-arsenal"
         />
+
+        <div className="py-10">
+          <ProjectsContainer data={ items } />
+        </div>
+
       </div>
     </div>
   );

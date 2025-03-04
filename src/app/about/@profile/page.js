@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-const AboutPhoto = dynamic( () => import( "@/components/home/about/AboutPhoto" ) );
+const AboutPhoto = dynamic( () => import( "@/components/pages/home/about/AboutPhoto" ) );
 const WaterConatainer = dynamic( () => import( "@/components/animations/bg/threejs/water/water/water/WaterConatainer" ) );
 
 export const metadata = {

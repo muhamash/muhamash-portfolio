@@ -1,4 +1,4 @@
-import Footer from "@/components/home/footer/Footer";
+import Footer from "@/components/pages/home/footer/Footer";
 import dynamic from "next/dynamic";
 
 const ClientLayout = dynamic( () => import( '@/components/layouts/AboutLayout' ) );

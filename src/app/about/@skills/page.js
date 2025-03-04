@@ -1,4 +1,4 @@
-import DynamicMenu from "@/components/about/skills/Menu";
+import DynamicMenu from "@/components/pages/about/skills/Menu";
 import dynamic from "next/dynamic";
 
 export const metadata = {
@@ -9,7 +9,7 @@ export const metadata = {
 const TextContainerBlackHole =dynamic(()=> import("@/components/animations/bg/threejs/text/TextContainerBlackHole"))
 const ParticlesContainer = dynamic( () => import( "@/components/animations/bg/particles/ParticlesContainer" ) );
 const GradContainer = dynamic( () => import( "@/components/animations/gradientText/GradContainer" ) );
-const CompanyGalleryConatiner = dynamic( () => import( "../../../components/home/clients/CompanyGalleryConatiner" ) );
+const CompanyGalleryConatiner = dynamic( () => import( "../../../components/pages/home/clients/CompanyGalleryConatiner" ) );
 
 export default async function SkillsPage() {
   return (

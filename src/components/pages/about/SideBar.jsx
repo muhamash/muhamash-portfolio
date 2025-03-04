@@ -4,8 +4,8 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import HireMeButton from '../common/HireMeButton';
-import Resume from '../common/Resume';
+import HireMeButton from '../../common/HireMeButton';
+import Resume from '../../common/Resume';
 import { NavLinks } from "./NavLinks";
 
 export const Sidebar = ({ activePage, setActivePage }) => {

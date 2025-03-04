@@ -2,12 +2,12 @@ import CardContainer from "@/components/animations/TiledCard/CardContainer";
 import Link from "next/link";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
-export default function AboutPhoto() {
+export default async function AboutPhoto() {
     return (
         <div className="w-ful flex flex-col items-center justify-center gap-3">
             <CardContainer src={ "/photo.jpeg" } name={ "Muhammad Ashraful Alam" } />
             <div className="flex gap-5 relative text-white">
-                <Link href="https://github.com" className="hover:text-green-400 hover:scale-110 transition-all duration-150">
+                <Link href="https://github.com/muhamash" className="hover:text-green-400 hover:scale-110 transition-all duration-150">
                     <FaGithub size={ 24 } />
                 </Link>
                 <Link href="https://linkedin.com" className="hover:text-green-400 hover:scale-110 transition-all duration-150">

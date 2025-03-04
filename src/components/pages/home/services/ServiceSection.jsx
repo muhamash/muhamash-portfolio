@@ -1,4 +1,4 @@
-import TechSlider from "../../animations/sliders/techStacks/TechSlider";
+import TechSlider from "../../../animations/sliders/techStacks/TechSlider";
 
 export default function ServiceSection() {
   return (
