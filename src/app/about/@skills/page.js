@@ -1,3 +1,4 @@
+import DynamicMenu from "@/components/about/skills/Menu";
 import dynamic from "next/dynamic";
 
 export const metadata = {
@@ -12,14 +13,24 @@ const CompanyGalleryConatiner = dynamic( () => import( "../../../components/home
 
 export default async function SkillsPage() {
   return (
-    <div className="relative w-screen h-screen flex flex-col items-center justify-center">
+    <div className="relative w-full h-full flex flex-col items-center justify-center pt-10 pb-10">
      
       <div className="absolute -z-50 top-0 w-screen h-screen">
         <ParticlesContainer />
       </div>
+
+      <div className="flex flex-col gap-3 pt-20">
+        <GradContainer
+          showBorder={ false }
+          text={ "The skills i have owned!!!!" }
+          className="px-5 py-2 text-xl md:text-3xl font-arsenal"
+        />
+
+        <DynamicMenu/>
+      </div>
       
 
-      <div className="flex flex-col justify-center items-center justify-between gap-10 w-full">
+      <div className="flex flex-col justify-center items-center justify-between gap-10 w-full pt-10">
 
         <GradContainer
           showBorder={ true }
@@ -28,15 +39,6 @@ export default async function SkillsPage() {
         />
 
         <CompanyGalleryConatiner />
-      </div>
-
-      <div className="pt-10">
-
-        <GradContainer
-          showBorder={ false }
-          text={ "The skills i have owned!!!!" }
-          className="px-5 py-2 text-xl md:text-3xl font-arsenal"
-        />
       </div>
 
     </div>
