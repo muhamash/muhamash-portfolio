@@ -29,7 +29,7 @@ const ICON_MAPPING = {
 const socialprofils = {
     github: "https://github.com/muhamash",
     facebook: "https://facebook.com/dott.ash",
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/in/md-ashraful-alam-94b62a16b/",
     twitter: "https://twitter.com",
 };
 

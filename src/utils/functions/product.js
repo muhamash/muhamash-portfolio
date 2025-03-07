@@ -2,7 +2,7 @@
 
 export const getAllProjects = async (tags, page=1) => {
     try {
-        const response = await fetch(`http://localhost:3000/api/test?tags=${encodeURIComponent(tags)}&page=${page}`);
+        const response = await fetch(`${process.env.NEXT_BASE_PUBLIC_URL}/api/test?tags=${encodeURIComponent(tags)}&page=${page}`);
         
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
