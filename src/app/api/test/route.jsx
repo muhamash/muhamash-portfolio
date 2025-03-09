@@ -1,27 +1,34 @@
-export const dynamic = 'force-dynamic';
+import { projects } from "@/utils/demo/projectsDemo";
+
+export const dynamic = "force-dynamic";
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  const tagsParam = searchParams.get('tags'); 
-  const page = parseInt(searchParams.get('page')) || 1;
-  const limit = parseInt(searchParams.get('limit')) || 4;
+  const categoryParam = searchParams.get("category") || "all";
+  const nameParam = searchParams.get("name") || "all"; 
+  const page = parseInt(searchParams.get("page")) || 1;
+  const limit = parseInt(searchParams.get("limit")) || 4;
 
-  let filteredItems = items; 
+  let filteredItems = projects;
 
-  if (tagsParam) {
-    let queryTags = tagsParam.split(',')
-      .map(tag => tag.trim().toLowerCase())
-      .filter(tag => tag !== '');
+  console.log("Filters Applied:", { categoryParam, nameParam });
 
-    if (!queryTags.includes('all') && queryTags.length > 0) {
-      filteredItems = items.filter(item => 
-        queryTags.some(queryTag => 
-          item.tags.some(itemTag => 
-            itemTag.toLowerCase() === queryTag
-          )
-        )
-      );
-    }
+  // If category is NOT "all", filter by category
+  if (categoryParam.toLowerCase() !== "all") {
+    filteredItems = filteredItems.filter(
+      project => project.type.toLowerCase() === categoryParam.toLowerCase()
+    );
+  }
+
+  // If nameParam is NOT "all" or "undefined", filter by technology names
+  if (nameParam.toLowerCase() !== "all" && nameParam.toLowerCase() !== "undefined") {
+    const queryNames = nameParam.split(",").map(name => name.trim().toLowerCase());
+
+    filteredItems = filteredItems.filter(project =>
+      queryNames.some(queryName =>
+        project.technologies.some(tech => tech.name.toLowerCase() === queryName)
+      )
+    );
   }
 
   // Pagination logic
@@ -30,30 +37,20 @@ export async function GET(request) {
   const startIndex = (page - 1) * limit;
   const paginatedItems = filteredItems.slice(startIndex, startIndex + limit);
 
-  return new Response( JSON.stringify( {
-    data: paginatedItems,
-    page,
-    limit,
-    pageData: {
-      totalPages,
+  return new Response(
+    JSON.stringify({
+      data: paginatedItems,
       page,
       limit,
-      totalData,
-      hasNextPage: page < totalPages,
-      hasPreviousPage: page > 1
-    }
-  } ), {
-    headers: { 'Content-Type': 'application/json' },
-  } );
+      pageData: {
+        totalPages,
+        page,
+        limit,
+        totalData,
+        hasNextPage: page < totalPages,
+        hasPreviousPage: page > 1,
+      },
+    }),
+    { headers: { "Content-Type": "application/json" } }
+  );
 }
-
-// Sample Data
-const items = [
-  { image: '/ss/hotel.png', tags: ["node", "nest", "next"], link: 'https://muhamash-portfolio.vercel.app/projects', title: 'Booking hub', description: 'Typescript, MERN, Tailwindcss' },
-  { image: '/ss/movie.png', tags: ["node", "nest", "tailwind"], link: 'https://muhamash-portfolio.vercel.app/projects', title: 'MovieDb', description: 'Javascript, MERN, Tailwindcss' },
-  { image: '/ss/portfolio.png', tags: ["React.js", "nest", "tailwind"], link: 'https://muhamash-portfolio.vercel.app/projects', title: 'Portfolio', description: 'Javascript, MERN, Tailwindcss' },
-  { image: '/ss/task.png', tags: ["React.js", "next", "tailwind"], link: 'https://muhamash-portfolio.vercel.app/projects', title: 'Tasks', description: 'Javascript, Mysql, MERN, Prisma' },
-  { image: '/ss/web.png', tags: ["React.js", "mysql"], link: 'https://muhamash-portfolio.vercel.app/projects', title: 'Web', description: 'Javascript, MERN, Tailwindcss' },
-  { image: '/ss/web.png', tags: ["React.js", "mongodb"], link: 'https://muhamash-portfolio.vercel.app/projects', title: 'Web', description: 'Javascript, MERN, Tailwindcss' },
-  { image: '/ss/hotel.png', tags: ["React.js", "postgres"], link: 'https://muhamash-portfolio.vercel.app/projects', title: 'Web', description: 'Javascript, MERN, Tailwindcss' }
-];

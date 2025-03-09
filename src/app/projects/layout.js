@@ -8,7 +8,7 @@ export default async function ProjectLayout ( { filters, allProjects } )
 {
   return (
     <>
-      <SectionScrollLayout className={ "flex md:flex-row flex-col justify-center items-center w-full h-screen py-20 bg-white px-10" }>
+      <SectionScrollLayout className={ "flex md:flex-row flex-col justify-center items-start w-full h-screen py-20 bg-white px-10 gap-10" }>
         { filters }
         { allProjects }
       </SectionScrollLayout>

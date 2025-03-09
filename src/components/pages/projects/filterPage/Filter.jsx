@@ -4,7 +4,6 @@ import { projects } from "@/utils/demo/projectsDemo";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useMemo } from "react";
-import { Badge } from "../ui/badge";
 import ProjectFilter from "./Filters";
 
 export default function Filter() {
@@ -50,7 +49,7 @@ export default function Filter() {
 
   return (
     <div className=" flex flex-col gap-5">
-      { hasActiveFilters && (
+      {/* { hasActiveFilters && (
         <div className="flex items-center">
           <span className="text-sm font-medium mr-2">Active filters:</span>
           { typeParam !== "all" && (
@@ -64,7 +63,7 @@ export default function Filter() {
             </Badge>
           ) ) }
         </div>
-      ) }
+      ) } */}
 
       { !isMobile && (
         <div className="w-fit rounded-[10px]">

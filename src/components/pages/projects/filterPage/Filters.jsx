@@ -22,7 +22,7 @@ const ProjectFilter = ({ selectedType, setSelectedTech, selectedTech }) => {
     };
 
     const handleTypeClick = (type) => {
-        updateSearchParams("type", type === "all" ? "" : type);
+        updateSearchParams("type", type);
     };
 
     // console.log( selectedTech );
@@ -56,7 +56,7 @@ const ProjectFilter = ({ selectedType, setSelectedTech, selectedTech }) => {
 
     return (
         <div className="w-full transition-all rounded-[8px] bg-gradient-to-r from-violet-500 via-cyan-600 via-sky-400 to-slate-400 bg-opacity-70  p-[1px]">
-            <div className="space-y-6 rounded-[8px] shadow-[10px] p-4 bg-slate-100 backdrop-blur-md bg-opacity-90">
+            <div className="space-y-6 rounded-[8px] shadow-[10px]  p-4 bg-slate-100 backdrop-blur-md bg-opacity-90">
                 <div className="space-y-3">
                     <div className="flex items-center justify-between">
                         <h3 className="text-lg font-semibold text-gray-700 font-arsenal">Project Type</h3>
