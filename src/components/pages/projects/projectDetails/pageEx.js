@@ -21,7 +21,7 @@ export default async function ProjectsPage ({searchParams})
   
   if ( !getSearchParams?.page )
   {
-    redirect("/projects?page=1");
+    redirect("/projects?&type=&tech=page=1");
   }
   // console.log( getSearchParams );
 
