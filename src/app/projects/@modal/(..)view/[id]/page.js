@@ -1,3 +1,4 @@
+import Modal from "@/components/common/Modal";
 import { redirect } from "next/navigation";
 
 export default async function ProjectDetailsPage({ params, searchParams }) {
@@ -19,9 +20,11 @@ export default async function ProjectDetailsPage({ params, searchParams }) {
   }
 
   return (
-    <div className="bg-gray-200 text-black text-xl h-screen w-screen flex items-center justify-center">
-      <p>project index : {getParams?.id}</p>
-      <p className="font-code text-red-600 text-4xl">Under construction site!!</p>
-    </div>
+    <Modal>
+      <div className="bg-gray-200 text-black text-xl h-full w-full flex items-center justify-center p-5 z-50">
+        <p>project index : { getParams?.id }</p>
+        <p className="font-code text-red-600 text-4xl">Under construction site!!</p>
+      </div>
+    </Modal>
   );
 }

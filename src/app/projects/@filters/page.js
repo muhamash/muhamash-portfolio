@@ -13,7 +13,7 @@ export default async function FilterPage ({searchParams})
   
   return (
     <div className="relative flex items-center justify-between w-[320px] h-full">
-      <Suspense fallback={ <p>loading filter!!</p> }>
+      <Suspense fallback={ <div className="loaderFetch"></div> }>
         <Filter />
       </Suspense>
     </div>

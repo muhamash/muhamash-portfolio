@@ -78,7 +78,7 @@ export default function Filter() {
               ) }
             </div>
 
-            <Suspense fallback={ <p>Loading project filters!!!</p> }>
+            <Suspense fallback={ <div className="loaderFetch"></div> }>
               <ProjectFilter
                 selectedType={ typeParam }
                 selectedTech={ selectedTech }
