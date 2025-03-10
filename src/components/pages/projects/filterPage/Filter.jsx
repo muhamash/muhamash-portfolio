@@ -2,21 +2,25 @@
 
 import { projects } from "@/utils/demo/projectsDemo";
 import { useWindowSize } from "@uidotdev/usehooks";
+import { Filter } from 'lucide-react';
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useMemo } from "react";
+import { Suspense, useMemo, useState } from "react";
 import { Button } from "../ui/button";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "../ui/Sheet";
 import ProjectFilter from "./Filters";
 
-export default function Filter() {
+export default function FilterProject() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
   const windowSize = useWindowSize();
-  const isMobile = windowSize.width < 500;
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const isMobile = windowSize.width <= 767;
 
   const typeParam = searchParams.get("type") || "all";
   const techParam = searchParams.get("tech");
-  const selectedTech = techParam ? techParam.split(",") : [];
+  const selectedTech = techParam ? techParam.split( "," ) : [];
+  const hasActiveFilters = typeParam !== "all" || selectedTech.length > 0;
 
   // Memoized filtered projects to prevent unnecessary re-renders
   const filteredProjects = useMemo( () =>
@@ -71,7 +75,7 @@ export default function Filter() {
                   variant="ghost"
                   size="sm"
                   onClick={ handleClearFilters }
-                  className="text-xs text-rose-50 h-auto py-1 px-2  font-nunito hover:text-foreground bg-rose-700"
+                  className="text-xs text-rose-50 h-auto py-1 px-2  font-nunito hover:text-slate-700 bg-rose-700"
                 >
                   Clear filters
                 </Button>
@@ -89,7 +93,48 @@ export default function Filter() {
             </Suspense>
           </div>
         </div>
-      ) }
+      )
+      }
+
+      {
+        isMobile && (
+          <Sheet open={ isFilterOpen } onOpenChange={ setIsFilterOpen }>
+            <SheetTrigger asChild>
+              <Button variant="primary" className="w-fit font-arsenal font-bold">
+                <Filter size={ 10 } className="mr-2" />
+                Filters
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-80 sm:w-[350px]">
+              <SheetHeader>
+                <SheetTitle>
+                  <div className="flex items-center justify-between my-4">
+                    <h2 className="font-bold font-arsenal text-[20px] text-violet-100">Filters</h2>
+
+                    { ( typeParam !== "all" || selectedTech.length > 0 ) && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={ handleClearFilters }
+                        className="text-xs text-rose-50 h-auto py-1 px-2  font-nunito hover:text-slate-700 bg-rose-700"
+                      >
+                        Clear filters
+                      </Button>
+                    ) }
+                  </div>
+                </SheetTitle>
+              </SheetHeader>
+              <ProjectFilter
+                selectedType={ typeParam }
+                selectedTech={ selectedTech }
+                setSelectedTech={ ( value ) =>
+                  updateSearchParams( "tech", value.join( "," ) )
+                }
+              />
+            </SheetContent>
+          </Sheet>
+        )
+      }
     </div>
   );
 }

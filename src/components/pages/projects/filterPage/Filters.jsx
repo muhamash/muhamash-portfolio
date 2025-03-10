@@ -9,6 +9,9 @@ const ProjectFilter = ({ selectedType, setSelectedTech, selectedTech }) => {
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const router = useRouter();
+    // const size = useWindowSize();
+
+    // const isMobile = size < 767;
 
     const updateSearchParams = (key, value) => {
         const params = new URLSearchParams(searchParams.toString());

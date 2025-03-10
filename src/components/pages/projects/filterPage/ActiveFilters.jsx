@@ -15,7 +15,7 @@ export default function ActiveFilters() {
     return (
         <>
             {hasActiveFilters && (
-                <div className="flex flex-wrap items-center place-self-start px-4 sm:px-6 md:px-10 w-full bg-gray-500 p-2 z-20 overflow-x-auto whitespace-nowrap rounded-lg shadow-md">
+                <div className="flex flex-wrap items-center place-self-start px-4 sm:px-6 md:px-10 w-full bg-gray-500 p-2 z-20 overflow-x-auto whitespace-nowrap shadow-md">
                     <span className="text-sm mr-2 text-yellow-50 font-outfit">Active filters:</span>
 
                     {typeParam !== "all" && (

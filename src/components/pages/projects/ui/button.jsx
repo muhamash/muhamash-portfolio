@@ -14,7 +14,7 @@ const Button = ({
     "inline-flex items-center justify-center rounded-md font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none rounded-[3px]",
     {
       // Variants
-      "bg-sky-600 text-white hover:bg-blue-500 focus:ring-sky-400": variant === "primary",
+      "bg-sky-600 text-white hover:bg-cyan-500 focus:ring-sky-400": variant === "primary",
       "bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-400": variant === "secondary",
       "border border-gray-300 text-gray-700 bg-transparent hover:bg-gray-100 focus:ring-gray-400":
         variant === "outline",

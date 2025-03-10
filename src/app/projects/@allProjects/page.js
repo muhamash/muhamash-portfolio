@@ -5,7 +5,7 @@ import { getAllProjects } from "@/utils/functions/product";
 export default async function AllProjectsPage ( { searchParams } )
 {
   const getSearchParams = await searchParams;
-  console.log( getSearchParams );
+  // console.log( getSearchParams );
 
   const projectsData = await getAllProjects( getSearchParams?.type, getSearchParams?.tech, getSearchParams?.page );
   // console.log( projectsData );
