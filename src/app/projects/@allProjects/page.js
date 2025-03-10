@@ -10,7 +10,7 @@ export default async function AllProjectsPage ( { searchParams } )
   // console.log( projectsData );
 
   return (
-    <div className="flex items-center justify-between md:w-2/3 w-full">
+    <div className="sticky flex items-center justify-between md:w-2/3 w-full h-full">
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 w-full">
         {
           projectsData?.data?.map( ( project, i ) => (

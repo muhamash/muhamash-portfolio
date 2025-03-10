@@ -5,7 +5,7 @@ import { Badge } from '../ui/badge';
 
 const ProjectCard = async({ project, index }) => {
   return (
-    <Link href={`/project/${project?.id}`} className="block">
+    <Link href={`/projects/${project?.id}`} className="block">
       <Card className={`h-full overflow-hidden bg-card transition-all duration-300 hover:shadow-lg hover:scale-[1.02] animate-slide-up`}
            style={{ animationDelay: `${index * 0.05}s` }}>
         <div className="relative aspect-video overflow-hidden">

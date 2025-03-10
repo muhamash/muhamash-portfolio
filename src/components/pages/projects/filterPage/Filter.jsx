@@ -48,7 +48,7 @@ export default function Filter() {
   const hasActiveFilters = typeParam !== "all" || selectedTech.length > 0;
 
   return (
-    <div className=" flex flex-col gap-5">
+    <div className="w-full h-full flex flex-col gap-5">
       {/* { hasActiveFilters && (
         <div className="flex items-center">
           <span className="text-sm font-medium mr-2">Active filters:</span>

@@ -7,7 +7,7 @@ export async function GET(request) {
   const categoryParam = searchParams.get("category") || "all";
   const nameParam = searchParams.get("name") || "all"; 
   const page = parseInt(searchParams.get("page")) || 1;
-  const limit = parseInt(searchParams.get("limit")) || 4;
+  const limit = parseInt(searchParams.get("limit")) || 8;
 
   let filteredItems = projects;
 
