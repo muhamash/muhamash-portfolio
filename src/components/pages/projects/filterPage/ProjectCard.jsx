@@ -6,7 +6,7 @@ import { Badge } from '../ui/badge';
 const ProjectCard = async({ project, index }) => {
   return (
     <Link href={`/projects/${project?.id}`} className="block">
-      <Card className={`h-full overflow-hidden bg-card transition-all duration-300 hover:shadow-lg hover:scale-[1.02] animate-slide-up`}
+      <Card className={`h-full overflow-hidden rounded-[8px] transition-all duration-300 hover:shadow-lg hover:scale-[1.02] animate-slide-up`}
            style={{ animationDelay: `${index * 0.05}s` }}>
         <div className="relative aspect-video overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent z-10" />
@@ -16,24 +16,24 @@ const ProjectCard = async({ project, index }) => {
             className="w-full h-full object-cover transition-transform duration-700 ease-in-out hover:scale-105"
           />
           <div className="absolute top-2 right-2 z-20">
-            <Badge variant="secondary" className="text-xs font-medium capitalize bg-secondary/80 backdrop-blur-sm">
+            <Badge className="text-xs  capitalize bg-secondary/80 backdrop-blur-sm font-nunito text-violet-100 font-semibold border-[0.2px] border-yellow-50">
               {project?.type}
             </Badge>
           </div>
         </div>
 
         <CardContent className="p-4 pb-0 space-y-2.5">
-          <h3 className="font-medium text-lg tracking-tight">{project?.title}</h3>
-          <p className="text-sm text-muted-foreground line-clamp-2">{project?.description}</p>
+          <h3 className="text-lg text-cyan-50 tracking-tight font-arsenal font-semibold">{project?.title}</h3>
+          <p className="text-sm font-outfit text-violet-100 line-clamp-2">{project?.description}</p>
           
           <div className="flex flex-wrap gap-1.5 pt-1">
             {project?.technologies.slice(0, 3).map((tech) => (
-              <Badge key={tech?.name} variant="outline" className="text-xs bg-secondary/50 hover:bg-secondary">
+              <Badge key={tech?.name} variant="outline" className="text-xs bg-secondary/50 hover:bg-secondary text-yellow-50 font-code">
                 {tech?.name}
               </Badge>
             ))}
             {project?.technologies?.length > 3 && (
-              <Badge variant="outline" className="text-xs bg-secondary/50 hover:bg-secondary">
+              <Badge variant="outline" className="text-xs bg-secondary/50 hover:bg-secondary text-teal-400 font-bold font-code">
                 +{project?.technologies?.length - 3}
               </Badge>
             )}
@@ -41,9 +41,9 @@ const ProjectCard = async({ project, index }) => {
         </CardContent>
         
         <CardFooter className="p-4 pt-3 flex items-center justify-between">
-          <span className="text-xs text-muted-foreground">
+          {/* <span className="text-xs text-muted-foreground">
             Updated {new Date(project?.updatedAt).toLocaleDateString()}
-          </span>
+          </span> */}
           
           <div className="flex items-center space-x-2">
             {/* {project?.repoUrl && (

@@ -55,7 +55,7 @@ const ProjectFilter = ({ selectedType, setSelectedTech, selectedTech }) => {
     });
 
     return (
-        <div className="w-full transition-all rounded-[8px] bg-gradient-to-r from-violet-500 via-cyan-600 via-sky-400 to-slate-400 bg-opacity-70  p-[1px]">
+        <div className="w-full transition-all rounded-[8px] bg-gradient-to-r from-violet-500 via-cyan-600 via-sky-400 to-slate-400 bg-opacity-70  p-[2px]">
             <div className="space-y-6 rounded-[8px] shadow-[10px]  p-4 bg-slate-100 backdrop-blur-md bg-opacity-90">
                 <div className="space-y-3">
                     <div className="flex items-center justify-between">

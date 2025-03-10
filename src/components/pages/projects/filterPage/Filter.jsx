@@ -48,7 +48,7 @@ export default function Filter() {
   const hasActiveFilters = typeParam !== "all" || selectedTech.length > 0;
 
   return (
-    <div className="w-full h-full flex flex-col gap-5">
+    <div className="w-full h-full flex flex-col gap-5 bg-slate-500 backdrop-blur-sm bg-opacity-50 rounded-[8px]">
       {/* { hasActiveFilters && (
         <div className="flex items-center">
           <span className="text-sm font-medium mr-2">Active filters:</span>
@@ -66,10 +66,10 @@ export default function Filter() {
       ) } */}
 
       { !isMobile && (
-        <div className="w-fit rounded-[10px]">
-          <div className="sticky top-24 bg-background p-4 rounded-[8px] border">
+        <div className="w-fit rounded-[8px]">
+          <div className="sticky top-24 bg-background p-4 rounded-[8px] border-slate-600 border-[0.5px]">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="font-medium text-black">Filters</h2>
+              <h2 className="font-bold font-arsenal text-[20px] text-violet-100">Filters</h2>
             </div>
 
             <Suspense fallback={ <p>Loading project filters!!!</p> }>

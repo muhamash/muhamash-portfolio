@@ -1,4 +1,5 @@
 import ProjectCard from "@/components/pages/projects/filterPage/ProjectCard";
+import Pagination from "@/components/pages/projects/Pagination";
 import { getAllProjects } from "@/utils/functions/product";
 
 export default async function AllProjectsPage ( { searchParams } )
@@ -10,14 +11,15 @@ export default async function AllProjectsPage ( { searchParams } )
   // console.log( projectsData );
 
   return (
-    <div className="sticky flex items-center justify-between md:w-2/3 w-full h-full">
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 w-full">
+    <div className="relative flex flex-col items-center justify-between  w-full h-full">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-5 w-full">
         {
           projectsData?.data?.map( ( project, i ) => (
             <ProjectCard key={ i } project={ project } index={ i } />
           ) )
         }
       </div>
+      <Pagination totalPages={ projectsData?.pageData?.totalPages } />
     </div>
   );
 }
