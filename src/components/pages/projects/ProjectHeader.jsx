@@ -16,7 +16,7 @@ export default async function ProjectHeader ()
 
             <div className="h-fit max-w-[700px] text-center px-3">
                 {/* animation */ }
-                <SplitTextContainer className={"text-xl font-edu"} delay={50} text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facilis quas aliquam odio vero nesciunt voluptate laboriosam delectus in facere? Tempora accusamus atque dolor, optio nam tenetur consequuntur, voluptate expedita, laboriosam tempore laborum nobis. Architecto, culpa. Nam voluptas enim unde." />
+                <SplitTextContainer className={"text-xl font-edu"} delay={1} text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus facilis quas aliquam odio vero nesciunt voluptate laboriosam delectus in facere? Tempora accusamus atque dolor, optio nam tenetur consequuntur, voluptate expedita, laboriosam tempore laborum nobis. Architecto, culpa. Nam voluptas enim unde." />
             </div>
             
         </div>

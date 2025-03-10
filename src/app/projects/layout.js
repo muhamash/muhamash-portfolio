@@ -2,6 +2,7 @@ import Footer from "@/components/pages/home/footer/Footer";
 import ActiveFilters from "@/components/pages/projects/filterPage/ActiveFilters";
 import ProjectHeader from "@/components/pages/projects/ProjectHeader";
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Muhamash || Projects",
@@ -27,7 +28,9 @@ export default async function ProjectLayout ( { filters, allProjects , modal} )
 
         <div className={ "flex md:flex-row flex-col justify-center items-start w-full h-full pb-20 md:px-10 px-5 gap-10 z-20" }>
           { filters }
-          { allProjects }
+          <Suspense fallback={<p>Reading the connection!!</p>}>
+            { allProjects }
+          </Suspense>
           {/* {children} */ }
         </div>
 

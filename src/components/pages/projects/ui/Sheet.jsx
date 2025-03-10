@@ -56,7 +56,7 @@ const SheetContent = (({ side = "right", className, children, ...props }, ref) =
     >
       {children}
       <SheetPrimitive.Close className="absolute right-2 top-2 rounded-sm opacity-90 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none text-violet-900 bg-slate-200">
-        <X className="h-4 w-4" />
+        <X className="h-5 w-8" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
     </SheetPrimitive.Content>
@@ -112,6 +112,7 @@ SheetDescription.displayName = SheetPrimitive.Description.displayName
 
 export
 {
-    Sheet, SheetClose,
-    SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetOverlay, SheetPortal, SheetTitle, SheetTrigger
+  Sheet, SheetClose,
+  SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetOverlay, SheetPortal, SheetTitle, SheetTrigger
 }
+
