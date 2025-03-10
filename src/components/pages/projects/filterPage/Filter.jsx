@@ -58,11 +58,11 @@ export default function Filter() {
   };
 
   return (
-    <div className="w-full h-full flex flex-col gap-5 bg-slate-500 backdrop-blur-sm bg-opacity-50 rounded-[8px]">
+    <div className="w-full h-full flex flex-col gap-5  backdrop-blur-sm rounded-[8px]">
 
       { !isMobile && (
         <div className="w-fit rounded-[8px]">
-          <div className="sticky top-24 bg-background p-4 rounded-[8px] border-slate-600 border-[0.5px]">
+          <div className="sticky top-24 bg-sky-950 p-4 rounded-[8px] border-slate-600 border-[0.5px]">
             <div className="flex items-center justify-between mb-4">
               <h2 className="font-bold font-arsenal text-[20px] text-violet-100">Filters</h2>
 
