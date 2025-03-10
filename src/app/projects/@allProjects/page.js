@@ -11,8 +11,8 @@ export default async function AllProjectsPage ( { searchParams } )
   // console.log( projectsData );
 
   return (
-    <div className="relative flex flex-col items-center justify-between  w-full h-full">
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-5 w-full">
+    <div className="flex flex-col items-center justify-between gap-20 w-full h-full">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-5 w-full h-full">
         {
           projectsData?.data?.map( ( project, i ) => (
             <ProjectCard key={ i } project={ project } index={ i } />
