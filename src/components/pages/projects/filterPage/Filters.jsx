@@ -16,11 +16,13 @@ const ProjectFilter = ({ selectedType, setSelectedTech, selectedTech }) => {
     const updateSearchParams = (key, value) => {
         const params = new URLSearchParams(searchParams.toString());
         if (value && value.length > 0) {
-            params.set(key, value);
+            params.set( key, value );
+            params.set("page", "1");
         } else {
             params.delete(key);
         }
 
+        // console.log(`${pathname}?${params.toString()}`)
         router.replace(`${pathname}?${params.toString()}`, { scroll: false });
     };
 
