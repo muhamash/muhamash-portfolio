@@ -8,7 +8,7 @@ export default async function FilterPage ({searchParams})
     
   if ( !getSearchParams?.page )
   {
-    redirect("/projects?type=all&tech=Javascript&page=1");
+    redirect("/projects?type=all&page=1");
   }
   
   return (
