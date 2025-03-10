@@ -4,6 +4,7 @@ import { projects } from "@/utils/demo/projectsDemo";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useMemo } from "react";
+import { Button } from "../ui/button";
 import ProjectFilter from "./Filters";
 
 export default function Filter() {
@@ -44,32 +45,37 @@ export default function Filter() {
 
     router.replace(`${pathname}?${params.toString()}`, { scroll: false });
   };
+  
+  // console.log( searchParams );
 
-  const hasActiveFilters = typeParam !== "all" || selectedTech.length > 0;
+  const handleClearFilters = () =>
+  {
+    const params = new URLSearchParams( searchParams.toString() );
+    params.delete( "tech" );
+    params.set( "type", "all" );
+
+    router.replace( `${pathname}?${params.toString()}`, { scroll: false } );
+  };
 
   return (
     <div className="w-full h-full flex flex-col gap-5 bg-slate-500 backdrop-blur-sm bg-opacity-50 rounded-[8px]">
-      {/* { hasActiveFilters && (
-        <div className="flex items-center">
-          <span className="text-sm font-medium mr-2">Active filters:</span>
-          { typeParam !== "all" && (
-            <Badge variant="danger" className="capitalize mr-2">
-              { typeParam }
-            </Badge>
-          ) }
-          { selectedTech.map( ( tech, i ) => (
-            <Badge variant="success" key={ i } className="mr-2">
-              { tech }
-            </Badge>
-          ) ) }
-        </div>
-      ) } */}
 
       { !isMobile && (
         <div className="w-fit rounded-[8px]">
           <div className="sticky top-24 bg-background p-4 rounded-[8px] border-slate-600 border-[0.5px]">
             <div className="flex items-center justify-between mb-4">
               <h2 className="font-bold font-arsenal text-[20px] text-violet-100">Filters</h2>
+
+              { ( typeParam !== "all" || selectedTech.length > 0 ) && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={ handleClearFilters }
+                  className="text-xs text-rose-50 h-auto py-1 px-2  font-nunito hover:text-foreground bg-rose-700"
+                >
+                  Clear filters
+                </Button>
+              ) }
             </div>
 
             <Suspense fallback={ <p>Loading project filters!!!</p> }>

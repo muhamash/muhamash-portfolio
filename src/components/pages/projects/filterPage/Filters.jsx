@@ -35,17 +35,6 @@ const ProjectFilter = ({ selectedType, setSelectedTech, selectedTech }) => {
         updateSearchParams("tech", updatedTechs.length > 0 ? updatedTechs.join(",") : "");
     };
 
-    const handleClearFilters = () =>
-    {
-        setSelectedTech( [] );
-
-        const params = new URLSearchParams( searchParams.toString() );
-        params.delete( "tech" );
-        params.set( "type", "all" );
-
-        router.replace( `${pathname}?${params.toString()}`, { scroll: false } );
-    };
-
     const techByCategory = {};
     technologies.forEach((tech) => {
         if (!techByCategory[tech.category]) {
@@ -60,16 +49,6 @@ const ProjectFilter = ({ selectedType, setSelectedTech, selectedTech }) => {
                 <div className="space-y-3">
                     <div className="flex items-center justify-between">
                         <h3 className="text-lg font-semibold text-gray-700 font-arsenal">Project Type</h3>
-                        {(selectedType !== "all" || selectedTech.length > 0) && (
-                            <Button
-                                variant="ghost"
-                                size="sm"
-                                onClick={handleClearFilters}
-                                className="text-xs h-auto py-1 px-2 text-muted-foreground font-nunito hover:text-foreground"
-                            >
-                                Clear filters
-                            </Button>
-                        )}
                     </div>
 
                     <div className="flex flex-wrap gap-2">
