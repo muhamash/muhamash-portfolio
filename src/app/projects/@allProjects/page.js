@@ -19,6 +19,14 @@ export default async function AllProjectsPage ( { searchParams } )
           ) )
         }
       </div>
+      {
+          projectsData?.data?.length === 0 && (
+            <div className="flex flex-col items-center justify-between gap-20 w-full h-full mx-auto">
+              <div className="loaderNotFound"></div>
+              <p className="text-2xl font-edu font-semibold text-rose-700 bg-slate-400 p-2 rounded-md">May be the user is working harder, Stay tuned! he will update his latest projects on his website ☺️</p>
+            </div>
+          )
+        }
       <Pagination totalPages={ projectsData?.pageData?.totalPages } />
     </div>
   );
