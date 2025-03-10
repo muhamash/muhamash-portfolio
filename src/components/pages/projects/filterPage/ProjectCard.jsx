@@ -41,9 +41,6 @@ const ProjectCard = async({ project, index }) => {
         </CardContent>
         
         <CardFooter className="p-4 pt-3 flex items-center justify-between">
-          {/* <span className="text-xs text-muted-foreground">
-            Updated {new Date(project?.updatedAt).toLocaleDateString()}
-          </span> */}
           
           <div className="flex items-center space-x-2">
             {/* {project?.repoUrl && (
