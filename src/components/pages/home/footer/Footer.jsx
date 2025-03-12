@@ -21,7 +21,7 @@ export default async function Footer() {
                 </div>
                 <div className="flex flex-col gap-2">
                     <p className="text-center md:text-left font-nunito ">For inquiries, contact me at:</p>
-                    <a href="tel:+8801306567164" className="flex items-center gap-2 text-violet-400 hover:text-violet-300 font-outfit">
+                    <a href="tel:+8801306567164" className="flex items-center gap-2 text-violet-400 hover:text-violet-300 font-outfit mx-auto md:mx-0">
                         <FaPhone /> +8801306567164
                     </a>
                     <a href="mailto:muhammad-ashraful@outlook.com" className="flex items-center gap-2 text-violet-400 hover:text-violet-300 font-outfit">
@@ -32,10 +32,10 @@ export default async function Footer() {
 
             <div className="flex flex-col items-center md:items-start gap-4">
                 <h3 className="text-xl font-semibold md:text-left text-center font-arsenal">Quick Links</h3>
-                <ul className="text-center flex  gap-3 md:flex-col flex-row md:text-left font-outfit">
-                    <li><a href="/about" className="hover:text-violet-400">About</a></li>
-                    <li><a href="/services" className="hover:text-violet-400">Projects</a></li>
-                    <li><a href="/contact" className="hover:text-violet-400">Contact</a></li>
+                <ul className="text-center flex  gap-1 flex-col md:text-left font-outfit">
+                    <li><Link href="/about" className="hover:text-violet-400">About</Link></li>
+                    <li className="w-full"><Link href="/privacy" className="hover:text-violet-400">Privacy and policy</Link></li>
+                    <li className="w-full"><Link href="/terms" className="hover:text-violet-400">Terms & conditions</Link></li>
                 </ul>
             </div>
 
