@@ -2,12 +2,9 @@
 
 import { ExternalLink, Github } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 export default function CallToAction ( { project } )
 {
-    const router = useRouter();
-
     const handleLearnMoreRefresh = () => window.location.reload();
 
     return (
@@ -40,7 +37,7 @@ export default function CallToAction ( { project } )
             <div onClick={handleLearnMoreRefresh} className="block bg-gradient-to-r from-yellow-500 via-cyan-600 via-blue-400 to-green-600 w-[210px] p-[1px] rounded-lg">
                 <button className="relative px-6 py-3 font-semibold text-white bg-gray-900 rounded-lg w-full group">
                     <span className="absolute inset-0 bg-gradient-to-r from-amber-500 to-green-500 rounded-lg blur-md opacity-50 group-hover:opacity-100 transition duration-300"></span>
-                    <span className="relative z-10 font-edu">Learn more!</span>
+                    <span className="relative z-10 font-edu">View details!</span>
                 </button>
             </div>
         </div>

@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { Card, CardContent, CardFooter } from '../ui/Card';
 import { Badge } from '../ui/badge';
 
-const ProjectCard = async({ project, index }) => {
+const ProjectCard = async ( { project, index } ) =>
+{
   return (
     <Link href={`/view/${project?.id}`} className="block">
       <Card className={`h-full overflow-hidden rounded-[8px] transition-all duration-300 hover:shadow-lg hover:scale-[1.02] animate-slide-up`}

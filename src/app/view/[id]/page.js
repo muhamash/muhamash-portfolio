@@ -1,3 +1,4 @@
+import ProjectDetails from "@/components/pages/home/projects/View";
 import { redirect } from "next/navigation";
 
 export const metadata = {
@@ -24,9 +25,9 @@ export default async function ProjectDetailsPage({ params, searchParams }) {
   }
 
   return (
-    <div className="bg-gray-200 text-black text-xl h-screen w-screen flex items-center justify-center">
-      <p>project index : { getParams?.id }</p>
-      <p className="font-code text-red-600 text-4xl">Under construction site!!</p>
+    <div className="bg-gradient-to-br from-slate-800 via-sky-900 via-teal-950 text-black text-xl h-full w-full flex items-center justify-center">
+
+      <ProjectDetails />
     </div>
   );
 }
