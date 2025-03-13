@@ -1,16 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 
 const NavItem = ({ icon, text, subRoutes = [] }) => {
   const pathname = usePathname();
+  const router = useRouter();
   const url = `/${text.toLowerCase()}`;
   const isActive = pathname === url;
   const [ isOpen, setIsOpen ] = useState( false );
-  // const router = useRouter
+
+  console.log(subRoutes)
 
   return (
     <div className="relative">

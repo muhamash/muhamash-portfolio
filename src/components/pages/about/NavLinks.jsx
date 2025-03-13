@@ -1,3 +1,5 @@
+"use client";
+
 import { FaBriefcase, FaGraduationCap, FaTools, FaTrophy, FaUser } from "react-icons/fa";
 
 const icons = {

@@ -17,49 +17,6 @@ export const Sidebar = ({ activePage, setActivePage }) => {
                     <Resume/>
                 </div>
             </div>
-
-            {/* Mobile Drawer with AnimatePresence */}
-            {/* <AnimatePresence mode='wait'>
-                {isDrawerOpen && (
-                    <motion.div
-                        className="fixed inset-0 bg-black/50 z-50"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        onClick={closeDrawer}
-                    >
-                        <motion.div
-                            className="absolute left-0 top-0 w-64 h-full bg-white/10 backdrop-blur-lg shadow-xl p-6 pt-[40px]"
-                            initial={{ x: "-100%" }}
-                            animate={{ x: 0 }}
-                            exit={{ x: "-100%" }}
-                            transition={{ duration: 0.4, ease: "easeInOut" }}
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            <motion.button
-                                onClick={closeDrawer}
-                                className="text-white mb-4 flex items-center gap-2"
-                                whileHover={{ scale: 1.1 }}
-                                aria-label="Close navigation menu"
-                            >
-                                <FontAwesomeIcon 
-                                    icon={faTimes} 
-                                    className="transition-transform hover:rotate-90"
-                                />
-                                Close
-                            </motion.button>
-
-                            <NavLinks
-                                activePage={activePage}
-                                setActivePage={setActivePage}
-                                closeDrawer={closeDrawer}
-                            />
-                        </motion.div>
-                        
-                    </motion.div>
-                )}
-            </AnimatePresence> */}
         </>
     );
 };
