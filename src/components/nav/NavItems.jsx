@@ -12,7 +12,7 @@ const NavItem = ({ icon, text, subRoutes = [] }) => {
   const isActive = pathname === url;
   const [ isOpen, setIsOpen ] = useState( false );
 
-  console.log(subRoutes)
+  // console.log(subRoutes)
 
   return (
     <div className="relative">
