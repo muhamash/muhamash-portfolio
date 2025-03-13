@@ -1,5 +1,6 @@
-import { FaEnvelope, FaFolderOpen, FaHome, FaUser } from "react-icons/fa";
-import { NavItem } from "./NavItems";
+import { FaEnvelope, FaFolderOpen, FaHome } from "react-icons/fa";
+import AboutItem from "./AboutItem";
+import NavItem from "./NavItems";
 
 export default async function Nav() {
   return (
@@ -9,7 +10,7 @@ export default async function Nav() {
           {/* Navigation Links */}
           <ul className="flex space-x-6">
             <NavItem icon={<FaHome />} text="" />
-            <NavItem icon={<FaUser />} text="About" />
+            <AboutItem/>
             <NavItem icon={<FaEnvelope />} text="Contact" />
             <NavItem icon={<FaFolderOpen  />} text="Projects" />
           </ul>
