@@ -40,7 +40,7 @@ const NavItem = ({ icon, text, subRoutes = [] }) => {
           </button>
 
           {/* Subroute Panel */}
-          <SubRoutePanel isOpen={isOpen} subRoutes={subRoutes}/>
+          <SubRoutePanel isOpen={isOpen} setIsOpen={setIsOpen} subRoutes={subRoutes}/>
         </>
       )}
     </div>
