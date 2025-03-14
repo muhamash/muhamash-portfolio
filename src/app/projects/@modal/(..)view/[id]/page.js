@@ -65,7 +65,7 @@ export default async function ProjectDetailsPage({ params, searchParams }) {
 
   return (
     <Modal>
-      <div className="backdrop-blur-md bg-opacity-50 rounded-lg bg-gradient-to-r from-slate-500 via-gray-400 via-yellow-50 via-gray-500 to-cyan-950 text-black text-xl h-full w-full flex md:flex-row flex-col items-center justify-center py-5 z-50 justify-between md:gap-20 md:px-20 px-10">
+      <div className="backdrop-blur-md bg-opacity-50 rounded-lg bg-gradient-to-r from-slate-500 via-gray-400 via-yellow-50 via-gray-500 to-cyan-950 text-black text-xl h-full w-full flex md:flex-row flex-col items-center justify-center py-5 z-50 justify-between md:gap-20 md:px-20 px-10 overflow-y-scroll">
         <div className="w-fit flex flex-col">
           <ProjectDetailsHeader project={ projectData } />
         </div>
