@@ -11,7 +11,6 @@ const NavItem = ({ icon, text, subRoutes = [] }) => {
   const url = `/${text.toLowerCase()}`;
   const isActive = pathname === url;
   const [ isOpen, setIsOpen ] = useState( false );
-  const checkSubRouteActive = window.location.href;
 
   // console.log(subRoutes)
 
@@ -43,11 +42,7 @@ const NavItem = ({ icon, text, subRoutes = [] }) => {
           {isOpen && (
             <ul className="absolute left-0 mt-3 w-40 bg-black  shadow-md text-white rounded-md p-2 transition-all duration-300 transform  origin-top">
               {subRoutes.map((sub) => (
-                <li key={sub.text} className={`flex items-center p-2 hover:bg-gray-800 rounded transition-all ${
-                    checkSubRouteActive.includes(sub?.text?.toLowerCase())
-                        ? "bg-slate-700 text-green-400 shadow-sm shadow-green-300"
-                        : "text-white/80 hover:bg-white/20"
-                }`}>
+                <li key={sub.text} className="flex items-center p-2 hover:bg-gray-800 rounded transition-all">
                   {sub.icon}
                   <Link
                     href={sub.url}
@@ -64,6 +59,6 @@ const NavItem = ({ icon, text, subRoutes = [] }) => {
       )}
     </div>
   );
-};
+}
 
 export default NavItem;
