@@ -33,7 +33,7 @@ export default async function Footer() {
             <div className="flex flex-col items-center md:items-start gap-4">
                 <h3 className="text-xl font-semibold md:text-left text-center font-arsenal">Quick Links</h3>
                 <ul className="text-center flex  gap-1 flex-col md:text-left font-outfit">
-                    <li><Link href="/about" className="hover:text-violet-400">About</Link></li>
+                    <li><Link href="/about?view=profile" className="hover:text-violet-400">About</Link></li>
                     <li className="w-full"><Link href="/privacy" className="hover:text-violet-400">Privacy and policy</Link></li>
                     <li className="w-full"><Link href="/terms" className="hover:text-violet-400">Terms & conditions</Link></li>
                 </ul>

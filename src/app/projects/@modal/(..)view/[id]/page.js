@@ -1,7 +1,6 @@
 import Modal from "@/components/common/Modal";
 import ProjectDetailsHeader from "@/components/pages/projects/modal/ProjectDetailsHeader";
 import ProjectSlider from "@/components/pages/projects/modal/Slider";
-import { redirect } from "next/navigation";
 
 // export const metadata = {
 //   title: "Muhamash || project view",
@@ -46,26 +45,10 @@ const projectData = {
 };
 
 export default async function ProjectDetailsPage({ params, searchParams }) {
-  
-    const getParams = await params;
-    const getSearchParams = await searchParams;
-
-    if ( getSearchParams?.page )
-    {
-    const cleanParams = Object.fromEntries(
-      Object.entries(getSearchParams)
-        .filter(([key]) => key !== "page")
-    );
-
-    const queryString = new URLSearchParams(cleanParams).toString();
-    const destination = `/projects/${getParams.id}${queryString ? `?${queryString}` : ""}`;
-
-    redirect(destination);
-  }
 
   return (
     <Modal>
-      <div className="backdrop-blur-md bg-opacity-50 rounded-lg bg-gradient-to-r from-slate-500 via-gray-400 via-yellow-50 via-gray-500 to-cyan-950 text-black text-xl h-full w-full flex md:flex-row flex-col items-center justify-center py-5 z-50 justify-between md:gap-20 md:px-20 px-10 overflow-y-scroll">
+      <div className="backdrop-blur-md bg-opacity-50 rounded-lg bg-gradient-to-r from-slate-500 via-gray-400 via-yellow-50 via-gray-500 to-cyan-950 text-black text-xl h-full w-full flex md:flex-row flex-col items-center justify-center py-5 z-50 justify-between md:gap-20 gap-10 md:px-20 px-10 overflow-y-scroll">
         <div className="w-fit flex flex-col">
           <ProjectDetailsHeader project={ projectData } />
         </div>
