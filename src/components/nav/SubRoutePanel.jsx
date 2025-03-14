@@ -1,11 +1,12 @@
 "use client";
 
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import LInks from "./LInks";
 
 export default function SubRoutePanel ( { isOpen, subRoutes, setIsOpen } )
 {
-    const [currentUrl, setCurrentUrl] = useState("");
+    const [ currentUrl, setCurrentUrl ] = useState( "" );
+    const linkRef = useRef( null );
 
     useEffect( () =>
     {
@@ -13,25 +14,31 @@ export default function SubRoutePanel ( { isOpen, subRoutes, setIsOpen } )
         {
             setCurrentUrl( window.location.href );
         }
-    }, [] );
-    console.log( currentUrl );
+    }, [ isOpen ] );
 
+    useEffect( () =>
+    {
+        function handleClickOutside ( event )
+        {
+            if ( linkRef.current && !linkRef.current.contains( event.target ) )
+            {
+                setIsOpen( false );
+            }
+        }
+
+        document.addEventListener( "mousedown", handleClickOutside );
+        return () =>
+        {
+            document.removeEventListener( "mousedown", handleClickOutside );
+        };
+    }, [] );
     
     return (
         <>
             { isOpen && (
-                <ul className="absolute left-0 mt-3 w-40 bg-black  shadow-md text-white rounded-md p-2 transition-all duration-300 transform  origin-top">
-                    { subRoutes.map( ( sub ) => (
-                        <li key={ sub.text } className="flex items-center p-2 hover:bg-gray-800 rounded transition-all">
-                            { sub.icon }
-                            <Link
-                                href={ sub.url }
-                                className={ `ml-2 w-full ` }
-                                onClick={ () => setIsOpen( false ) }
-                            >
-                                { sub.text }
-                            </Link>
-                        </li>
+                <ul ref={linkRef} className="absolute left-0 mt-3 w-40 bg-black  shadow-md text-white rounded-md p-2 transition-all duration-300 transform  origin-top">
+                    { subRoutes?.map( ( sub ) => (
+                        <LInks key={ sub.text } sub={ sub } currentUrl={ currentUrl } setIsOpen={setIsOpen} />
                     ) ) }
                 </ul>
             ) }
