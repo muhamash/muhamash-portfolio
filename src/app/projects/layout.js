@@ -12,18 +12,17 @@ export const metadata = {
 const ClientLayout = dynamic( () => import( '@/components/layouts/AboutLayout' ) );
 const SectionScrollLayout = dynamic( () => import( '@/components/layouts/SectionScrollLayout' ) );
 const TechSlider = dynamic( () => import( "@/components/animations/sliders/techStacks/TechSlider" ) );
+const AuoraContainer = dynamic( () => import( "@/components/animations/bg/auora/AuoraContainer" ) );
 
 
 export default async function ProjectLayout ( { filters, allProjects , modal} )
 {
+  // throw new error;
   return (
     <>
-      <SectionScrollLayout className="relative flex flex-col items-center justify-center w-full h-full pt-[100px] bg-gradient-to-r from-slate-600 via-slate-600 to-cyan-900 gap-10 overflow-hidden">
+      <SectionScrollLayout className="flex flex-col items-center justify-center top-0 left-0 right-0 z-20 w-full h-full pt-[100px] bg-gradient-to-r from-slate-600 via-slate-600 to-cyan-900 gap-10 overflow-hidden">
         <ProjectHeader />
-
-        <div className="max-w-6xl mx-auto text-white relative z-20 overflow-hidden">
-           <TechSlider />
-        </div>
+        
         <ActiveFilters />
         {/* css circle */ }
         <div className="bg-violet-950 bg-opacity-50 h-[1000px] w-[1000px] rounded-full absolute blur-3xl -top-40 -right-40 z-0 overflow-hidden hover:blur-xl">

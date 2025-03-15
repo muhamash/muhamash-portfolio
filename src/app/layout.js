@@ -13,7 +13,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
+      <body id="modal-root"
         className={`${arsenalSC.variable} ${nunito.variable} ${outfit.variable} ${eduFont.variable} ${codeFont.variable}  antialiased bg-black overflow-x-hidden`}
       >
         <Nav/>
