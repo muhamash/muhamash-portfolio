@@ -122,7 +122,7 @@ export default function HireMeForm() {
 
         <a href="mailto:contact@example.com" className="text-primary flex items-center gap-1 hover:text-primary/80">
           <span>contact@example.com</span>
-          <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" />
+          <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 hover:text-green-700 hover:translate-x-2" />
         </a>
       </div>
 
