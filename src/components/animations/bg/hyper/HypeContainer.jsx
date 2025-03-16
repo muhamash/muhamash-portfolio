@@ -8,11 +8,13 @@ const Hyperspeed = dynamic( () => import( "./HyperSpeed" ) );
 export default function HypeContainer ()
 {
     const size = useWindowSize();
-    const isMobile = size?.width < 550;
+    const isMobile = size?.width < 600;
+    // console
+
     return (
         <>
             {
-                isMobile ? (
+                !isMobile ? (
                     <Hyperspeed
                         effectOptions={ {
                             onSpeedUp: () => { },
