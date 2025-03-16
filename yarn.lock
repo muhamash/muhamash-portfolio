@@ -4387,6 +4387,11 @@ react-resizable-panels@^2.1.7:
   resolved "https://registry.yarnpkg.com/react-resizable-panels/-/react-resizable-panels-2.1.7.tgz#afd29d8a3d708786a9f95183a38803c89f13c2e7"
   integrity sha512-JtT6gI+nURzhMYQYsx8DKkx6bSoOGFp7A3CwMrOb8y5jFHFyqwo9m68UhmXRw57fRVJksFn1TSlm3ywEQ9vMgA==
 
+react-responsive-3d-carousel@^2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/react-responsive-3d-carousel/-/react-responsive-3d-carousel-2.1.5.tgz#48f4ca41380177cd9398e082cb9d42536db54762"
+  integrity sha512-bdXVVdDiYupIIRk9EPxaa2gM0TsD6N++qYdO14YRO3+IWNX88MC3mJSsTAALT7p1GY9Y5mFW9LUJ+shVooKx3w==
+
 react-router-dom@^7.3.0:
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-7.3.0.tgz#170e569b7536ffd71ff16016cb0f4458d1f23d83"

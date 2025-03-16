@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.react-3d-carousel .carousel-item {
+  transform-style: preserve-3d;
+}
+
 /* font-edu */
 /* font-nunito */
 /* font-outfit */
