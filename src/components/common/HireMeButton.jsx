@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default async function HireMeButton ()
+export default function HireMeButton ()
 {
   return (
     <Link href={'/contact'} className=" bg-gradient-to-r from-violet-500 via-cyan-600 via-sky-400 to-slate-400 w-[130px] p-[1px] rounded-lg">
