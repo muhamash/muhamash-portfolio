@@ -2,6 +2,7 @@ import dynamic from "next/dynamic";
 
 const InstituteCard = dynamic( () => import( "@/components/pages/about/education/InstituteCard" ) );
 const ForestContainer = dynamic( () => import( "@/components/animations/bg/threejs/forest/ForestContainer" ) );
+const GradContainer = dynamic( () => import( "@/components/animations/gradientText/GradContainer" ) )
 
 export const metadata = {
   title: "About || Educations || Muhammad Ashraful Alam",
@@ -66,13 +67,17 @@ export default async function EducationsPage ()
       
       <div className="relative flex items-center justify-center w-full h-full">
         <div className="relative z-20 p-8 bg-gray-100 backdrop-blur-sm bg-opacity-20  rounded-lg shadow-lg max-w-4xl mx-auto mt-10">
-          <h1 className="text-3xl font-bold text-center mb-6 font-arsenal text-violet-700">Education Details</h1>
+          <GradContainer
+            showBorder={ true }
+            text={ "😊 Academic Information 😊" }
+            className="px-5 py-2 text-xl md:text-3xl font-arsenal mt-10 mb-5"
+          />
         
           <div className="space-y-6">
             {
               educations?.map( ( edu ) => (
                 <InstituteCard key={ edu?.id } edu={ edu } />
-                ))
+              ) )
             }
           </div>
         </div>
