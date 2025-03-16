@@ -29,7 +29,8 @@ export async function hireMeForm(prevState, formData) {
   await new Promise( ( resolve ) => setTimeout( resolve, 1000 ) );
 
   const data = {
-    name: formData.get('name'),
+    name: formData.get( 'name' ),
+    currency: formData.get('currency'),
     email: formData.get( 'email' ),
     budget: formData.get("budget"),
     phone: formData.get('phone'),
@@ -40,5 +41,5 @@ export async function hireMeForm(prevState, formData) {
   console.log('Submitting Form:', data);
 
   // Return a success message or error state
-  return { message: 'Form submitted successfully!', data, error: false };
+  return { message: 'Form submitted successfully!', data, error: false, status: true };
 }
