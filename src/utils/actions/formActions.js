@@ -18,3 +18,26 @@ export async function contactForm(prevState, formData) {
         return { message: error || error?.message, success: false }
     }
 }
+
+export async function hireMeForm(prevState, formData) {
+  const selectedServices = formData.getAll('services');
+
+  if (selectedServices.length === 0) {
+    return { message: 'Please select at least one service.', error: true };
+  }
+
+  await new Promise( ( resolve ) => setTimeout( resolve, 1000 ) );
+
+  const data = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+    phone: formData.get('phone'),
+    message: formData.get('message'),
+    source: formData.get('source'),
+    services: formData.getAll('services'),
+  };
+  console.log('Submitting Form:', data);
+
+  // Return a success message or error state
+  return { message: 'Form submitted successfully!', data, error: false };
+}

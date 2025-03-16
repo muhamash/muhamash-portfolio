@@ -1,5 +1,6 @@
 'use client';
 
+import { hireMeForm } from '@/utils/actions/formActions';
 import { ArrowRight, Send } from 'lucide-react';
 import { useActionState, useState } from 'react';
 import { useFormStatus } from 'react-dom';
@@ -18,34 +19,8 @@ const services = [
   { id: 'mvp-dev', label: 'MVP Development & Prototyping' },
 ];
 
-// Mock form submission handler
-async function submitForm(prevState, formData) {
-  // Simulate a delay for submission
-  const selectedServices = formData.getAll('services');
-
-  if (selectedServices.length === 0) {
-    return { message: 'Please select at least one service.', error: true };
-  }
-
-  await new Promise( ( resolve ) => setTimeout( resolve, 1000 ) );
-
-  // Log form data
-  const data = {
-    name: formData.get('name'),
-    email: formData.get('email'),
-    phone: formData.get('phone'),
-    message: formData.get('message'),
-    source: formData.get('source'),
-    services: formData.getAll('services'),
-  };
-  console.log('Submitting Form:', data);
-
-  // Return a success message or error state
-  return { message: 'Form submitted successfully!', data, error: false };
-}
-
 export default function HireMeForm() {
-  const [state, formAction] = useActionState(submitForm, { message: '' });
+  const [state, formAction] = useActionState(hireMeForm, { message: '' });
   const { pending } = useFormStatus();
   const [ checkedServices, setCheckedServices ] = useState( [] );
   const [ phone, setPhone ] = useState('');
@@ -61,17 +36,15 @@ export default function HireMeForm() {
   return (
     <form
       action={ formAction }
-      className="space-y-6 p-6 bg-white shadow-lg rounded-2xl max-w-lg mx-auto border border-gray-200 text-black"
-    >
-      <h2 className="text-xl font-bold font-arsenal text-gray-800">Let's Work Together</h2>
-      
+      className="space-y-6 md:p-6 p-2 bg-white  max-w-lg mx-auto  text-black"
+    > 
       { state.message && (
         <p className={ `text-sm ${state.error ? 'text-red-600' : 'text-green-600'}` }>
           { state.message }
         </p>
       ) }
       <div>
-        <label className="block text-gray-700 font-semibold text-xl font-edu">Select Services</label>
+        <label className="block text-gray-700 font-semibold text-lg font-edu">Select Services</label>
         <div className="md:grid md:grid-cols-2 grid-cols-1 md:gap-3 mt-2 bg-slate-300 p-2 rounded-md shadow-sm shadow-black hover:shadow-xl font-outfit">
           { services.map( ( service ) => (
             <div key={ service.id } className="flex items-center gap-2 py-1 md:py-0">
@@ -107,13 +80,13 @@ export default function HireMeForm() {
         className="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-primary/50 font-outfit "
       />
       <PhoneInput
-        country={'bd'}
-        value={phone}
-        onChange={setPhone}
-        inputProps={{
+        country={ 'bd' }
+        value={ phone }
+        onChange={ setPhone }
+        inputProps={ {
           name: 'phone',
           autoFocus: true
-        }}
+        } }
         containerClass="w-full"
         inputClass="!w-full px-4 py-2 border rounded-lg focus:ring focus:ring-primary/50 font-outfit"
       />
