@@ -2,6 +2,7 @@
 
 import { hireMeForm } from '@/utils/actions/formActions';
 import { ArrowRight, Send } from 'lucide-react';
+import Link from 'next/link';
 import { useActionState, useState } from 'react';
 import { useFormStatus } from 'react-dom';
 import PhoneInput from 'react-phone-input-2';
@@ -121,10 +122,10 @@ export default function HireMeForm() {
           ) }
         </Button>
 
-        <a href="mailto:contact@example.com" className="text-primary flex items-center gap-1 hover:text-primary/80 font-outfit">
-          <span>contact@example.com</span>
+        <Link href="mailto:muhammad-ashraful@outlook.com" className="text-primary flex items-center justify-center gap-1 hover:text-primary/80 font-outfit">
+          <span className='font-code font-semibold text-violet-500'>muhammad-ashraful@outlook.com</span>
           <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 font-outfit hover:text-green-700 hover:translate-x-2" />
-        </a>
+        </Link>
       </div>
     </form>
   );
