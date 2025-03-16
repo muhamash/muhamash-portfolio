@@ -1,5 +1,6 @@
 import { arsenalSC, codeFont, eduFont, nunito, outfit } from "@/components/fonts/fonts";
 import Nav from "@/components/nav/Nav";
+import Head from "next/head";
 import "./globals.css";
 
 
@@ -13,12 +14,18 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet" />
+      </Head>
+
       <body id="modal-root"
-        className={`${arsenalSC.variable} ${nunito.variable} ${outfit.variable} ${eduFont.variable} ${codeFont.variable}  antialiased bg-black overflow-x-hidden`}
+        className={ `${arsenalSC.variable} ${nunito.variable} ${outfit.variable} ${eduFont.variable} ${codeFont.variable}  antialiased bg-black overflow-x-hidden` }
       >
-        <Nav/>
+        <Nav />
         { children }
-        {/* <Footer/> */}
+        {/* <Footer/> */ }
       </body>
     </html>
   );

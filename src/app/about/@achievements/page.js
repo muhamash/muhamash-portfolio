@@ -11,7 +11,11 @@ export default  async function AchievementPage() {
   return (
     <div className="relative w-screen h-screen flex items-center justify-center">
       {/* <StarConatiner/> */ }
-      <WaterConatainer />
+      {/* <WaterConatainer /> */ }
+      {/* <AnimatedRadialBackground/> */ }
+      {/* <HorizontalScrollWithColors/> */ }
+      {/* <VerticalImageLoop/> */}
+      {/* <App/> */}
       
       <div className="bg-slate-500 opacity-70 backdrop-blur-md p-10 rounded-md shadow-md font-nunito text-2xl text-violet-300">
         <p>This section is under construction!!!</p>

@@ -25,7 +25,7 @@ export default async function Client() {
                 />
 
                 {/* Stats Section */ }
-                <div className="flex flex-col justify-center items-center justify-between gap-10 w-full">
+                <div className="flex flex-col justify-center items-center justify-between gap-10 w-full relative">
                     <States />
 
 
@@ -35,7 +35,9 @@ export default async function Client() {
                         className="px-5 py-2 text-xl md:text-3xl font-arsenal"
                     />
 
-                    {/* <CompanyGalleryConatiner /> */}
+                    {/* <div>
+                        <CommitHeatmap username={"muhamash"}/>
+                    </div> */}
                 </div>
                 <div className="flex flex-wrap-reverse items-center gap-5 justify-center font-edu font-semibold my-5">
                     <MeetingButton />

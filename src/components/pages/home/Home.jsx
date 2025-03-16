@@ -1,3 +1,4 @@
+import ScrollGsap from "@/components/animations/ScrollGsap";
 import About from "@/components/pages/home/about/About";
 import Contact from "@/components/pages/home/contact/Contact";
 import HeaderComponent from "@/components/pages/home/header/Header";
@@ -23,6 +24,9 @@ export default async function Home ()
         <HeaderComponent />
       </div>
 
+      {/* <div className="relative">
+        <VerticalImageLoop/>
+      </div> */}
       <About />
       {/* <ProjectSection /> */}
       <Client/>
