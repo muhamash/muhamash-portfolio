@@ -117,7 +117,10 @@ const config = {
 	// 		}
     },
   },
-  plugins: [require("tailwindcss-animate")],
+	plugins: [ require( "tailwindcss-animate" ) ],
+  corePlugins: {
+    backdropBlur: true,
+  },
 };
 
 export default config;
