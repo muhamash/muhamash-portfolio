@@ -73,6 +73,14 @@ export default function HireMeForm() {
         className="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-primary/50 font-outfit"
       />
       <input
+        id="budget"
+        name="number"
+        type="number"
+        placeholder="Your estimate budget??"
+        required
+        className="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-primary/50 font-outfit"
+      />
+      <input
         id="email"
         name="email"
         type="email"
@@ -106,7 +114,7 @@ export default function HireMeForm() {
         className="w-full px-4 py-2 border rounded-lg focus:ring focus:ring-primary/50 font-outfit"
       />
       
-      <div className="text-sm text-gray-500 font-nunito">Your information is kept confidential.</div>
+      <div className="text-sm text-rose-500 font-nunito">Note : Your information is kept confidential; Don't worry!!</div>
       
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <Button

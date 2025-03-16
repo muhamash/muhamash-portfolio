@@ -30,7 +30,8 @@ export async function hireMeForm(prevState, formData) {
 
   const data = {
     name: formData.get('name'),
-    email: formData.get('email'),
+    email: formData.get( 'email' ),
+    budget: formData.get("budget"),
     phone: formData.get('phone'),
     message: formData.get('message'),
     source: formData.get('source'),
