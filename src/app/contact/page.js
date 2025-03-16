@@ -9,11 +9,13 @@ export default async function ContactPage ()
 {
     return (
         <>
-            <SectionScrollLayout className={ "min-h-screen sticky z-40 w-full bg-white text-black px-4 md:p-0 md:m-0 min-w-screen flex md:flex-row flex-col justify-between justify-center items-center mx-auto backdrop-blur-sm" }>
+            <SectionScrollLayout className={ "min-h-screen sticky z-40 w-full bg-white text-black px-4 md:p-0 md:m-0 min-w-screen flex md:flex-row flex-col-reverse justify-between justify-center items-center mx-auto backdrop-blur-sm overflow-hidden" }>
                 <HireMe />
 
                 {/* slider */ }
-                <DemoSlide />
+                <div className="w-fit overflow-hidden">
+                    <DemoSlide />
+                </div>
             </SectionScrollLayout>
             <Footer />
         </>

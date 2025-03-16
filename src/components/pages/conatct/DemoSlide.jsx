@@ -15,7 +15,7 @@ const sliderData = [
 
 export default function DemoSlide() {
     return (
-        <div className="h-screen py-20 md:flex items-center justify-center bg-gray-700 hidden w-fit overflow-hidden">
+        <div className="h-screen py-20 flex items-center justify-center bg-gray-700  w-fit overflow-hidden">
             <Swiper
                 effect="coverflow"
                 grabCursor={ true }
