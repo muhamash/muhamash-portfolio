@@ -11,7 +11,7 @@ export const metadata = {
 
 // console.log( arsenal_SC, codeFont, eduFont, nunito, outfit );
 
-export default async function RootLayout({ children }) {
+export default async function RootLayout({ children, modal }) {
   return (
     <html lang="en">
       <Head>
@@ -24,6 +24,7 @@ export default async function RootLayout({ children }) {
         className={ `${arsenalSC.variable} ${nunito.variable} ${outfit.variable} ${eduFont.variable} ${codeFont.variable}  antialiased bg-black overflow-x-hidden` }
       >
         <Nav />
+        {modal}
         { children }
         {/* <Footer/> */ }
       </body>

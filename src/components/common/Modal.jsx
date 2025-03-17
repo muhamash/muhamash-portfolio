@@ -11,6 +11,8 @@ const Modal = ({ children }) => {
     const wrapper = useRef(null);
     const router = useRouter();
 
+    console.log(router)
+
     const onDismiss = useCallback(() => {
         setIsVisible(false);
         router.back();
