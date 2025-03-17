@@ -11,7 +11,7 @@ export const metadata = {
 
 // console.log( arsenal_SC, codeFont, eduFont, nunito, outfit );
 
-export default async function RootLayout({ children, modal }) {
+export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
@@ -20,11 +20,11 @@ export default async function RootLayout({ children, modal }) {
         <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet" />
       </Head>
 
-      <body id="modal-root"
+      <body
+        id="modal-root"
         className={ `${arsenalSC.variable} ${nunito.variable} ${outfit.variable} ${eduFont.variable} ${codeFont.variable}  antialiased bg-black overflow-x-hidden` }
       >
         <Nav />
-        {modal}
         { children }
         {/* <Footer/> */ }
       </body>
