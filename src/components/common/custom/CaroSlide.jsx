@@ -30,7 +30,7 @@ export default function CaroSlide ()
                 height={ "220px" }
                 width={ isMobile ? "300px" : "450px" }
                 containerPadding='1rem'
-                containerHeight='100%'
+                containerHeight='400px'
                 containerWidth='100%'
                 items={ items }
                 startIndex={ 0 }

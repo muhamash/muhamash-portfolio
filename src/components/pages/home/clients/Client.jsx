@@ -29,19 +29,21 @@ export default async function Client() {
                     <States />
 
 
-                    <GradContainer
-                        showBorder={ true }
-                        text={ "😍 My beloved people!! 😍" }
-                        className="px-5 py-2 text-xl md:text-3xl font-arsenal"
-                    />
+                    <div className="pt-20">
+                        <GradContainer
+                            showBorder={ true }
+                            text={ "😍 My beloved people!! 😍" }
+                            className="px-5 py-2 text-xl md:text-3xl font-arsenal"
+                        />
+                    </div>
 
                     <div className="w-screen h-full">
-                        <CaroSlide/>
-                   </div>
+                        <CaroSlide />
+                    </div>
                 </div>
                 <div className="flex flex-wrap-reverse items-center gap-5 justify-center font-edu font-semibold my-5 pt-10">
                     <MeetingButton />
-                    <DownloadRecommendation/>
+                    <DownloadRecommendation />
                 </div>
             </div>
         </SectionScrollLayout>

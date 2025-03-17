@@ -24,10 +24,22 @@ const steps = [
 
 export default function VerticalStepper() {
   const [activeStep, setActiveStep] = useState(0);
-  const [formData, setFormData] = useState({ currency: "USD" });
+  const [formData, setFormData] = useState({ currency: "USD", email: "" });
+  const [errors, setErrors] = useState({});
 
   const handleInputChange = (name, value) => {
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    // If email field is being updated, validate it
+    if (name === "email" && value) {
+      // Simple email validation regex
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(value)) {
+        setErrors(prev => ({ ...prev, email: "Please enter a valid email." }));
+      } else {
+        setErrors(prev => ({ ...prev, email: "" }));
+      }
+    }
+
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const isStepFilled = () => {
@@ -35,7 +47,7 @@ export default function VerticalStepper() {
   };
 
   const goNext = () => {
-    if (isStepFilled() && activeStep < steps.length - 1) {
+    if (isStepFilled() && activeStep < steps.length - 1 && !errors.email) {
       setActiveStep(prev => prev + 1);
     }
   };
@@ -45,7 +57,7 @@ export default function VerticalStepper() {
   };
 
   const handleFinish = () => {
-    if (isStepFilled()) {
+    if (isStepFilled() && !errors.email) {
       console.log("Submitted Data:", formData);
     }
   };
@@ -62,7 +74,7 @@ export default function VerticalStepper() {
                 <Circle className={ `w-6 h-6 ${index === activeStep ? "text-blue-500" : "text-gray-300"}` } />
               ) }
               <div className="flex flex-col">
-                <p className="text-lg font-semibold">{ step.title }</p>
+                <p className="text-lg font-semibold font-edu font-semibold">{ step.title }</p>
                 { index === activeStep && (
                   <motion.div
                     className="text-gray-600 mt-2"
@@ -70,12 +82,12 @@ export default function VerticalStepper() {
                     animate={ { opacity: 1, height: "auto" } }
                     exit={ { opacity: 0, height: 0 } }
                   >
-                    <p>{ step.description }</p>
+                    <p className="font-nunito">{ step.description }</p>
                     { step.fields.map( ( field, idx ) => (
                       field.type === "select" ? (
                         <select
                           key={ idx }
-                          className="border p-2 w-full mt-2 rounded"
+                          className="border p-2 w-full mt-2 rounded font-edu"
                           value={ formData[ field.name ] || "" }
                           onChange={ ( e ) => handleInputChange( field.name, e.target.value ) }
                         >
@@ -86,7 +98,7 @@ export default function VerticalStepper() {
                       ) : field.type === "textarea" ? (
                         <textarea
                           key={ idx }
-                          className="border p-2 w-full mt-2 rounded"
+                          className="border p-2 w-full mt-2 rounded font-edu"
                           placeholder={ field.placeholder }
                           value={ formData[ field.name ] || "" }
                           onChange={ ( e ) => handleInputChange( field.name, e.target.value ) }
@@ -96,13 +108,17 @@ export default function VerticalStepper() {
                           key={ idx }
                           name={ field.name }
                           type={ field.type }
-                          className="border p-2 w-full mt-2 rounded"
+                          className="border p-2 w-full mt-2 rounded font-edu"
                           placeholder={ field.placeholder }
                           value={ formData[ field.name ] || "" }
                           onChange={ ( e ) => handleInputChange( field.name, e.target.value ) }
                         />
                       )
                     ) ) }
+                    {/* Show error message for email if validation fails */}
+                    {errors.email && (
+                      <p className="text-red-500 text-sm">{errors.email}</p>
+                    )}
                   </motion.div>
                 ) }
               </div>
@@ -121,7 +137,7 @@ export default function VerticalStepper() {
             <button
               onClick={ goNext }
               className="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50"
-              disabled={ !isStepFilled() }
+              disabled={ !isStepFilled() || !!errors.email }
             >
               Next
             </button>
@@ -129,7 +145,7 @@ export default function VerticalStepper() {
             <button
               onClick={ handleFinish }
               className="px-4 py-2 bg-green-500 text-white rounded disabled:opacity-50"
-              disabled={ !isStepFilled() }
+              disabled={ !isStepFilled() || !!errors.email }
             >
               Finish
             </button>
