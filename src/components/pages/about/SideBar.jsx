@@ -10,11 +10,9 @@ export const Sidebar = ({ activePage, setActivePage }) => {
             <div className="hidden md:block md:col-span-1 bg-black pt-[120px] px-6 min-h-screen border-r-4 border-slate-800 z-50 ">
                 
                 <NavLinks activePage={ activePage } setActivePage={ setActivePage } />
-                <div className='mt-10 font-edu'>
-                    <HireMeButton/>
-                </div>
-                <div className='mt-3 font-edu'>
-                    <Resume/>
+                <div className="flex flex-col gap-5 my-5 font-edu">
+                    <HireMeButton />
+                    <Resume />
                 </div>
             </div>
         </>

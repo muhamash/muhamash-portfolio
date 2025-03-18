@@ -6,8 +6,8 @@ const GradContainer = dynamic( () => import( "@/components/animations/gradientTe
 
 export default async function HireMe() {
   return (
-    <div className="md:w-1/2 w-full h-screen md:p-0 md:py-[100px] relative overflow-y-scroll md:pb-[20px] py-[70px]">
-      <div className="absolute md:-top-2 top-10 md:left-1 -left-0">
+    <div className="md:w-1/2 w-full h-screen md:p-0 py-[100px] relative overflow-y-scroll md:pb-[20px]">
+      <div className="absolute md:-top-2 top-20 md:left-1 -left-0">
         <BackButton />
       </div>
 
