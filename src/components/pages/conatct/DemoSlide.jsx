@@ -34,13 +34,13 @@ export default function DemoSlide() {
                 className="w-full max-w-4xl"
             >
                 { sliderData.map( ( item ) => (
-                    <SwiperSlide key={ item.id } className="p-6 bg-white rounded-xl shadow-xl text-center max-w-xs">
+                    <SwiperSlide key={ item.id } className="p-6 bg-gray-500 rounded-xl shadow-xl text-center max-w-xs bg-opacity-70 backdrop-blur-md ">
                         <h3 className="text-xl font-semibold text-gray-800">{ item.title }</h3>
-                        <p className="text-gray-600 mt-2">{ item.description }</p>
-                        <p className="text-gray-600 mt-2">{ item.description }</p>
+                        <p className="text-gray-300 mt-2">{ item.description }</p>
+                        <p className="text-gray-100 mt-2">{ item.description }</p>
                         <h3 className="text-xl font-semibold text-gray-800">{ item.title }</h3>
-                        <p className="text-gray-600 mt-2">{ item.description }</p>
-                        <p className="text-gray-600 mt-2">{ item.description }</p>
+                        <p className="text-gray-100 mt-2">{ item.description }</p>
+                        <p className="text-gray-100 mt-2">{ item.description }</p>
                     </SwiperSlide>
                 ) ) }
             </Swiper>

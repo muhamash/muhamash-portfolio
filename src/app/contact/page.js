@@ -17,7 +17,7 @@ export default async function ContactPage ()
                 <HireMe />
 
                 {/* slider */ }
-                <div className="relative md:w-1/2 hidden md:block h-full">
+                <div className="relative md:w-1/2 hidden md:flex items-center justify-center  h-full">
                     <ParticleBackground /> 
                     <DemoSlide />
                 </div>

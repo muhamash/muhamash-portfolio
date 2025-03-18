@@ -1,21 +1,13 @@
 "use client";
 
+import { testimonials } from '@/utils/demo/review';
 import { firstLayout } from '@/utils/helper/slide';
 import { useWindowSize } from '@uidotdev/usehooks';
 import { Carousel } from 'react-responsive-3d-carousel';
 import 'react-responsive-3d-carousel/dist/styles.css';
 import CaroCard from "./CaroCard";
 
-const items = [
-    <CaroCard />,
-    <CaroCard />,
-    <CaroCard />,
-    <CaroCard />,
-    <CaroCard />,
-    <CaroCard />,
-    <CaroCard />,
-];
-
+const items = testimonials.map((user, index) => <CaroCard key={index} user={user} />);
 
 export default function CaroSlide ()
 {
