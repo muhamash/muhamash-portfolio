@@ -22,7 +22,7 @@ export default async function Welcome() {
                 <p className="text-violet-400 font-nunito font-semibold">Full stack Software Engineer</p>
                 <p className="text-violet-300 font-nunito font-semibold">muhammad-ashraful@outlook.com</p>
 
-                <div className="flex md:flex-row flex-col gap-5 my-5 font-edu">
+                <div className="flex gap-5 font-edu mt-3">
                     <HireMeButton />
                     <Resume />
                 </div>
