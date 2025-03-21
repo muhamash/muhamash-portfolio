@@ -95,25 +95,21 @@ const VerticalImageLoop = () => {
     <>
       <section 
         ref={sectionRef} 
-        className="p-[10vw] h-full min-h-[500vh] overflow-visible flex flex-col justify-center"
+        className="p-[10vw] w-screen min-h-screen overflow-hidden relative flex flex-col justify-center"
       >
         <h1 className="font-extrabold mx-auto my-8 text-[clamp(3vw,2rem,4rem)] text-center z-[999] max-w-[800px] mix-blend-difference pointer-events-none text-white fixed top-0 left-0 right-0 bottom-0 grid place-items-center">
           Vertical image loop with scroll acceleration with gsap
         </h1>
-        <h2 className="text-center z-[999] text-xs fixed bottom-4 right-4 [writing-mode:vertical-rl] [text-orientation:mixed]">
-          <a href="https://thisisadvantage.com" target="_blank" rel="noreferrer" className="text-white">
-            Made by Advantage
-          </a>
-        </h2>
+        
       </section>
 
       <div 
         ref={galleryRef} 
-        className="z-[1] flex flex-row justify-center w-full h-full fixed top-0 left-1/2 -translate-x-1/2 overflow-visible md:w-full sm:w-[160%]"
+        className="z-[1] flex flex-row justify-center w-full h-full fixed top-0 left-1/2 -translate-x-1/2 overflow-hidden md:w-full sm:w-[160%]"
       >
         <div className="col flex flex-1 flex-col w-full self-start justify-self-start">
           {column1.map((src, index) => (
-            <div key={`col1-${index}`} className="w-full saturate-0 hover:saturate-100 p-4 image hover:z-[99999999999]">
+            <div key={`col1-${index}`} className="w-full saturate-0 hover:saturate-100 p-4 image ">
               <img 
                 src={src} 
                 alt={`Image ${index + 1}`}
@@ -122,7 +118,7 @@ const VerticalImageLoop = () => {
             </div>
           ))}
           {column1.map((src, index) => (
-            <div key={`col1-clone-${index}`} className="w-full saturate-0 hover:saturate-100 p-4 image hover:z-[99999999999]">
+            <div key={`col1-clone-${index}`} className="w-full saturate-0 hover:saturate-100 p-4 image ">
               <img 
                 src={src} 
                 alt={`Image ${index + 1}`}
@@ -134,7 +130,7 @@ const VerticalImageLoop = () => {
 
         <div className="col flex flex-1 flex-col w-full self-end justify-self-end">
           {column2.map((src, index) => (
-            <div key={`col2-${index}`} className="w-full saturate-0 hover:saturate-100 p-4 image hover:z-[99999999999]">
+            <div key={`col2-${index}`} className="w-full saturate-0 hover:saturate-100 p-4 image ">
               <img 
                 src={src} 
                 alt={`Image ${index + 1}`}
@@ -143,7 +139,7 @@ const VerticalImageLoop = () => {
             </div>
           ))}
           {column2.map((src, index) => (
-            <div key={`col2-clone-${index}`} className="w-full saturate-0 hover:saturate-100 p-4 image hover:z-[99999999999]">
+            <div key={`col2-clone-${index}`} className="w-full saturate-0 hover:saturate-100 p-4 image ">
               <img 
                 src={src} 
                 alt={`Image ${index + 1}`}
@@ -155,7 +151,7 @@ const VerticalImageLoop = () => {
 
         <div className="col flex flex-1 flex-col w-full self-start justify-self-start">
           {column3.map((src, index) => (
-            <div key={`col3-${index}`} className="w-full saturate-0 hover:saturate-100 p-4 image hover:z-[99999999999]">
+            <div key={`col3-${index}`} className="w-full saturate-0 hover:saturate-100 p-4 image ">
               <img 
                 src={src} 
                 alt={`Image ${index + 1}`}

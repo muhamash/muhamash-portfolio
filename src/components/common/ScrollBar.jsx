@@ -10,7 +10,7 @@ export default function ScrollBar ()
     return (
         <motion.div
             style={ { scaleX } }
-            className="bg-gradient-to-br from-slate-300 via-sky-400 via-violet-300 fixed top-0 w-screen h-[5px] border border-black origin-left z-[100] rounded-full"
+            className="bg-gradient-to-br from-slate-400 via-sky-600 via-violet-400 fixed top-0 w-screen h-[5px] border border-black origin-left z-[100] rounded-full"
         />
     );
 }
