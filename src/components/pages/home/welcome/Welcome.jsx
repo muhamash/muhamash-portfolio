@@ -15,13 +15,13 @@ export default async function Welcome() {
                 <TextContainerBlackHole />
             </div>
 
-            <div className="absolute flex flex-col gap-1 md:bottom-20 md:right-0 md:left-0  bottom-[60px] text-center ">
+            <div className="absolute flex flex-col gap-1 md:bottom-20 md:right-0 md:left-0 bottom-[60px] text-center z-30">
                 <p className="text-[#B069DB] text-2xl md:text-5xl font-arsenal font-semibold">Md Ashraful Alam</p>
                 <p className="text-violet-400 font-nunito font-semibold">Full stack Software Engineer</p>
                 <p className="text-violet-300 font-nunito font-semibold">muhammad-ashraful@outlook.com</p>
 
                 <div className="translate-y-10">
-                    <ScrollButton/>
+                    <ScrollButton />
                 </div>
             </div>
         </div>

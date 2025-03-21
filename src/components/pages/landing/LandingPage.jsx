@@ -19,7 +19,9 @@ export default async function LandingPage ()
             {/* welcome section */ }
             <Welcome />
             
-            <About/>
+            <div id="next-section">
+                <About/>
+            </div>
         </div>
     );
 }
