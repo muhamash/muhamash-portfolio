@@ -7,8 +7,8 @@ const ContactForm = dynamic( () => import( "../form/ContactForm" ) );
 const Contact = async() =>
 {
   return (
-    <SectionScrollLayout
-      className="min-h-screen sticky top-0 z-40 w-full bg-black text-white px-4 min-w-screen flex md:flex-row flex-col md:justify-between justify-center gap-10 items-center mx-auto backdrop-blur-sm py-10 mb-5"
+    <div
+      className="h-screen top-0 z-50 w-full bg-black text-white px-4 w-screen flex md:flex-row flex-col md:justify-between justify-center gap-10 items-center mx-auto backdrop-blur-sm py-10 mb-5"
     >
 
       {/* background */ }
@@ -29,7 +29,7 @@ const Contact = async() =>
         <ContactForm />
       </div>
 
-    </SectionScrollLayout>
+    </div>
   );
 };
 

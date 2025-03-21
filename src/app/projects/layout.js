@@ -24,6 +24,7 @@ export default async function ProjectLayout ( { filters, allProjects , modal} )
         <ProjectHeader />
         
         <ActiveFilters />
+        
         {/* css circle */ }
         <div className="bg-violet-950 bg-opacity-50 h-[1000px] w-[1000px] rounded-full absolute blur-3xl -top-40 -right-40 z-0 overflow-hidden hover:blur-xl">
 
@@ -35,10 +36,6 @@ export default async function ProjectLayout ( { filters, allProjects , modal} )
             { allProjects }
           </Suspense>
           {/* {children} */ }
-        </div>
-
-        <div className="bg-green-950 bg-opacity-50 h-[1000px] w-[1000px] rounded-full absolute blur-3xl bottom-20 -left-40 z-0 overflow-hidden hover:blur-xl">
-
         </div>
       
       </SectionScrollLayout>

@@ -111,6 +111,9 @@ const AnimatedBackground = ({ text , textSize, particleSize = 1 }) => {
       let colors = [];
       let sizes = [];
       
+      // Create a violet color
+      const violetColor = new THREE.Color(0x8A7BE7);
+      
       for (let x = 0; x < shapes.length; x++) {
         let shape = shapes[x];
         const amountPoints = (shape.type == 'Path') ? 1200 / 2 : 1200;
@@ -119,7 +122,8 @@ const AnimatedBackground = ({ text , textSize, particleSize = 1 }) => {
         points.forEach((element) => {
           const a = new THREE.Vector3(element.x, element.y, 0);
           thePoints.push(a);
-          colors.push(1, 1, 1); // White color
+          // Set initial color to violet
+          colors.push(violetColor.r, violetColor.g, violetColor.b);
           sizes.push(particleSize);
         });
       }
@@ -230,7 +234,8 @@ const AnimatedBackground = ({ text , textSize, particleSize = 1 }) => {
             let py = pos.getY(i);
             let pz = pos.getZ(i);
             
-            colorChange.setHSL(0.5, 1, 1);
+            // Initial color is violet (HSL: ~0.8, 1, 0.5)
+            colorChange.setHSL(0.8, 1, 0.5);
             colors.setXYZ(i, colorChange.r, colorChange.g, colorChange.b);
             colors.needsUpdate = true;
             
@@ -249,12 +254,12 @@ const AnimatedBackground = ({ text , textSize, particleSize = 1 }) => {
               px -= f * Math.cos(t);
               py -= f * Math.sin(t);
               
-              colorChange.setHSL(0.5 + zigzagTime, 1.0, 0.5);
+              colorChange.setHSL(0.8 + zigzagTime, 1.0, 0.5);
               colors.setXYZ(i, colorChange.r, colorChange.g, colorChange.b);
               colors.needsUpdate = true;
               
               if ((px > (initX + 70)) || (px < (initX - 70)) || (py > (initY + 70) || (py < (initY - 70)))) {
-                colorChange.setHSL(0.15, 1.0, 0.5);
+                colorChange.setHSL(0.7, 1.0, 0.5);
                 colors.setXYZ(i, colorChange.r, colorChange.g, colorChange.b);
                 colors.needsUpdate = true;
               }
@@ -265,7 +270,7 @@ const AnimatedBackground = ({ text , textSize, particleSize = 1 }) => {
                   px -= 0.03 * Math.cos(t);
                   py -= 0.03 * Math.sin(t);
                   
-                  colorChange.setHSL(0.15, 1.0, 0.5);
+                  colorChange.setHSL(0.7, 1.0, 0.5);
                   colors.setXYZ(i, colorChange.r, colorChange.g, colorChange.b);
                   colors.needsUpdate = true;
                   
@@ -284,7 +289,7 @@ const AnimatedBackground = ({ text , textSize, particleSize = 1 }) => {
                 }
                 
                 if ((px > (initX + 10)) || (px < (initX - 10)) || (py > (initY + 10) || (py < (initY - 10)))) {
-                  colorChange.setHSL(0.15, 1.0, 0.5);
+                  colorChange.setHSL(0.7, 1.0, 0.5);
                   colors.setXYZ(i, colorChange.r, colorChange.g, colorChange.b);
                   colors.needsUpdate = true;
                   
@@ -359,7 +364,7 @@ const AnimatedBackground = ({ text , textSize, particleSize = 1 }) => {
     <div className="relative min-w-screen min-h-screen">
       <div
         ref={ containerRef }
-        className="fixed left-0 right-0  w-full h-full z-20"
+        className="w-full h-full z-10"
       />
     </div>
   );

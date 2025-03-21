@@ -22,7 +22,7 @@ export default async function RootLayout({ children }) {
 
       <body
         id="modal-root"
-        className={ `${arsenalSC.variable} ${nunito.variable} ${outfit.variable} ${eduFont.variable} ${codeFont.variable}  antialiased bg-black overflow-x-hidden` }
+        className={ `${arsenalSC.variable} ${nunito.variable} ${outfit.variable} ${eduFont.variable} ${codeFont.variable} antialiased bg-black` }
       >
         <Nav />
         { children }

@@ -25,9 +25,7 @@ export default function TextContainerBlackHole() {
   }, [ size ] );
 
   return (
-    <div className='w-screen h-screen relative'>
-      <AnimatedBackground text={ 'Welcome to\nMuhamash!!' } textSize={ textSize }
-        particleSize={ 0.6 } />
-    </div>
+    <AnimatedBackground text={ 'Welcome to\nMuhamash!!' } textSize={ textSize }
+      particleSize={ 0.6 } />
   );
 }

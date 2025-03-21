@@ -8,7 +8,7 @@ const ClientLayout = ({ profile, experiences, educations, skills, achievements }
     const searchParams = useSearchParams();
     const router = useRouter();
 
-    const activePage = searchParams.get("view") || localStorage.getItem("activePage") || "profile";
+    const activePage = searchParams.get("view") || localStorage.getItem("activePage");
 
     useEffect(() => {
         // Store in localStorage to persist across refreshes

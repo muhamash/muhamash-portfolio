@@ -2,7 +2,6 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 
 const AboutPhoto = dynamic( () => import( "./AboutPhoto" ) );
-const SectionScrollLayout = dynamic( () => import( "@/components/layouts/SectionScrollLayout" ) );
 const TechSlider = dynamic( () => import( "@/components/animations/sliders/techStacks/TechSlider" ) );
 const FocusConatiner = dynamic( () => import( "@/components/animations/focusText/FocusConatiner" ) );
 const TextContainer = dynamic( () => import( "@/components/animations/depcretedText/TextContainer" ) );
@@ -11,8 +10,8 @@ const AuoraContainer = dynamic( () => import( "@/components/animations/bg/auora/
 const About = async () => 
 {
   return (
-    <SectionScrollLayout
-      className={ "min-h-screen min-w-screen sticky top-0 left-0 right-0 z-20 w-full bg-gradient-to-br from-slate-800 via-gray-800 via-cyan-900 via-teal-900 backdrop-blur-md" }
+    <div
+      className={ "min-h-screen min-w-screen z-20 w-full" }
     >
       {/* <AuoraContainer /> */ }
 
@@ -51,7 +50,7 @@ const About = async () =>
         {/* image */ }
         <AboutPhoto />
       </div>
-    </SectionScrollLayout>
+    </div>
   )
 };
 
