@@ -11,7 +11,7 @@ const About = async () =>
 {
   return (
     <div
-      className={ "min-h-screen min-w-screen z-20 w-full" }
+      className={ "min-h-screen min-w-screen z-20 w-full bg-gray-900" }
     >
       {/* <AuoraContainer /> */ }
 

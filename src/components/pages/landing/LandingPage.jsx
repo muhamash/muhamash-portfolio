@@ -11,7 +11,7 @@ export default async function LandingPage ()
         <div className="relative">
             <ScrollBar />
           
-            <div className="fixed inset-0 w-full h-full overflow-hidden z-20">
+            <div className="fixed inset-0 min-w-screen h-full z-20">
                 <ParticlesContainer/>
             </div>
 

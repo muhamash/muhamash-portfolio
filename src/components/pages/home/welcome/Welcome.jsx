@@ -11,7 +11,7 @@ const Resume = dynamic( () => import( "@/components/common/Resume" ) );
 
 export default async function Welcome() {
     return (
-        <div className="relative h-screen w-screen flex md:flex-row flex-col md:justify-between justify-center gap-10 items-center mx-auto">
+        <div className="relative h-screen min-w-screen w-full flex md:flex-row flex-col md:justify-between justify-center gap-10 items-center mx-auto bg-black">
       
             <div className="w-screen h-screen -translate-y-20">
                 <TextContainerBlackHole />
