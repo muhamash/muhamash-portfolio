@@ -22,14 +22,14 @@ const ClientNav = () => {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
+                        onClick={() => setIsOpen(!isOpen)}
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="absolute top-12 left-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-md shadow-lg p-6 rounded-b-xl flex flex-col space-y-4"
+                        className="absolute top-14 left-0 w-full bg-gray-900 bg-opacity-90 backdrop-blur-md shadow-lg p-6 rounded-b-xl flex flex-col space-y-4"
                     >
-                        <NavItem icon={<FaHome />} text="Home" />
-                        {/* <AboutItem /> */}
+                        <NavItem icon={<FaHome />} text="" />
                         <NavItem icon={<FaEnvelope />} text="Contact" />
                         <NavItem icon={<FaFolderOpen />} text="Projects" />
                     </motion.div>
