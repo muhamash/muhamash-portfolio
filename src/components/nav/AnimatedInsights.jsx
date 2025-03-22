@@ -40,7 +40,7 @@ export const AnimatedInsights = () => {
           ease: "easeInOut",
           x: { type: "spring", stiffness: 100, damping: 15 }
         }}
-        className="absolute text-sm md:text-lg font-code font-semibold text-violet-200 whitespace-nowrap md:left-14 left-10 -z-10"
+        className="absolute text-[10px] md:text-lg font-code font-semibold text-violet-200 whitespace-nowrap md:left-14 left-10 -z-10"
       >
         {texts[index]}
       </motion.div>
